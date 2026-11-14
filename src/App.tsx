@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ExitModal from "./components/ExitModal";
 import TelegramChat from "./components/TelegramChat";
+import CursorGlow from "./components/CursorGlow";
 
 const Home = lazy(() => import("./pages/Home"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
@@ -39,6 +40,8 @@ export default function App() {
     <I18nProvider>
       <div className="min-h-screen bg-ink-950 text-foreground">
         <Navbar />
+        {/* Brand v2.1: sichqoncha aurora — barcha sahifalarda */}
+        <CursorGlow />
         <main>
           <Suspense fallback={<PageLoader />}>
             <Routes>
