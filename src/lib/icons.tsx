@@ -33,7 +33,7 @@ export {
   DotsSixVertical as GripVerticalIcon,
   Question as HelpCircle,
   CircleNotch as Loader2Icon,
-  Hamburger as Menu,
+  List as Menu,
   ChatCircle as MessageCircle,
   Minus,
   Minus as MinusIcon,
