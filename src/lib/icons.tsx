@@ -102,4 +102,6 @@ export {
   Funnel as Filter,
   Stack as Layers,
   CheckCircle as CircleCheckIcon,
+  CaretLeft,
+  CaretRight,
 } from "@phosphor-icons/react";

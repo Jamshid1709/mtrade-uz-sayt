@@ -81,12 +81,19 @@ export default function FAQPage() {
         <div className="section-container max-w-4xl">
           <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: (i % 4) * 0.07, ease: [0.2, 0, 0, 1] }}
+              >
                 <div className="glass-card overflow-hidden">
                   <button
                     onClick={() =>
                       setOpenIndex(openIndex === i ? null : i)
                     }
+                    aria-expanded={openIndex === i}
                     className="w-full flex items-center justify-between p-6 text-left"
                   >
                     <span className="font-display font-medium text-foreground pr-4 text-lg">
@@ -94,7 +101,7 @@ export default function FAQPage() {
                     </span>
                     <motion.div
                       animate={{ rotate: openIndex === i ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.35, ease: "easeOut" }}
                     >
                       <ChevronDown
                         size={24}
@@ -103,13 +110,14 @@ export default function FAQPage() {
                     </motion.div>
                   </button>
 
-                  <AnimatePresence>
+                  <AnimatePresence initial={false}>
                     {openIndex === i && (
                       <motion.div
+                        key="content"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        transition={{ duration: 0.32, ease: "easeOut" }}
                       >
                         <div className="px-6 pb-6 text-muted leading-relaxed border-t border-border/50 pt-4">
                           {faq.a}
@@ -118,7 +126,7 @@ export default function FAQPage() {
                     )}
                   </AnimatePresence>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             ))}
           </div>
 

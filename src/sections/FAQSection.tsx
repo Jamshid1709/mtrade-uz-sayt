@@ -93,19 +93,20 @@ export default function FAQSection() {
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === i ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 22 }}
                   >
                     <ChevronDown size={20} className="text-accent shrink-0" />
                   </motion.div>
                 </button>
 
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                   {openIndex === i && (
                     <motion.div
+                      key="content"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      transition={{ type: "spring", stiffness: 240, damping: 30, mass: 0.8 }}
                     >
                       <div className="px-5 pb-5 text-muted text-sm leading-relaxed border-t border-border/50 pt-4">
                         {faq.a}
