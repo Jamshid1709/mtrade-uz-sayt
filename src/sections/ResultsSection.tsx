@@ -97,7 +97,7 @@ export default function ResultsSection() {
                 style={{
                   width: "min(280px, 62vw)",
                   height: "360px",
-                  marginLeft: "min(-140px, -31vw)",
+                  marginLeft: "max(-140px, -31vw)",
                   marginTop: "-180px",
                   transformStyle: "preserve-3d",
                 }}

@@ -219,7 +219,7 @@ export default function CoursesPage() {
                     <th className="py-4 pr-4 text-muted font-medium">Xususiyat</th>
                     <th className="py-4 px-4 text-foreground font-display">Online Premium</th>
                     <th className="py-4 px-4 text-foreground font-display">Masofaviy Gibrid</th>
-                    <th className="py-4 px-4 text-accent font-display">Offline Akademiya</th>
+                    <th className="py-4 px-4 text-highlight font-display">Offline Akademiya</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
@@ -238,7 +238,7 @@ export default function CoursesPage() {
                       <td className="py-3 pr-4 text-muted">{feature}</td>
                       <td className="py-3 px-4 text-foreground">{premium}</td>
                       <td className="py-3 px-4 text-foreground">{hybrid}</td>
-                      <td className="py-3 px-4 text-accent font-semibold">{offline}</td>
+                      <td className="py-3 px-4 text-highlight font-semibold">{offline}</td>
                     </tr>
                   ))}
                 </tbody>
