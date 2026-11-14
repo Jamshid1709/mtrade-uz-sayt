@@ -92,6 +92,7 @@ export default function HangingBadges({ mentors }: HangingBadgesProps) {
               {/* Badge — flip kartasi */}
               <button
                 type="button"
+                data-glow-none
                 onClick={() => setOpen(flipped ? null : i)}
                 aria-pressed={flipped}
                 aria-label={

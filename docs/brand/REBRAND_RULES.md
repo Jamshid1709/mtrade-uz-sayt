@@ -76,7 +76,8 @@
 
 `150 / 220 / 320ms`, easing `cubic-bezier(.2,0,0,1)`. `prefers-reduced-motion` hurmat qilinadi (`index.css` da o'rnatilgan). `will-change` faqat kerak bo'lganda.
 
-**CursorGlow (global, `src/components/CursorGlow.tsx`):** barcha sahifalarda sichqoncha-kuzatiladigan Aurora yorug'ligi — Wine aurora (sekin, katta) + Sand shamcha (chaqqon, kichik), `mix-blend-screen`, z-[35] (navbar z-50 ostida). Doimiy o'rnatilgan sozlamalar: mobil/touch (`hover:hover` + `pointer:fine`) va reduced-motion'da avtomatik o'chadi. Yangi sahifa/tema uchun qayta sozlash KERAK EMAS.
+**CursorGlow (global, `src/components/CursorGlow.tsx`):** barcha sahifalarda sichqoncha-kuzatiladigan Aurora yorug'ligi — Wine aurora (sekin, 430px) + Sand shamcha (chaqqon, 160px), `mix-blend-screen`, z-[35] (navbar z-50 ostida). Doimiy sozlamalar: mobil/touch (`hover:hover` + `pointer:fine`) va reduced-motion'da avtomatik o'chadi.
+**`data-glow-none` atributi:** nur o'chishi kerak bo'lgan har qanday karta/elementga qo'ying (masalan natija rasmlari, video o'ramchalari, badges). Kursor element yoki farzandlari ustida turganda nur 0 opacity bo'ladi (0.28s transition). IFRAME'larga avtomatik qo'llanadi.
 
 ## 9. Matn / kontent qoidalari
 

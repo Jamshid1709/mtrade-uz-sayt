@@ -84,6 +84,7 @@ export default function ResultsSection() {
               <motion.div
                 key={r.src}
                 role={isCenter ? "img" : "button"}
+                data-glow-none
                 tabIndex={isCenter ? -1 : 0}
                 aria-label={isCenter ? r.alt : `${total - i}-rasmni markazga keltirish`}
                 aria-current={isCenter}

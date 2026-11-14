@@ -5,9 +5,12 @@ import { useEffect, useRef, useState } from "react";
  * Barcha sahifalarda ishlaydi (bitta global mount), mobil/touch va
  * prefers-reduced-motion'da o'zi o'chadi (sahifaga ta'sir qilmaydi).
  *
- * Layers (brand palitrasidan, screen blend — qora matnga tegmaydi):
- *  A) Wine aurora — katta, sekin, orqada;
+ * Layers (brand palitrasidan, screen blend):
+ *  A) Wine aurora — zich emas (430px), sekin;
  *  B) Qum (sand) shamcha — kichik, chaqqon.
+ *
+ * Nurlanishni o'chirish: kerakli elementga `data-glow-none` atributini qo'ying —
+ * kursor o'sha element (yoki farzandlari) ustida turganda nur 0 opacity bo'ladi.
  */
 export default function CursorGlow() {
   const [active, setActive] = useState(false);
@@ -27,6 +30,14 @@ export default function CursorGlow() {
     const fast = { ...target };
     let raf = 0;
     let visible = false;
+    let glowing = true;
+
+    const setGlowOpacity = (on: boolean) => {
+      if (glowing === on) return;
+      glowing = on;
+      if (glowA.current) glowA.current.style.opacity = on ? "1" : "0";
+      if (glowB.current) glowB.current.style.opacity = on ? "1" : "0";
+    };
 
     const onMove = (e: PointerEvent) => {
       target.x = e.clientX;
@@ -37,9 +48,13 @@ export default function CursorGlow() {
         slow.y = target.y;
         fast.x = target.x;
         fast.y = target.y;
-        if (glowA.current) glowA.current.style.opacity = "1";
-        if (glowB.current) glowB.current.style.opacity = "1";
+        setGlowOpacity(true);
       }
+      // data-glow-none (yoki iframe) ustida — nur o'chadi
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const overHalo =
+        !!el && (el.closest?.("[data-glow-none]") != null || el.tagName === "IFRAME");
+      setGlowOpacity(!overHalo);
     };
 
     const tick = () => {
@@ -49,10 +64,10 @@ export default function CursorGlow() {
       fast.y += (target.y - fast.y) * 0.22;
 
       if (glowA.current) {
-        glowA.current.style.transform = `translate3d(${slow.x - 320}px, ${slow.y - 320}px, 0)`;
+        glowA.current.style.transform = `translate3d(${slow.x - 215}px, ${slow.y - 215}px, 0)`;
       }
       if (glowB.current) {
-        glowB.current.style.transform = `translate3d(${fast.x - 90}px, ${fast.y - 90}px, 0)`;
+        glowB.current.style.transform = `translate3d(${fast.x - 80}px, ${fast.y - 80}px, 0)`;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -70,26 +85,26 @@ export default function CursorGlow() {
 
   return (
     <>
-      {/* A) Wine aurora — katta, sekin */}
+      {/* A) Wine aurora — o'rta masshtab, sekin */}
       <div
         ref={glowA}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[35] h-[640px] w-[640px] rounded-full opacity-0 blur-3xl transition-opacity duration-700 will-change-transform mix-blend-screen"
+        className="pointer-events-none fixed left-0 top-0 z-[35] h-[430px] w-[430px] rounded-full opacity-0 blur-3xl will-change-transform mix-blend-screen"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgba(127,1,31,0.5) 0%, rgba(98,1,22,0.32) 38%, rgba(72,1,14,0.12) 62%, transparent 75%)",
-          transition: "opacity 0.7s ease",
+            "radial-gradient(circle at 50% 50%, rgba(127,1,31,0.42) 0%, rgba(98,1,22,0.26) 40%, rgba(72,1,14,0.1) 64%, transparent 78%)",
+          transition: "opacity 0.28s ease",
         }}
       />
       {/* B) Sand shamcha — kichik, chaqqon */}
       <div
         ref={glowB}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[36] h-[180px] w-[180px] rounded-full opacity-0 blur-2xl transition-opacity duration-500 will-change-transform mix-blend-screen"
+        className="pointer-events-none fixed left-0 top-0 z-[36] h-[160px] w-[160px] rounded-full opacity-0 blur-2xl will-change-transform mix-blend-screen"
         style={{
           background:
-            "radial-gradient(circle at 50% 50%, rgba(245,235,208,0.3) 0%, rgba(245,235,208,0.1) 45%, transparent 75%)",
-          transition: "opacity 0.5s ease",
+            "radial-gradient(circle at 50% 50%, rgba(245,235,208,0.28) 0%, rgba(245,235,208,0.09) 45%, transparent 75%)",
+          transition: "opacity 0.28s ease",
         }}
       />
     </>

@@ -66,7 +66,7 @@ export default function VideoSection() {
 
           {/* Right: Video */}
           <ScrollReveal delay={0.2}>
-            <div className="glass-card p-2">
+            <div className="glass-card p-2" data-glow-none>
               <div className="aspect-video rounded-xl overflow-hidden bg-card relative group">
                 <iframe
                   width="100%"
