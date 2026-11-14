@@ -10,37 +10,8 @@ import {
   Zap,
 } from "@/lib/icons";
 import { motion } from "framer-motion";
-
-const mentors = [
-  {
-    name: "Odilbek",
-    role: "CEO & Asoschisi, Professional treyder",
-    image: "/images/odilbek.webp",
-    bio: "5 yillik tajriba, halol treyding yo'nalishi asoschisi. Professional treyder va investor.",
-    experience: "5+ yil tajriba",
-  },
-  {
-    name: "Bunyodbek",
-    role: "Professional treyder & Mentor",
-    image: "/images/bunyodbek.webp",
-    bio: "3+ yillik tajriba, 50+ dan ortiq o'quvchilarga ta'lim bergan professional mentor.",
-    experience: "50+ o'quvchi",
-  },
-  {
-    name: "Jamshid",
-    role: "Signal analitik",
-    image: "/images/jamshid.webp",
-    bio: "Texnik tahlil mutaxassisi, signal xizmati yetakchisi. Bozor tahlili va strategiyalar.",
-    experience: "Teknik analiz",
-  },
-  {
-    name: "Azizbek",
-    role: "Tahlilchi",
-    image: "/images/azizbek.webp",
-    bio: "Texnik tahlil mutaxassisi, signal xizmati yetakchisi.",
-    experience: "Teknik analiz",
-  },
-];
+import HangingBadges from "../components/HangingBadges";
+import { mentors } from "../data/mentors";
 
 const roadmap = [
   { icon: Target, title: "Asoslar", desc: "Bozor tushunchalari" },
@@ -169,55 +140,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mentors */}
-      <section className="py-20 bg-ink-950">
+      {/* Mentors — osiluvchi ID badges (Home bilan bir xil) */}
+      <section className="py-20 bg-ink-950 overflow-hidden">
         <div className="section-container">
           <ScrollReveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <h2 className="font-display font-bold text-3xl text-foreground mb-4">
-                Bizning <span className="gold-text">jamoa</span>
+                Bizning <span className="sand-text">jamoa</span>
               </h2>
               <p className="text-muted">
-                Tajribali mentorlar va analitiklar sizga yo'l boshlaydi.
+                Tajribali mentorlar va analitiklar sizga yo&apos;l boshlaydi.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
-            {mentors.map((mentor, i) => (
-              <ScrollReveal key={mentor.name} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  className="glass-card p-6 text-center flex flex-col justify-between h-full border border-border/50 hover:border-accent/50 transition-all"
-                >
-                  <div>
-                    {/* Uniform White Photo Frame */}
-                    <div className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden bg-white p-1 shadow-lg border border-accent/40 flex items-center justify-center">
-                      <img
-                        src={mentor.image}
-                        alt={mentor.name}
-                        className="w-full h-full object-cover object-top rounded-xl"
-                      />
-                    </div>
-                    <h3 className="font-display font-bold text-xl text-foreground mb-1">
-                      {mentor.name}
-                    </h3>
-                    <p className="text-accent text-xs font-mono font-bold mb-3">
-                      {mentor.role}
-                    </p>
-                    <p className="text-muted text-xs leading-relaxed mb-4">{mentor.bio}</p>
-                  </div>
-                  {mentor.experience && (
-                    <div className="mt-auto">
-                      <span className="inline-block text-[11px] font-mono text-muted bg-ink-900 px-3 py-1 rounded-full border border-border/40">
-                        {mentor.experience}
-                      </span>
-                    </div>
-                  )}
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <HangingBadges mentors={mentors} />
 
           {/* Duo image */}
           <ScrollReveal>
