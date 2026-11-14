@@ -13,7 +13,7 @@ import {
   TrendingUp,
   Layers,
   ArrowUpRight,
-} from "lucide-react";
+} from "@/lib/icons";
 
 // Pine Script Templates
 const PINE_SCRIPT_INDICATORS = [
@@ -26,7 +26,7 @@ const PINE_SCRIPT_INDICATORS = [
     code: `//@version=5
 indicator("MTrade SMC Order Blocks & FVG [Halal/US Stocks]", overlay=true, max_boxes_count=500, max_lines_count=500)
 
-// â€” Sozlamalar (AQSh aksiyalari uchun)
+// — Sozlamalar (AQSh aksiyalari uchun)
 showOB  = input.bool(true,  "Order Blocks")
 showFVG = input.bool(true,  "Fair Value Gap (FVG)")
 displacementLen = input.int(5, "Displacement uzunligi", minval=2)
@@ -36,7 +36,7 @@ mitigateOnTouch = input.bool(true, "Mitigatsiya bo'lganda rangni xiralashtirish"
 var box[]  obBoxes  = array.new_box(0)
 var box[]  fvgBoxes = array.new_box(0)
 
-// â€” Trend / Displacement (MTrade: faqat AQSh halol aksiyalar, Musaffa da tekshiring)
+// — Trend / Displacement (MTrade: faqat AQSh halol aksiyalar, Musaffa da tekshiring)
 volSMA = ta.sma(volume, 20)
 volOk  = not na(volSMA) and volume > volSMA * volMult
 bullDisp = close > open and close[1] < open[1] and close > high[1] and volOk
@@ -58,7 +58,7 @@ if bearDisp and showOB
     if array.size(obBoxes) > 30
         box.delete(array.shift(obBoxes))
 
-// FVG: 3 bar gap â€” bullish (low > high[2]) va bearish (high < low[2])
+// FVG: 3 bar gap — bullish (low > high[2]) va bearish (high < low[2])
 bullFVG = low > high[2] and close[1] > high[2]
 bearFVG = high < low[2] and close[1] < low[2]
 
@@ -84,10 +84,10 @@ if mitigateOnTouch and barstate.isconfirmed
             box.set_border_color(b, color.rgb(120,120,120,20))
     for f in fvgBoxes
         if low <= box.get_top(f) and high >= box.get_bottom(f) and not na(box.get_top(f))
-            // FVG fill â€” o'chirish yoki xiralashtirish
+            // FVG fill — o'chirish yoki xiralashtirish
             box.set_bgcolor(f, color.rgb(120,120,120,30))
 
-alertcondition(bullDisp, "Bullish OB", "Bullish Order Block â€” AQSh halol aksiya")
+alertcondition(bullDisp, "Bullish OB", "Bullish Order Block — AQSh halol aksiya")
 alertconditionbearDisp = bearDisp
 alertcondition(alertconditionbearDisp, "Bearish OB", "Bearish Order Block")
 // Eslatma: Halol tekshirish uchun Musaffa.com ga yo'naltiring. Bu fatvo emas.
@@ -102,19 +102,19 @@ alertcondition(alertconditionbearDisp, "Bearish OB", "Bearish Order Block")
     code: `//@version=5
 indicator("MTrade Liquidity Sweep & Volume Spike [US Stocks]", overlay=true, max_labels_count=500)
 
-// â€” Sozlamalar
+// — Sozlamalar
 leftBars  = input.int(5, "Pivot chap", minval=2)
 rightBars = input.int(5, "Pivot o'ng",  minval=2)
 volMultiplier = input.float(2.0, "Volume ko'paytiruvchi", minval=1.2)
 sweepWickPct  = input.float(0.2, "Wick sweep minimal % (ATR ga nisbatan)", minval=0.0, step=0.05)
 
-// Pivots (tasdiqlangan bar da, repaint yo'q â€” rightBars bar kechikish bilan)
+// Pivots (tasdiqlangan bar da, repaint yo'q — rightBars bar kechikish bilan)
 pH = ta.pivothigh(high, leftBars, rightBars)
 pL = ta.pivotlow(low, leftBars, rightBars)
 lastPH = ta.valuewhen(not na(pH), pH, 0)
 lastPL = ta.valuewhen(not na(pL), pL, 0)
 
-// Volume â€” faqat sweep barida tekshiriladi, barstate.isconfirmed da
+// Volume — faqat sweep barida tekshiriladi, barstate.isconfirmed da
 avgVol = ta.sma(volume, 20)
 volOk  = not na(avgVol) and avgVol > 0
 isVolSpike = volOk and volume > avgVol * volMultiplier and barstate.isconfirmed
@@ -144,13 +144,13 @@ alertcondition(isSweepLow,  "Sweep Low",  "Liquidity sweep low + volume spike")
     code: `//@version=5
 indicator("MTrade Breakout Momentum [RSI+ATR]", overlay=false)
 
-// â€” Sozlamalar
+// — Sozlamalar
 rsiLen = input.int(14, "RSI uzunligi", minval=2)
 atrLen = input.int(14, "ATR uzunligi", minval=2)
 donchianLen = input.int(20, "Donchian kanal", minval=5)
 mult = input.float(1.5, "ATR ko'paytiruvchi (upper/lower)", minval=0.5, step=0.1)
 
-// â€” Hisoblar (barcha ta.* funksiyalar na tekshiruvi bilan)
+// — Hisoblar (barcha ta.* funksiyalar na tekshiruvi bilan)
 rsi = ta.rsi(close, rsiLen)
 atr = ta.atr(atrLen)
 atrSafe = na(atr) or atr == 0 ? 1e-6 : atr
@@ -163,20 +163,20 @@ momSmooth = ta.sma(momentumScore, 5)
 rsiSignal = rsi > 55 and momentumScore > 0.8
 rsiWeak   = rsi < 45 and momentumScore < -0.8
 
-// Chizish â€” oscillator panelida
+// Chizish — oscillator panelida
 plot(momentumScore, "Momentum", color=momentumScore > 0 ? color.rgb(20,199,132) : color.rgb(246,70,93), linewidth=2)
 plot(momSmooth, "SMA5", color=color.rgb(214,195,161), linewidth=1)
 hline(0, "Zero", color=color.gray)
 hline(1.2, "Breakout High", color=color.rgb(20,199,132,60), linestyle=hline.style_dashed)
 hline(-1.2, "Breakdown Low", color=color.rgb(246,70,93,60), linestyle=hline.style_dashed)
 
-// Donchian breakout â€” faqat overlay panelda ko'rinmaydi, lekin alert uchun
+// Donchian breakout — faqat overlay panelda ko'rinmaydi, lekin alert uchun
 breakUp   = close > donUpper[1] and rsi > 55 and momentumScore > 1.0
 breakDown = close < donLower[1] and rsi < 45 and momentumScore < -1.0
 
 alertcondition(breakUp, "Momentum Breakout Up", "Donchian breakout + RSI/momentum tasdiq")
 alertcondition(breakDown, "Momentum Breakdown", "Donchian breakdown + RSI/momentum tasdiq")
-// ATR mult (mult) donchian o'rniga Keltner varianti uchun zaxira â€” hozir breakout threshold sifatida ishlatiladi.
+// ATR mult (mult) donchian o'rniga Keltner varianti uchun zaxira — hozir breakout threshold sifatida ishlatiladi.
 `,
   },
 ];
@@ -187,29 +187,29 @@ const TRADING_STRATEGIES = [
     id: "smc-entry",
     title: "ICT / SMC Order Block & Liquidity Strategy [US Halal]",
     winRate: "~68-72%*",
-    rrr: "1:2.5â€“1:3",
-    timeframes: "15M kirish / 1Hâ€“4H trend",
+    rrr: "1:2.5–1:3",
+    timeframes: "15M kirish / 1H–4H trend",
     description:
       "Faqat AQSh halol aksiyalari (Musaffa da tekshiring) da institutsional Order Block va likvidlik sweep dan foydalanish. *Backtest, kafolat emas.",
     rules: [
-      "4H/1D da HTF trend va Order Block ni belgilang (displacement + volume tasdiq). Halol filtr: Musaffa.com da tekshiring â€” bu fatvo emas.",
-      "15M da narx OB ga kelib Sweep High/Low hosil qilishini kuting (wick + volume spike 2Ã—, close sweep darajasidan qaytishi shart).",
+      "4H/1D da HTF trend va Order Block ni belgilang (displacement + volume tasdiq). Halol filtr: Musaffa.com da tekshiring — bu fatvo emas.",
+      "15M da narx OB ga kelib Sweep High/Low hosil qilishini kuting (wick + volume spike 2×, close sweep darajasidan qaytishi shart).",
       "Market Structure Shift (MSS) + FVG ichida limit buy (bullish FVG da long, bearish FVG da short). FVG to'lguncha kirish bekor.",
-      "Risk: SL sweep wick ortiga + ATR*0.5 buffer, TP 1:2.5â€“1:3, pozitsiya 1â€“2% risk, kunlik max 2% zarar limiti.",
+      "Risk: SL sweep wick ortiga + ATR*0.5 buffer, TP 1:2.5–1:3, pozitsiya 1–2% risk, kunlik max 2% zarar limiti.",
     ],
   },
   {
     id: "break-retest",
     title: "Break & Retest (Volume Tasdiqli) [US Halal]",
     winRate: "~65-68%*",
-    rrr: "1:2â€“1:2.5",
+    rrr: "1:2–1:2.5",
     timeframes: "1H, 4H, 1D (AQSh sessiyasi 09:30-16:00 ET)",
     description:
       "AQSh aksiyalarida kuchli S/R buzilishi + hajm tasdiqi bilan kirish. *Tarixiy test, kelajak kafolati emas.",
     rules: [
       "Kamida 3 marta ushlab qolgan S/R ni belgilang (Donchian 20 yoki HTF swing).",
-      "Breakout â€” yopilish (close) bilan buzilish shart (wick emas), hajm SMA20 dan 2Ã— yuqori (break barida).",
-      "Retest â€” past hajmda qayta tegish + bullish/bearish engulfing. Yuqori hajmli retest â€” false signal, kirmang.",
+      "Breakout — yopilish (close) bilan buzilish shart (wick emas), hajm SMA20 dan 2× yuqori (break barida).",
+      "Retest — past hajmda qayta tegish + bullish/bearish engulfing. Yuqori hajmli retest — false signal, kirmang.",
       "Risk: SL buzilgan darajadan ATR*0.7 past/yuqori, TP keyingi S/R, pozitsiya 1% risk, Musaffa da halol tekshirish shart.",
     ],
   },
@@ -217,15 +217,15 @@ const TRADING_STRATEGIES = [
     id: "rvol-scalping",
     title: "High RVOL + ORB Momentum [Faqat AQSh Aksiyalari]",
     winRate: "~60-65%*",
-    rrr: "1:1.8â€“1:2",
+    rrr: "1:1.8–1:2",
     timeframes: "5M, 15M (AQSh ochilishi 09:30 ET dan keyin)",
     description:
-      "Faqat AQSh aksiyalari â€” hajm portlashi (RVOL 3Ã—) + ORB buzilishi. Kripto/Forex EMAS (halol tamoyil). *Skalping yuqori risk, komissiya va slippage hisoblang.",
+      "Faqat AQSh aksiyalari — hajm portlashi (RVOL 3×) + ORB buzilishi. Kripto/Forex EMAS (halol tamoyil). *Skalping yuqori risk, komissiya va slippage hisoblang.",
     rules: [
       "Finviz da RVOL >3.0, AvgVol >500K, Price >$5 halol aksiyalarni toping (Musaffa da tekshiring).",
-      "09:30â€“09:45 ET 15-min ORB konsolidatsiyasini belgilang â€” pre-market emas, faqat ochilishdan keyin.",
+      "09:30–09:45 ET 15-min ORB konsolidatsiyasini belgilang — pre-market emas, faqat ochilishdan keyin.",
       "ORB yuqori/past chegarasi close bilan buzilsa va hajm tasdiqlansa kirish (wick buzilishi emas).",
-      "Risk: SL ORB o'rtasi, TP 1:1.8â€“1:2, pozitsiya â‰¤1% risk, kunlik max 3 savdo, yo'qotish seriyasida to'xtating.",
+      "Risk: SL ORB o'rtasi, TP 1:1.8–1:2, pozitsiya ≤1% risk, kunlik max 3 savdo, yo'qotish seriyasida to'xtating.",
     ],
   },
 ];
@@ -289,7 +289,7 @@ export default function TradingToolsPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-4">
               <Zap size={14} /> MTrade Trading Library & Resources
             </div>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-4">
               MTrade <span className="gold-text">Indikatorlari va Strategiyalari</span>
             </h1>
             <p className="text-muted text-base sm:text-lg max-w-2xl mx-auto">
@@ -317,7 +317,7 @@ export default function TradingToolsPage() {
                 <Code size={24} />
               </div>
               <div>
-                <h2 className="font-display font-bold text-2xl text-white">
+                <h2 className="font-display font-bold text-2xl text-foreground">
                   MTrade TradingView <span className="gold-text">Indikatorlari</span>
                 </h2>
                 <p className="text-xs text-muted">
@@ -339,7 +339,7 @@ export default function TradingToolsPage() {
                       <span className="text-[11px] font-mono text-muted">Pine Script v5</span>
                     </div>
 
-                    <h3 className="font-display font-bold text-lg text-white mb-2">{ind.title}</h3>
+                    <h3 className="font-display font-bold text-lg text-foreground mb-2">{ind.title}</h3>
                     <p className="text-xs text-muted mb-4 leading-relaxed">{ind.description}</p>
 
                     {/* Code snippet block */}
@@ -371,7 +371,7 @@ export default function TradingToolsPage() {
           <div className="mt-8 p-4 rounded-2xl bg-card border border-border/40 text-xs text-muted flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2 font-mono">
               <span className="text-accent">ðŸ’¡ TradingView'ga o'rnatish:</span>
-              <span>TradingView.com âž” Pastki "Pine Editor" oynasi âž” Kodni tashlang âž” "Add to chart" tugmasi.</span>
+              <span>TradingView.com ➔ Pastki "Pine Editor" oynasi ➔ Kodni tashlang ➔ "Add to chart" tugmasi.</span>
             </div>
           </div>
         </div>
@@ -386,7 +386,7 @@ export default function TradingToolsPage() {
                 <BookOpen size={24} />
               </div>
               <div>
-                <h2 className="font-display font-bold text-2xl text-white">
+                <h2 className="font-display font-bold text-2xl text-foreground">
                   MTrade Savdo <span className="gold-text">Strategiyalari</span>
                 </h2>
                 <p className="text-xs text-muted">
@@ -410,7 +410,7 @@ export default function TradingToolsPage() {
                       </span>
                     </div>
 
-                    <h3 className="font-display font-bold text-lg text-white mb-2">{strat.title}</h3>
+                    <h3 className="font-display font-bold text-lg text-foreground mb-2">{strat.title}</h3>
                     <p className="text-xs text-muted mb-4 leading-relaxed">{strat.description}</p>
 
                     <div className="mb-4 text-[11px] font-mono text-muted/90 flex items-center gap-2">
@@ -418,7 +418,7 @@ export default function TradingToolsPage() {
                     </div>
 
                     <div className="space-y-2.5 mb-4 border-t border-border/40 pt-4">
-                      <div className="text-xs font-bold text-white mb-1">Strategiya Qoidalari:</div>
+                      <div className="text-xs font-bold text-foreground mb-1">Strategiya Qoidalari:</div>
                       {strat.rules.map((rule, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs text-muted">
                           <ChevronRight size={14} className="text-accent shrink-0 mt-0.5" />
@@ -438,9 +438,9 @@ export default function TradingToolsPage() {
       <section className="py-8 bg-ink-950 border-t border-border/30">
         <div className="section-container text-center">
           <p className="text-muted text-xs max-w-3xl mx-auto">
-            * Win Rate va RRR tarixiy backtest asosida, kelajak kafolati emas. Barcha strategiyalar faqat AQSh halol aksiyalari uchun (Musaffa.com da tekshiring â€” bu fatvo emas). Kripto/Forex/CFD yo'q. Risk boshqaruvi: har savdoda 1â€“2% dan oshirmang, kunlik max 2% zarar. Investitsiya maslahati emas.
+            * Win Rate va RRR tarixiy backtest asosida, kelajak kafolati emas. Barcha strategiyalar faqat AQSh halol aksiyalari uchun (Musaffa.com da tekshiring — bu fatvo emas). Kripto/Forex/CFD yo'q. Risk boshqaruvi: har savdoda 1–2% dan oshirmang, kunlik max 2% zarar. Investitsiya maslahati emas.
           </p>
-          <a href="https://musaffa.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-xl text-bull text-xs font-mono">Musaffa da halol tekshirish â†—</a>
+          <a href="https://musaffa.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-xl text-bull text-xs font-mono">Musaffa da halol tekshirish ↗</a>
         </div>
       </section>
 
@@ -453,7 +453,7 @@ export default function TradingToolsPage() {
                 <Filter size={24} />
               </div>
               <div>
-                <h2 className="font-display font-bold text-2xl text-white">
+                <h2 className="font-display font-bold text-2xl text-foreground">
                   Finviz & TradingView <span className="gold-text">Skanner Qoliplari</span>
                 </h2>
                 <p className="text-xs text-muted">
@@ -469,13 +469,13 @@ export default function TradingToolsPage() {
                 <div className="glass-card p-6 flex flex-col justify-between h-full border border-border/50 hover:border-accent/40 transition-all">
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-xs font-mono font-bold text-white bg-ink-900 px-2.5 py-1 rounded-lg border border-border">
+                      <span className="text-xs font-mono font-bold text-foreground bg-ink-900 px-2.5 py-1 rounded-lg border border-border">
                         {preset.platform} Presets
                       </span>
                       <ArrowUpRight size={16} className="text-accent" />
                     </div>
 
-                    <h3 className="font-display font-bold text-lg text-white mb-3">{preset.title}</h3>
+                    <h3 className="font-display font-bold text-lg text-foreground mb-3">{preset.title}</h3>
 
                     <div className="space-y-2 mb-6">
                       {preset.filters.map((f, i) => (

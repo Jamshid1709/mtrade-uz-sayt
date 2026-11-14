@@ -8,7 +8,7 @@ import {
   Cpu,
   Gamepad2,
   Zap,
-} from "lucide-react";
+} from "@/lib/icons";
 import { motion } from "framer-motion";
 
 const mentors = [
@@ -16,7 +16,7 @@ const mentors = [
     name: "Odilbek",
     role: "CEO & Asoschisi, Professional treyder",
     image: "/images/odilbek.webp",
-    bio: "5 yillik tajriba, halol treyding yoÊ»nalishi asoschisi. Professional treyder va investor.",
+    bio: "5 yillik tajriba, halol treyding yo'nalishi asoschisi. Professional treyder va investor.",
     experience: "5+ yil tajriba",
   },
   {
@@ -60,14 +60,14 @@ export default function AboutPage() {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-6">
-                Biz â€” kelajak treyderlarini{" "}
+              <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-6">
+                Biz — kelajak treyderlarini{" "}
                 <span className="gold-text">yetishtiruvchi akademiya</span>
               </h1>
               <p className="text-muted text-lg leading-relaxed mb-8">
                 MTrade Academy 2024 yilda tashkil etilgan va o'shandan buyon
                 100+ dan ortiq o'quvchiga halol treyding sirlarini o'rgatdi.
-                Bizning maqsadimiz â€” O'zbekiston yoshlarini professional
+                Bizning maqsadimiz — O'zbekiston yoshlarini professional
                 moliyaviy savodxonlik bilan ta'minlash.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   href="https://t.me/mtrade_obuna_bot?start=course_premium"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gold-gradient-bg text-ink-950 font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 hover:shadow-gold transition-all"
+                  className="wine-gradient-bg text-sand-100 font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 hover:shadow-gold transition-all"
                 >
                   Kursga yozilish
                 </a>
@@ -101,10 +101,10 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <ScrollReveal>
               <div className="glass-card p-8 h-full">
-                <div className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl wine-gradient-bg flex items-center justify-center mb-6">
                   <Eye size={24} className="text-ink-950" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-bold text-2xl text-foreground mb-4">
                   Maqsadimiz
                 </h3>
                 <p className="text-muted leading-relaxed">
@@ -117,10 +117,10 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.1}>
               <div className="glass-card p-8 h-full">
-                <div className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-xl wine-gradient-bg flex items-center justify-center mb-6">
                   <Target size={24} className="text-ink-950" />
                 </div>
-                <h3 className="font-display font-bold text-2xl text-white mb-4">
+                <h3 className="font-display font-bold text-2xl text-foreground mb-4">
                   Missiyamiz
                 </h3>
                 <p className="text-muted leading-relaxed">
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="section-container">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-3xl text-white mb-4">
+              <h2 className="font-display font-bold text-3xl text-foreground mb-4">
                 MTrade <span className="gold-text">Yo'li</span>
               </h2>
               <p className="text-muted">
@@ -155,10 +155,10 @@ export default function AboutPage() {
                   whileHover={{ y: -5 }}
                   className="glass-card p-5 text-center h-full"
                 >
-                  <div className="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center mx-auto mb-3">
+                  <div className="w-10 h-10 rounded-lg wine-gradient-bg flex items-center justify-center mx-auto mb-3">
                     <step.icon size={18} className="text-ink-950" />
                   </div>
-                  <p className="font-display font-semibold text-white text-sm mb-1">
+                  <p className="font-display font-semibold text-foreground text-sm mb-1">
                     {step.title}
                   </p>
                   <p className="text-muted text-xs">{step.desc}</p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
         <div className="section-container">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="font-display font-bold text-3xl text-white mb-4">
+              <h2 className="font-display font-bold text-3xl text-foreground mb-4">
                 Bizning <span className="gold-text">jamoa</span>
               </h2>
               <p className="text-muted">
@@ -199,7 +199,7 @@ export default function AboutPage() {
                         className="w-full h-full object-cover object-top rounded-xl"
                       />
                     </div>
-                    <h3 className="font-display font-bold text-xl text-white mb-1">
+                    <h3 className="font-display font-bold text-xl text-foreground mb-1">
                       {mentor.name}
                     </h3>
                     <p className="text-accent text-xs font-mono font-bold mb-3">

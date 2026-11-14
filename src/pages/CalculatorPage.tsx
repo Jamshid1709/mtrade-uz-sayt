@@ -7,7 +7,7 @@ import {
   BarChart3,
   PieChart,
   Percent,
-} from "lucide-react";
+} from "@/lib/icons";
 
 // A) Position Size Calculator
 function PositionSizeCalc() {
@@ -27,7 +27,7 @@ function PositionSizeCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl text-foreground mb-4 flex items-center gap-2">
         <Calculator size={20} className="text-accent" />
         Position Size Kalkulyatori
       </h3>
@@ -40,7 +40,7 @@ function PositionSizeCalc() {
             type="number"
             value={balance}
             onChange={(e) => setBalance(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -49,7 +49,7 @@ function PositionSizeCalc() {
             type="number"
             value={riskPercent}
             onChange={(e) => setRiskPercent(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -60,7 +60,7 @@ function PositionSizeCalc() {
             type="number"
             value={entry}
             onChange={(e) => setEntry(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -71,7 +71,7 @@ function PositionSizeCalc() {
             type="number"
             value={stopLoss}
             onChange={(e) => setStopLoss(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ function PositionSizeCalc() {
           </div>
           <div className="flex justify-between">
             <span className="text-muted text-sm">Risk/Share:</span>
-            <span className="font-mono text-white">
+            <span className="font-mono text-foreground">
               ${result.riskPerShare.toFixed(2)}
             </span>
           </div>
@@ -117,7 +117,7 @@ function RRRcalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl text-foreground mb-4 flex items-center gap-2">
         <TrendingUp size={20} className="text-accent" />
         Risk/Reward Ratio
       </h3>
@@ -128,7 +128,7 @@ function RRRcalc() {
             type="number"
             value={entry}
             onChange={(e) => setEntry(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -139,7 +139,7 @@ function RRRcalc() {
             type="number"
             value={stopLoss}
             onChange={(e) => setStopLoss(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -150,7 +150,7 @@ function RRRcalc() {
             type="number"
             value={takeProfit}
             onChange={(e) => setTakeProfit(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
       </div>
@@ -219,7 +219,7 @@ function FundamentalCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl text-foreground mb-4 flex items-center gap-2">
         <BarChart3 size={20} className="text-accent" />
         Fundamental Ratio Kalkulyatori
       </h3>
@@ -241,7 +241,7 @@ function FundamentalCalc() {
               onChange={(e) =>
                 (setter as (v: number) => void)(Number(e.target.value))
               }
-              className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+              className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
             />
           </div>
         ))}
@@ -280,7 +280,7 @@ function PortfolioCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl text-foreground mb-4 flex items-center gap-2">
         <PieChart size={20} className="text-accent" />
         Portfolio Taqsimoti
       </h3>
@@ -292,7 +292,7 @@ function PortfolioCalc() {
           type="number"
           value={total}
           onChange={(e) => setTotal(Number(e.target.value))}
-          className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none mb-4"
+          className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none mb-4"
         />
         <div className="space-y-3">
           {allocations.map((a, i) => (
@@ -306,7 +306,7 @@ function PortfolioCalc() {
                     na[i].name = e.target.value;
                     setAllocations(na);
                   }}
-                  className="w-16 sm:w-20 bg-card border border-border rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-white text-xs sm:text-sm focus:border-accent outline-none"
+                  className="w-16 sm:w-20 bg-card border border-border rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-foreground text-xs sm:text-sm focus:border-accent outline-none"
                 />
                 <input
                   type="range"
@@ -322,7 +322,7 @@ function PortfolioCalc() {
                 />
               </div>
               <div className="flex items-center gap-2 sm:gap-1 ml-2 sm:ml-0">
-                <span className="font-mono text-white text-xs sm:text-sm w-8 sm:w-12 text-right">
+                <span className="font-mono text-foreground text-xs sm:text-sm w-8 sm:w-12 text-right">
                   {a.percent}%
                 </span>
                 <span className="font-mono text-accent text-xs sm:text-sm w-16 sm:w-20 text-right">
@@ -386,7 +386,7 @@ function CompoundCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+      <h3 className="font-display font-bold text-xl text-foreground mb-4 flex items-center gap-2">
         <Percent size={20} className="text-accent" />
         Daromad Kalkulyatori (Compound)
       </h3>
@@ -399,7 +399,7 @@ function CompoundCalc() {
             type="number"
             value={principal}
             onChange={(e) => setPrincipal(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -410,7 +410,7 @@ function CompoundCalc() {
             type="number"
             value={monthly}
             onChange={(e) => setMonthly(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -421,7 +421,7 @@ function CompoundCalc() {
             type="number"
             value={rate}
             onChange={(e) => setRate(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
         <div>
@@ -430,7 +430,7 @@ function CompoundCalc() {
             type="number"
             value={years}
             onChange={(e) => setYears(Number(e.target.value))}
-            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-foreground focus:border-accent outline-none"
           />
         </div>
       </div>
@@ -469,7 +469,7 @@ export default function CalculatorPage() {
       <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-4">
               Treyding <span className="gold-text">Kalkulyatori</span>
             </h1>
             <p className="text-muted max-w-2xl mx-auto">

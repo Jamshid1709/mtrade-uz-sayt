@@ -67,8 +67,8 @@
                 linear-gradient(135deg, #7F011F, #F06A72) border-box;
   }
 
-  /* Wine CTA foni (ilgari gold-gradient-bg) */
-  .gold-gradient-bg,
+  /* Wine CTA foni (ilgari wine-gradient-bg) */
+  .wine-gradient-bg,
   .wine-gradient-bg {
     background: linear-gradient(135deg, #620116 0%, #7F011F 55%, #B30E32 100%);
   }

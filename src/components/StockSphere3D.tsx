@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useRef, useState } from "react";
-import { ExternalLink, Search, Sparkles, TrendingUp, TrendingDown } from "lucide-react";
+import { ExternalLink, Search, Sparkles, TrendingUp, TrendingDown } from "@/lib/icons";
 
 export interface StockData {
   symbol: string;
@@ -358,7 +358,7 @@ export default function StockSphere3D() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
           <Sparkles size={14} /> 3D Market Cap Interactive Sphere
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-3">
+        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-foreground mb-3">
           Eng yirik <span className="gold-text">Aksiyalar 3D Shari</span>
         </h2>
         <p className="text-muted text-sm sm:text-base max-w-xl mx-auto">
@@ -374,7 +374,7 @@ export default function StockSphere3D() {
               placeholder="Aksiya nomini yozing (masalan, NVDA, AAPL)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-sm text-white focus:outline-none focus:border-accent transition-colors"
+              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
             />
             {filteredStocks.length > 0 && (
               <div className="absolute z-50 left-0 right-0 top-full mt-2 bg-ink-900 border border-border rounded-xl shadow-2xl overflow-hidden text-left">
@@ -385,7 +385,7 @@ export default function StockSphere3D() {
                     className="w-full px-4 py-2.5 hover:bg-primary/10 flex items-center justify-between border-b border-border/30 last:border-0 transition-colors"
                   >
                     <div>
-                      <span className="font-bold text-white font-mono">{stock.symbol}</span>
+                      <span className="font-bold text-foreground font-mono">{stock.symbol}</span>
                       <span className="text-xs text-muted ml-2">{stock.name}</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -404,30 +404,30 @@ export default function StockSphere3D() {
               className={`px-3 py-1.5 rounded-lg transition-all ${
                 redirectTarget === "finviz"
                   ? "bg-primary text-ink-950 font-bold shadow-md"
-                  : "text-muted hover:text-white"
+                  : "text-muted hover:text-foreground"
               }`}
             >
-              Finviz â†—
+              Finviz ↗
             </button>
             <button
               onClick={() => setRedirectTarget("stockanalysis")}
               className={`px-3 py-1.5 rounded-lg transition-all ${
                 redirectTarget === "stockanalysis"
                   ? "bg-primary text-ink-950 font-bold shadow-md"
-                  : "text-muted hover:text-white"
+                  : "text-muted hover:text-foreground"
               }`}
             >
-              StockAnalysis â†—
+              StockAnalysis ↗
             </button>
             <button
               onClick={() => setRedirectTarget("musaffa")}
               className={`px-3 py-1.5 rounded-lg transition-all ${
                 redirectTarget === "musaffa"
-                  ? "bg-bull text-white font-bold shadow-md"
-                  : "text-muted hover:text-white"
+                  ? "bg-bull text-foreground font-bold shadow-md"
+                  : "text-muted hover:text-foreground"
               }`}
             >
-              Musaffa (Halol tekshirish) â†—
+              Musaffa (Halol tekshirish) ↗
             </button>
           </div>
         </div>
@@ -461,7 +461,7 @@ export default function StockSphere3D() {
             className="z-50 bg-ink-900/95 backdrop-blur-md border border-accent/50 p-3 rounded-2xl shadow-2xl text-left transition-all transform scale-105"
           >
             <div className="flex items-center justify-between gap-3 mb-1">
-              <span className="font-mono font-extrabold text-lg text-white">
+              <span className="font-mono font-extrabold text-lg text-foreground">
                 {hoveredStock.symbol}
               </span>
               <span
@@ -494,10 +494,10 @@ export default function StockSphere3D() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="mt-2 block text-[10px] text-bull hover:text-white bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-lg px-2 py-1 text-center font-mono transition-colors"
+                className="mt-2 block text-[10px] text-bull hover:text-foreground bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-lg px-2 py-1 text-center font-mono transition-colors"
                 style={{ pointerEvents: "auto" }}
               >
-                Musaffa da halol tekshirish â†—
+                Musaffa da halol tekshirish ↗
               </a>
             )}
           </div>
@@ -506,7 +506,7 @@ export default function StockSphere3D() {
 
       {/* Footer Info Pill */}
       <div className="mt-6 text-center text-xs text-muted/70 font-mono">
-        ðŸ’¡ Maslahat: Har bir aksiyaga bosib uning to'liq moliyaviy grafiklarini {redirectTarget === "finviz" ? "Finviz" : redirectTarget === "stockanalysis" ? "StockAnalysis" : "Musaffa"} portalida ochishingiz mumkin. Halol tekshirish uchun Musaffa ga yo'naltiriladi â€” bu fatvo emas.
+        ðŸ’¡ Maslahat: Har bir aksiyaga bosib uning to'liq moliyaviy grafiklarini {redirectTarget === "finviz" ? "Finviz" : redirectTarget === "stockanalysis" ? "StockAnalysis" : "Musaffa"} portalida ochishingiz mumkin. Halol tekshirish uchun Musaffa ga yo'naltiriladi — bu fatvo emas.
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import { TOP_STOCKS } from "./StockSphere3D";
 import { SECTOR_COLORS } from "./StockConstellation3D";
-import { Activity, TrendingUp, TrendingDown, Newspaper, ArrowUpRight, Flame, BarChart3, ExternalLink } from "lucide-react";
+import { Activity, TrendingUp, TrendingDown, Newspaper, ArrowUpRight, Flame, BarChart3, ExternalLink } from "@/lib/icons";
 
 export default function SpaciousGmtTerminal() {
   const [activeTab, setActiveTab] = useState<"overview" | "gainers" | "news">("overview");
@@ -70,7 +70,7 @@ export default function SpaciousGmtTerminal() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-2">
             <Activity size={14} /> Spacious GMT Market Terminal
           </div>
-          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-foreground">
             Institutional <span className="gold-text">Aksiya Bozorlari Monitori</span>
           </h2>
         </div>
@@ -80,7 +80,7 @@ export default function SpaciousGmtTerminal() {
           <button
             onClick={() => setActiveTab("overview")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
-              activeTab === "overview" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-white"
+              activeTab === "overview" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-foreground"
             }`}
           >
             <BarChart3 size={15} /> Bozor Umumiy Tahlili
@@ -88,7 +88,7 @@ export default function SpaciousGmtTerminal() {
           <button
             onClick={() => setActiveTab("gainers")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
-              activeTab === "gainers" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-white"
+              activeTab === "gainers" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-foreground"
             }`}
           >
             <Flame size={15} /> Top Gainers & Losers
@@ -96,7 +96,7 @@ export default function SpaciousGmtTerminal() {
           <button
             onClick={() => setActiveTab("news")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
-              activeTab === "news" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-white"
+              activeTab === "news" ? "bg-primary text-ink-950 font-bold shadow-lg" : "text-muted hover:text-foreground"
             }`}
           >
             <Newspaper size={15} /> Aksiya Yangiliklari
@@ -108,7 +108,7 @@ export default function SpaciousGmtTerminal() {
       <div className="mb-8 p-5 rounded-2xl bg-card/70 border border-border/40">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-3 text-xs font-mono">
           <div className="flex items-center gap-2">
-            <span className="text-white font-bold">MARKET BREADTH:</span>
+            <span className="text-foreground font-bold">MARKET BREADTH:</span>
             <span className="text-bull font-bold">{advancersCount} O'sayotgan</span>
             <span className="text-muted">|</span>
             <span className="text-bear font-bold">{declinersCount} Tushayotgan</span>
@@ -139,7 +139,7 @@ export default function SpaciousGmtTerminal() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-border/40">
-                    <span className="font-display font-bold text-base text-white flex items-center gap-2">
+                    <span className="font-display font-bold text-base text-foreground flex items-center gap-2">
                       <span style={{ backgroundColor: secColor }} className="w-2.5 h-2.5 rounded-full" />
                       {sec}
                     </span>
@@ -157,7 +157,7 @@ export default function SpaciousGmtTerminal() {
                         className="p-2.5 rounded-xl bg-card/60 hover:bg-primary/10 border border-border/30 flex items-center justify-between cursor-pointer transition-colors"
                       >
                         <div>
-                          <span className="font-mono font-bold text-white text-xs">{st.symbol}</span>
+                          <span className="font-mono font-bold text-foreground text-xs">{st.symbol}</span>
                           <span className="text-[11px] text-muted ml-2">{st.name}</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -196,7 +196,7 @@ export default function SpaciousGmtTerminal() {
                   className="p-3 rounded-xl bg-card/80 hover:bg-bull/10 border border-border/40 flex items-center justify-between cursor-pointer transition-colors"
                 >
                   <div>
-                    <span className="font-mono font-bold text-white text-sm">{st.symbol}</span>
+                    <span className="font-mono font-bold text-foreground text-sm">{st.symbol}</span>
                     <span className="text-xs text-muted ml-2 font-sans">{st.name}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -223,7 +223,7 @@ export default function SpaciousGmtTerminal() {
                   className="p-3 rounded-xl bg-card/80 hover:bg-bear/10 border border-border/40 flex items-center justify-between cursor-pointer transition-colors"
                 >
                   <div>
-                    <span className="font-mono font-bold text-white text-sm">{st.symbol}</span>
+                    <span className="font-mono font-bold text-foreground text-sm">{st.symbol}</span>
                     <span className="text-xs text-muted ml-2 font-sans">{st.name}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -251,7 +251,7 @@ export default function SpaciousGmtTerminal() {
                 className={`px-3 py-1.5 rounded-xl border transition-all ${
                   selectedNewsSector === sec
                     ? "bg-primary text-ink-950 font-bold border-accent"
-                    : "bg-card border-border text-muted hover:text-white"
+                    : "bg-card border-border text-muted hover:text-foreground"
                 }`}
               >
                 {sec === "ALL" ? "Barcha Yangiliklar" : sec}
@@ -270,7 +270,7 @@ export default function SpaciousGmtTerminal() {
                     {news.time}
                   </span>
                   <div>
-                    <div className="text-sm font-semibold text-white mb-1 leading-snug">{news.headline}</div>
+                    <div className="text-sm font-semibold text-foreground mb-1 leading-snug">{news.headline}</div>
                     <div className="text-[11px] text-muted font-mono flex items-center gap-2">
                       <span>Sektor: {news.sector}</span>
                     </div>

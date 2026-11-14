@@ -1,6 +1,6 @@
 ﻿import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
-import { Check, Zap, Crown, Users } from "lucide-react";
+import { Check, Zap, Crown, Users } from "@/lib/icons";
 import { motion } from "framer-motion";
 
 const courses = [
@@ -26,7 +26,7 @@ const courses = [
     name: "Masofaviy Gibrid",
     price: "$600",
     badge: "INTENSIV",
-    badgeColor: "bg-info text-white",
+    badgeColor: "bg-info text-foreground",
     icon: Zap,
     duration: "9 hafta",
     features: [
@@ -69,7 +69,7 @@ export default function CoursesSection() {
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
               Kurslarimiz
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -102,7 +102,7 @@ export default function CoursesSection() {
                 <div
                   className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${
                     course.popular
-                      ? "gold-gradient-bg"
+                      ? "wine-gradient-bg"
                       : "bg-ink-900 border border-border"
                   }`}
                 >
@@ -112,7 +112,7 @@ export default function CoursesSection() {
                   />
                 </div>
 
-                <h3 className="font-display font-bold text-2xl text-white mb-2">
+                <h3 className="font-display font-bold text-2xl text-foreground mb-2">
                   {course.name}
                 </h3>
                 <div className="font-mono font-bold text-3xl text-accent mb-1">
@@ -140,7 +140,7 @@ export default function CoursesSection() {
                     href={course.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center py-3 rounded-full font-semibold transition-all border border-border text-muted hover:border-accent/50 hover:text-white"
+                    className="block text-center py-3 rounded-full font-semibold transition-all border border-border text-muted hover:border-accent/50 hover:text-foreground"
                   >
                     {course.cta}
                   </a>
@@ -149,8 +149,8 @@ export default function CoursesSection() {
                     to={course.link}
                     className={`block text-center py-3 rounded-full font-semibold transition-all ${
                       course.popular
-                        ? "gold-gradient-bg text-ink-950 hover:shadow-gold"
-                        : "border border-border text-muted hover:border-accent/50 hover:text-white"
+                        ? "wine-gradient-bg text-sand-100 hover:shadow-gold"
+                        : "border border-border text-muted hover:border-accent/50 hover:text-foreground"
                     }`}
                   >
                     {course.cta}

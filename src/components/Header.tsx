@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, TrendingUp, MessageCircle, BarChart3, BookOpen, Users, User } from 'lucide-react';
+import { Menu, X, TrendingUp, MessageCircle, BarChart3, BookOpen, Users, User } from '@/lib/icons';
 
 interface HeaderProps {
   currentPage: string;
@@ -48,7 +48,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-dark/95 backdrop-blur-lg border-b border-dark-border' 
+            ? 'bg-ink-950/95 backdrop-blur-lg border-b border-border' 
             : 'bg-transparent'
         }`}
       >
@@ -59,10 +59,10 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
               onClick={() => handleNavClick('home')}
               className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-dark" />
+              <div className="w-10 h-10 rounded-xl wine-gradient-bg flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-sand-100" />
               </div>
-              <span className="font-heading font-bold text-white text-lg hidden sm:block">
+              <span className="font-display font-bold text-foreground text-lg hidden sm:block">
                 MTRADE Academy
               </span>
             </button>
@@ -75,8 +75,8 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                   onClick={() => handleNavClick(item.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     currentPage === item.id
-                      ? 'gold-gradient text-dark'
-                      : 'text-gray-400 hover:text-white hover:bg-dark-lighter'
+                      ? 'wine-gradient-bg text-sand-100'
+                      : 'text-muted hover:text-foreground hover:bg-surface'
                   }`}
                 >
                   {item.icon}
@@ -89,7 +89,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             <div className="hidden md:block">
               <button 
                 onClick={handleContactClick}
-                className="flex items-center gap-2 px-6 py-2.5 gold-gradient text-dark rounded-full font-semibold hover:shadow-gold transition-all"
+                className="flex items-center gap-2 px-6 py-2.5 wine-gradient-bg text-sand-100 rounded-full font-semibold hover:shadow-gold transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 Tezkor bog'lanish
@@ -99,7 +99,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-white"
+              className="md:hidden w-10 h-10 flex items-center justify-center text-foreground"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -115,7 +115,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 bg-dark pt-20 md:hidden"
+            className="fixed inset-0 z-30 bg-ink-950 pt-20 md:hidden"
           >
             <div className="container mx-auto px-4 py-8">
               <nav className="space-y-2">
@@ -125,8 +125,8 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                     onClick={() => handleNavClick(item.id)}
                     className={`w-full flex items-center gap-3 px-4 py-4 rounded-xl text-left transition-all ${
                       currentPage === item.id
-                        ? 'gold-gradient text-dark'
-                        : 'bg-dark-card border border-dark-border text-white'
+                        ? 'wine-gradient-bg text-sand-100'
+                        : 'bg-card border border-border text-foreground'
                     }`}
                   >
                     <span className="font-medium">{item.label}</span>
@@ -134,10 +134,10 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                 ))}
               </nav>
               
-              <div className="mt-8 pt-8 border-t border-dark-border">
+              <div className="mt-8 pt-8 border-t border-border">
                 <button 
                   onClick={handleContactClick}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-4 gold-gradient text-dark rounded-xl font-medium"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-4 wine-gradient-bg text-sand-100 rounded-xl font-medium"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Tezkor bog'lanish

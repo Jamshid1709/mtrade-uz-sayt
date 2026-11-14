@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { TrendingUp, BarChart3, BookOpen, Users, User } from 'lucide-react';
+﻿import { motion } from 'framer-motion';
+import { TrendingUp, BarChart3, BookOpen, Users, User } from '@/lib/icons';
 
 interface BottomNavigationProps {
   currentPage: string;
@@ -25,7 +25,7 @@ export default function BottomNavigation({ currentPage, onPageChange }: BottomNa
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      className="fixed bottom-0 left-0 right-0 z-40 bg-dark-card/95 backdrop-blur-lg border-t border-dark-border md:hidden"
+      className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-lg border-t border-border md:hidden"
     >
       <div className="flex justify-around items-center h-16">
         {navItems.map((item) => {
@@ -37,7 +37,7 @@ export default function BottomNavigation({ currentPage, onPageChange }: BottomNa
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`flex flex-col items-center justify-center gap-1 flex-1 h-full transition-all ${
-                isActive ? 'text-gold' : 'text-gray-400'
+                isActive ? 'text-accent' : 'text-muted'
               }`}
             >
               <div className={`relative ${isActive ? 'scale-110' : ''} transition-transform`}>
@@ -45,7 +45,7 @@ export default function BottomNavigation({ currentPage, onPageChange }: BottomNa
                 {isActive && (
                   <motion.div
                     layoutId="bottomNavIndicator"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold"
+                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
                   />
                 )}
               </div>

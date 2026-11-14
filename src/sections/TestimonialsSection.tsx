@@ -1,5 +1,5 @@
 ﻿import ScrollReveal from "../components/ScrollReveal";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote } from "@/lib/icons";
 import { motion } from "framer-motion";
 
 const testimonials = [
@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
               O'quvchilarimiz <span className="gold-text">fikri</span>
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
                 </p>
 
                 <div className="border-t border-border/50 pt-4">
-                  <p className="font-display font-semibold text-white text-sm">
+                  <p className="font-display font-semibold text-foreground text-sm">
                     {t.name}
                   </p>
                   <p className="text-accent text-xs">MTrade Academy o'quvchisi</p>

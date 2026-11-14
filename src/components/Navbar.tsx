@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "@/lib/icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n, LANGUAGES, type LanguageCode } from "../context/i18nContext";
 
@@ -46,17 +46,13 @@ export default function Navbar() {
     >
       <div className="section-container">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          {/* Logo — Brand v2.1: BIR QATOR (inline reverse), brand p.7 "Bir qator (web)" */}
+          <Link to="/" className="flex items-center gap-3 py-1">
             <img
-              src="/images/logo.webp"
-              alt="MTrade Academy"
-              className="h-10 w-10 object-contain"
+              src="/brand/logo/MTrade_inline_reverse.svg"
+              alt="MTrade Academy — Halol trading — ilm bilan"
+              className="h-8 md:h-9 w-auto object-contain"
             />
-            <span className="font-display font-bold text-lg hidden sm:block">
-              <span className="gold-text">MTrade</span>{" "}
-              <span className="text-white">Academy</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -68,7 +64,7 @@ export default function Navbar() {
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   location.pathname === link.path
                     ? "text-accent bg-primary/10"
-                    : "text-muted hover:text-white hover:bg-white/5"
+                    : "text-muted hover:text-foreground hover:bg-white/5"
                 }`}
               >
                 {link.name}
@@ -82,7 +78,7 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border/60 text-xs font-mono text-white hover:border-accent transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border/60 text-xs font-mono text-foreground hover:border-accent transition-all"
               >
                 <span>{currentLangObj.flag}</span>
                 <span className="uppercase">{currentLangObj.code}</span>
@@ -116,13 +112,13 @@ export default function Navbar() {
               href="https://t.me/mtrade_obuna_bot?start=course_premium"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex gold-gradient-bg text-ink-950 font-semibold px-5 py-2 rounded-full text-sm hover:shadow-gold transition-shadow"
+              className="hidden sm:inline-flex wine-gradient-bg text-sand-100 font-semibold px-5 py-2 rounded-full text-sm hover:shadow-gold transition-shadow"
             >
               {t("free_lesson")}
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-white"
+              className="lg:hidden p-2 text-foreground"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -147,7 +143,7 @@ export default function Navbar() {
                   className={`px-4 py-3 rounded-lg font-medium transition-colors ${
                     location.pathname === link.path
                       ? "text-accent bg-primary/10"
-                      : "text-muted hover:text-white hover:bg-white/5"
+                      : "text-muted hover:text-foreground hover:bg-white/5"
                   }`}
                 >
                   {link.name}
@@ -157,7 +153,7 @@ export default function Navbar() {
                 href="https://t.me/mtrade_obuna_bot?start=course_premium"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="sm:hidden gold-gradient-bg text-ink-950 font-semibold px-5 py-3 rounded-full text-center mt-2"
+                className="sm:hidden wine-gradient-bg text-sand-100 font-semibold px-5 py-3 rounded-full text-center mt-2"
               >
                 {t("free_lesson")}
               </a>

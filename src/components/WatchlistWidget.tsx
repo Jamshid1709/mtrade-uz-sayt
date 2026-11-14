@@ -1,7 +1,7 @@
 ﻿import { useState, useEffect } from "react";
 import { storageService, type SavedWatchlistItem } from "../services/storageService";
 import { TOP_STOCKS } from "./StockSphere3D";
-import { Bookmark, Trash2, Plus, ExternalLink, Search, Star } from "lucide-react";
+import { Bookmark, Trash2, Plus, ExternalLink, Search, Star } from "@/lib/icons";
 import { useI18n } from "../context/i18nContext";
 
 export default function WatchlistWidget() {
@@ -50,11 +50,11 @@ export default function WatchlistWidget() {
             <Bookmark size={20} />
           </div>
           <div>
-            <h3 className="font-display font-bold text-xl text-white">
+            <h3 className="font-display font-bold text-xl text-foreground">
               {t("watchlist_title")}
             </h3>
             <p className="text-xs text-muted">
-              Kuzatuvdagi aksiyalaringiz â€” LocalStorage'da xavfsiz saqlanadi
+              Kuzatuvdagi aksiyalaringiz — LocalStorage'da xavfsiz saqlanadi
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function WatchlistWidget() {
               placeholder="Aksiya kodi (masalan: AAPL, TSLA, NVDA)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-accent"
+              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
             />
           </div>
 
@@ -91,7 +91,7 @@ export default function WatchlistWidget() {
                 className="px-3 py-2 rounded-xl bg-card hover:bg-primary/10 border border-border/40 flex items-center justify-between text-left transition-colors"
               >
                 <div>
-                  <span className="font-mono font-bold text-white text-xs">{stock.symbol}</span>
+                  <span className="font-mono font-bold text-foreground text-xs">{stock.symbol}</span>
                   <span className="text-[11px] text-muted ml-2 truncate">{stock.name}</span>
                 </div>
                 <Plus size={14} className="text-accent" />
@@ -145,7 +145,7 @@ export default function WatchlistWidget() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-white text-sm">{item.symbol}</span>
+                    <span className="font-mono font-bold text-foreground text-sm">{item.symbol}</span>
                     <span className="text-xs text-accent font-mono">{item.marketCap}</span>
                   </div>
                   <div className="text-[11px] text-muted">{item.name}</div>
@@ -162,7 +162,7 @@ export default function WatchlistWidget() {
                 </button>
                 <button
                   onClick={() => handleRemoveStock(item.symbol)}
-                  className="p-2 rounded-xl bg-bear/10 text-bear hover:bg-bear hover:text-white transition-colors"
+                  className="p-2 rounded-xl bg-bear/10 text-bear hover:bg-bear hover:text-foreground transition-colors"
                   title="Watchlist dan o'chirish"
                 >
                   <Trash2 size={14} />

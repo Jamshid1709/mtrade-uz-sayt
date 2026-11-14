@@ -4,7 +4,7 @@ import StockSphere3D from "../components/StockSphere3D";
 import StockConstellation3D from "../components/StockConstellation3D";
 import SpaciousGmtTerminal from "../components/SpaciousGmtTerminal";
 import LiveChartSection from "../components/LiveChartSection";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "@/lib/icons";
 
 // TradingView widget wrapper
 function TVWidget({
@@ -59,16 +59,16 @@ const topStocksQuote = [
 
 export default function MarketsPage() {
   return (
-    <div className="pt-20 bg-ink-950 text-white">
+    <div className="pt-20 bg-ink-950 text-foreground">
       {/* Header */}
       <section className="py-12 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-4">
               Aksiya <span className="gold-text">Bozori va 3D Galaxy</span>
             </h1>
             <p className="text-muted max-w-2xl mx-auto">
-              Real vaqt ma'lumotlari â€” 100+ Halal aksiyalar yulduz turqumi, 3D shari va GMT Terminali.
+              Real vaqt ma'lumotlari — 100+ Halal aksiyalar yulduz turqumi, 3D shari va GMT Terminali.
             </p>
           </ScrollReveal>
         </div>
@@ -108,7 +108,7 @@ export default function MarketsPage() {
         </div>
       </section>
 
-      {/* 5. Ticker Tape â€” Stocks Only (Fixed Symbols, No Red Dots) */}
+      {/* 5. Ticker Tape — Stocks Only (Fixed Symbols, No Red Dots) */}
       <section className="bg-ink-950 border-y border-border/30">
         <TVWidget
           containerId="tv-ticker"
@@ -141,7 +141,7 @@ export default function MarketsPage() {
       <section className="py-12 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-display font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-foreground mb-8">
               Top <span className="gold-text">Aksiyalar Kotirovkalari</span>
             </h2>
           </ScrollReveal>
@@ -173,7 +173,7 @@ export default function MarketsPage() {
       <section className="py-12 bg-surface">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-display font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-foreground mb-8">
               AQSh Aksiyalar <span className="gold-text">Skanneri</span>
             </h2>
           </ScrollReveal>
@@ -204,7 +204,7 @@ export default function MarketsPage() {
       <section className="py-12 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-display font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-foreground mb-8">
               Aksiyalar <span className="gold-text">Sektorlar Issiqlik Xaritasi</span>
             </h2>
           </ScrollReveal>
@@ -241,7 +241,7 @@ export default function MarketsPage() {
       <section className="py-6 bg-surface border-t border-border/30">
         <div className="section-container text-center">
           <p className="text-muted text-xs max-w-2xl mx-auto mb-3">
-            Halol yoki Not halal ekanligini aniqlash katta mas'uliyat. Biz to'g'ridan-to'g'ri hukm chiqarmaymiz â€” tekshirish uchun ishonchli manbaga yo'naltiramiz.
+            Halol yoki Not halal ekanligini aniqlash katta mas'uliyat. Biz to'g'ridan-to'g'ri hukm chiqarmaymiz — tekshirish uchun ishonchli manbaga yo'naltiramiz.
           </p>
           <a
             href="https://musaffa.com"
@@ -249,7 +249,7 @@ export default function MarketsPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-xl text-bull text-xs font-mono transition-colors"
           >
-            Musaffa da halol aksiyalarni tekshirish â†—
+            Musaffa da halol aksiyalarni tekshirish ↗
           </a>
           <p className="text-ink-500 text-[10px] mt-2">Eslatma: bu diniy fatvo emas. O'z ustozingizdan so'rang.</p>
         </div>
@@ -261,7 +261,7 @@ export default function MarketsPage() {
           <div className="flex items-center justify-center gap-2 text-ink-500 text-xs">
             <AlertTriangle size={14} />
             <span>
-              Ma'lumotlar TradingViewâ„¢ va Finnhub/Wisesheets/FMP manbalari asosida. Faqat Halol aksiyalar tahlili uchun. Investitsiya maslahati emas.
+              Ma'lumotlar TradingView™ va Finnhub/Wisesheets/FMP manbalari asosida. Faqat Halol aksiyalar tahlili uchun. Investitsiya maslahati emas.
             </span>
           </div>
         </div>

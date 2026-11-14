@@ -1,7 +1,7 @@
 ﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
-import { ChevronDown, BookOpen, Video, Users } from "lucide-react";
+import { ChevronDown, BookOpen, Video, Users } from "@/lib/icons";
 
 const premiumModules = [
   {
@@ -19,7 +19,7 @@ const premiumModules = [
     topics: [
       "Savdo instrumentlari (Stock, BTC, Forex, XAU)",
       "Birja nima? Tarix va shakllanishi",
-      "Fond birjasi â€” NYSE, NASDAQ, UZEX",
+      "Fond birjasi — NYSE, NASDAQ, UZEX",
       "Halol savdo turlari (dalillar bilan)",
       "Treyding Joizmi? (Bu fatvo emas!)",
     ],
@@ -29,9 +29,9 @@ const premiumModules = [
     title: "BROKERLAR VA PLATFORMALAR",
     topics: [
       "Market Maker, Broker va savdo jarayoni",
-      "TradingView â€” o'rnatish va interfeys",
+      "TradingView — o'rnatish va interfeys",
       "IBKR (Interactive Brokers) tanishuv",
-      "Webull â€” mobile-first platform",
+      "Webull — mobile-first platform",
       "Savdoni rejalashtirish",
     ],
   },
@@ -40,8 +40,8 @@ const premiumModules = [
     title: "ACCOUNTLAR VA TO'LOV",
     topics: [
       "Brokerdan ro'yxatdan o'tish",
-      "Cash akkaunt â€” qoidalar",
-      "Margin akkaunt â€” afzallik va xavflar",
+      "Cash akkaunt — qoidalar",
+      "Margin akkaunt — afzallik va xavflar",
       "Qay biri joiz? Dalillar bilan tanlov",
       "IBKR pul chiqarish (Visa)",
     ],
@@ -65,7 +65,7 @@ const premiumModules = [
       "Indikator nima va qanday ishlaydi",
       "Momentum: RSI, Stochastic",
       "Trend: EMA, SMA, WMA, Fibonacci",
-      "Indikatorlar 2 â€” MACD, VWAP",
+      "Indikatorlar 2 — MACD, VWAP",
       "Volatillik: Bollinger Bands, ATR",
     ],
   },
@@ -73,7 +73,7 @@ const premiumModules = [
     num: "07",
     title: "AKSIYA QIDIRISH (SCREENING)",
     topics: [
-      "Finviz.com â€” professional screener",
+      "Finviz.com — professional screener",
       "Yahoo Finance va StockAnalysis",
       "Webull built-in screener",
       "Sektor tahlili va lider aksiyalar",
@@ -87,7 +87,7 @@ const premiumModules = [
       "Fundamental vs Texnik tahlil",
       "P/E, P/C, P/S, PEG ratiolar",
       "Margin, ROE, ROA, ROI",
-      "Beta, Debt, Short ratio â€” risk",
+      "Beta, Debt, Short ratio — risk",
       "Economic asoslari (GDP, CPI, PPI)",
       "Sentimental tahlil va yangiliklar",
       "Aksiya tahlili AI (Sun'iy intelekt)",
@@ -125,7 +125,7 @@ const hybridModules = [
         w: "Hafta 01",
         title: "Asoslar va Platformalar",
         topics: [
-          "NYSE Â· NASDAQ, TradingView, IBKR Â· Webull",
+          "NYSE · NASDAQ, TradingView, IBKR · Webull",
           "Market / Limit / Stop buyurtmalar",
           "Candlestick, Support / Resistance",
         ],
@@ -162,7 +162,7 @@ const hybridModules = [
       },
       {
         w: "Hafta 05",
-        title: "Webull va IBKR â€” Real Platformalarda",
+        title: "Webull va IBKR — Real Platformalarda",
         topics: [
           "Real order placement, Level 2 data",
           "Bracket orders, Cash vs Margin, Withdraw (Visa)",
@@ -184,7 +184,7 @@ const hybridModules = [
     weeks: [
       {
         w: "Hafta 07",
-        title: "Strategiya Amaliyoti â€” Real Setup'lar",
+        title: "Strategiya Amaliyoti — Real Setup'lar",
         topics: [
           "Live setup, Entry / Exit, Stop Loss / TP",
           "Position sizing, Daily P/L",
@@ -292,11 +292,11 @@ export default function SyllabusPage() {
       <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-4">
               O'quv <span className="gold-text">dasturi</span>
             </h1>
             <p className="text-muted max-w-2xl mx-auto">
-              Tizimli va to'liq qamrovli dastur â€” 0 dan professional darajagacha.
+              Tizimli va to'liq qamrovli dastur — 0 dan professional darajagacha.
             </p>
           </ScrollReveal>
         </div>
@@ -314,8 +314,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "premium"
-                    ? "gold-gradient-bg text-ink-950 font-bold"
-                    : "text-muted hover:text-white"
+                    ? "wine-gradient-bg text-sand-100 font-bold"
+                    : "text-muted hover:text-foreground"
                 }`}
               >
                 <BookOpen size={16} />
@@ -328,8 +328,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "hybrid"
-                    ? "gold-gradient-bg text-ink-950 font-bold"
-                    : "text-muted hover:text-white"
+                    ? "wine-gradient-bg text-sand-100 font-bold"
+                    : "text-muted hover:text-foreground"
                 }`}
               >
                 <Video size={16} />
@@ -342,8 +342,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "offline"
-                    ? "gold-gradient-bg text-ink-950 font-bold"
-                    : "text-muted hover:text-white"
+                    ? "wine-gradient-bg text-sand-100 font-bold"
+                    : "text-muted hover:text-foreground"
                 }`}
               >
                 <Users size={16} />
@@ -368,7 +368,7 @@ export default function SyllabusPage() {
                         <span className="font-mono font-bold text-accent text-lg">
                           {mod.num}
                         </span>
-                        <span className="font-display font-semibold text-white">
+                        <span className="font-display font-semibold text-foreground">
                           {mod.title}
                         </span>
                         <span className="text-muted text-xs bg-ink-900 px-2 py-1 rounded-full hidden sm:inline">
@@ -437,7 +437,7 @@ export default function SyllabusPage() {
                             <span className="text-accent font-mono text-sm font-bold">
                               {week.w}
                             </span>
-                            <span className="font-display font-medium text-white">
+                            <span className="font-display font-medium text-foreground">
                               {week.title}
                             </span>
                           </div>
@@ -481,7 +481,7 @@ export default function SyllabusPage() {
                             <span className="text-accent font-mono text-sm font-bold">
                               {week.w}
                             </span>
-                            <span className="font-display font-medium text-white">
+                            <span className="font-display font-medium text-foreground">
                               {week.title}
                             </span>
                           </div>

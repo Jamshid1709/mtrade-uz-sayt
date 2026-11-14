@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Sparkles } from '@/lib/icons';
 
 interface Message {
   id: string;
@@ -102,7 +102,7 @@ export default function TelegramChat() {
       {/* Floating button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 gold-gradient rounded-full flex items-center justify-center shadow-gold hover:shadow-gold-lg transition-all"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 wine-gradient-bg rounded-full flex items-center justify-center shadow-gold hover:shadow-gold-lg transition-all"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -115,7 +115,7 @@ export default function TelegramChat() {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <X className="w-6 h-6 text-dark" />
+              <X className="w-6 h-6 text-sand-100" />
             </motion.div>
           ) : (
             <motion.div
@@ -125,7 +125,7 @@ export default function TelegramChat() {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <MessageCircle className="w-6 h-6 text-dark" />
+              <MessageCircle className="w-6 h-6 text-sand-100" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -139,17 +139,17 @@ export default function TelegramChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-48px)] bg-dark-card border border-dark-border rounded-2xl shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-48px)] bg-card border border-border rounded-2xl shadow-2xl overflow-hidden"
           >
             {/* Header */}
-            <div className="gold-gradient p-4">
+            <div className="wine-gradient-bg p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-dark/20 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-dark" />
+                <div className="w-10 h-10 rounded-full bg-ink-950/20 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-sand-100" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-dark">MTRADE AI Assistant</h3>
-                  <div className="flex items-center gap-1 text-dark/70 text-sm">
+                  <h3 className="font-bold text-sand-100">MTRADE AI Assistant</h3>
+                  <div className="flex items-center gap-1 text-sand-100/70 text-sm">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     24/7 onlayn
                   </div>
@@ -158,7 +158,7 @@ export default function TelegramChat() {
             </div>
 
             {/* Messages */}
-            <div className="h-80 p-4 overflow-y-auto bg-dark space-y-4">
+            <div className="h-80 p-4 overflow-y-auto bg-ink-950 space-y-4">
               {messages.map((message) => (
                 <motion.div
                   key={message.id}
@@ -169,12 +169,12 @@ export default function TelegramChat() {
                   <div
                     className={`max-w-[80%] rounded-2xl p-3 text-sm ${
                       message.isUser
-                        ? 'gold-gradient text-dark rounded-br-md'
-                        : 'bg-dark-lighter border border-dark-border text-gray-300 rounded-bl-md'
+                        ? 'wine-gradient-bg text-sand-100 rounded-br-md'
+                        : 'bg-surface border border-border text-ink-200 rounded-bl-md'
                     }`}
                   >
                     <p className="whitespace-pre-line">{message.text}</p>
-                    <p className={`text-xs mt-1 ${message.isUser ? 'text-dark/60' : 'text-gray-500'}`}>
+                    <p className={`text-xs mt-1 ${message.isUser ? 'text-sand-100/60' : 'text-ink-500'}`}>
                       {message.timestamp.toLocaleTimeString('uz-UZ', { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
@@ -187,11 +187,11 @@ export default function TelegramChat() {
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
                 >
-                  <div className="bg-dark-lighter border border-dark-border rounded-2xl rounded-bl-md p-3">
+                  <div className="bg-surface border border-border rounded-2xl rounded-bl-md p-3">
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 rounded-full bg-gold animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <span className="w-2 h-2 rounded-full bg-gold animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <span className="w-2 h-2 rounded-full bg-gold animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <span className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <span className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <span className="w-2 h-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: '300ms' }} />
                     </div>
                   </div>
                 </motion.div>
@@ -201,13 +201,13 @@ export default function TelegramChat() {
             </div>
 
             {/* Quick replies */}
-            <div className="px-4 py-2 bg-dark border-t border-dark-border">
+            <div className="px-4 py-2 bg-ink-950 border-t border-border">
               <div className="flex flex-wrap gap-2">
                 {quickReplies.map((reply, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleQuickReply(reply)}
-                    className="px-3 py-1.5 text-xs bg-dark-lighter border border-dark-border rounded-full text-gold hover:border-gold transition-colors flex items-center gap-1"
+                    className="px-3 py-1.5 text-xs bg-surface border border-border rounded-full text-accent hover:border-accent transition-colors flex items-center gap-1"
                   >
                     <Sparkles className="w-3 h-3" />
                     {reply}
@@ -217,7 +217,7 @@ export default function TelegramChat() {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-dark-border bg-dark-card">
+            <div className="p-4 border-t border-border bg-card">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -225,12 +225,12 @@ export default function TelegramChat() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Xabar yozing..."
-                  className="flex-1 bg-dark border border-dark-border rounded-full px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors"
+                  className="flex-1 bg-ink-950 border border-border rounded-full px-4 py-2.5 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
                 />
                 <button
                   onClick={handleSend}
                   disabled={!inputValue.trim()}
-                  className="w-10 h-10 gold-gradient rounded-full flex items-center justify-center text-dark hover:shadow-gold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-10 h-10 wine-gradient-bg rounded-full flex items-center justify-center text-sand-100 hover:shadow-gold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
                 </button>

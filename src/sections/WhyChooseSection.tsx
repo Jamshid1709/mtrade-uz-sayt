@@ -1,5 +1,5 @@
 ﻿import ScrollReveal from "../components/ScrollReveal";
-import { TrendingUp, Shield, Target } from "lucide-react";
+import { TrendingUp, Shield, Target } from "@/lib/icons";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -67,13 +67,13 @@ function Feature3DCard({ icon: Icon, title, description, delay }: {
         />
         <motion.div
           style={{ translateZ: 30 }}
-          className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-gold"
+          className="w-14 h-14 rounded-xl wine-gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-gold"
         >
           <Icon size={24} className="text-ink-950" />
         </motion.div>
         <motion.h3
           style={{ translateZ: 20 }}
-          className="font-display font-bold text-xl text-white mb-3"
+          className="font-display font-bold text-xl text-foreground mb-3"
         >
           {title}
         </motion.h3>
@@ -94,7 +94,7 @@ export default function WhyChooseSection() {
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
               Nima uchun aynan{" "}
               <span className="gold-text">MTrade Academy</span>?
             </h2>

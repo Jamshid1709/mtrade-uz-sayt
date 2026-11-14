@@ -1,5 +1,5 @@
 ﻿import ScrollReveal from "../components/ScrollReveal";
-import { Award, TrendingUp, BarChart3 } from "lucide-react";
+import { Award, TrendingUp, BarChart3 } from "@/lib/icons";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -81,14 +81,14 @@ function MentorCard({ mentor, delay }: { mentor: typeof mentors[0]; delay: numbe
 
         <motion.div
           style={{ translateZ: 30 }}
-          className="w-12 h-12 rounded-full gold-gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+          className="w-12 h-12 rounded-full wine-gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
         >
           <mentor.icon size={20} className="text-ink-950" />
         </motion.div>
 
         <motion.h3
           style={{ translateZ: 20 }}
-          className="font-display font-bold text-xl text-white mb-1"
+          className="font-display font-bold text-xl text-foreground mb-1"
         >
           {mentor.name}
         </motion.h3>
@@ -121,7 +121,7 @@ export default function MentorsSection() {
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-foreground mb-4">
               Bizning <span className="gold-text">mentorlarimiz</span>
             </h2>
             <p className="text-muted max-w-2xl mx-auto">

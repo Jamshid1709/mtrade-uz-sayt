@@ -1,5 +1,5 @@
 ﻿import { useState, useEffect, useRef } from "react";
-import { Play, Pause, SkipForward, RotateCcw, TrendingUp, TrendingDown, Award, Zap, DollarSign } from "lucide-react";
+import { Play, Pause, SkipForward, RotateCcw, TrendingUp, TrendingDown, Award, Zap, DollarSign } from "@/lib/icons";
 import { useI18n } from "../context/i18nContext";
 
 export interface Candle {
@@ -266,7 +266,7 @@ export default function BacktestSimulator() {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
           <Zap size={14} /> MTrade Backtest & Replay Simulator
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-3">
+        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-foreground mb-3">
           {t("backtest_title")}
         </h2>
         <p className="text-muted text-sm sm:text-base max-w-xl mx-auto">
@@ -282,7 +282,7 @@ export default function BacktestSimulator() {
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all ${
                 selectedAsset === asset
                   ? "bg-primary text-ink-950 font-bold shadow-md"
-                  : "bg-card border border-border text-muted hover:text-white"
+                  : "bg-card border border-border text-muted hover:text-foreground"
               }`}
             >
               {asset}
@@ -306,7 +306,7 @@ export default function BacktestSimulator() {
           <div className="glass-card p-4 flex items-center justify-between border-border/40">
             <div>
               <div className="text-[11px] text-muted font-mono">{t("total_trades")}</div>
-              <div className="text-2xl font-extrabold font-mono text-white">{closedTrades.length}</div>
+              <div className="text-2xl font-extrabold font-mono text-foreground">{closedTrades.length}</div>
             </div>
             <DollarSign className="text-accent" size={28} />
           </div>
@@ -349,7 +349,7 @@ export default function BacktestSimulator() {
               </button>
               <button
                 onClick={handleNextCandle}
-                className="p-2.5 rounded-xl bg-card border border-border text-white hover:border-accent transition-colors font-mono text-xs flex items-center gap-1"
+                className="p-2.5 rounded-xl bg-card border border-border text-foreground hover:border-accent transition-colors font-mono text-xs flex items-center gap-1"
               >
                 <SkipForward size={16} /> {t("step_next")}
               </button>
@@ -360,7 +360,7 @@ export default function BacktestSimulator() {
                   setActiveTrade(null);
                   setIsPlaying(false);
                 }}
-                className="p-2.5 rounded-xl bg-card border border-border text-muted hover:text-white transition-colors"
+                className="p-2.5 rounded-xl bg-card border border-border text-muted hover:text-foreground transition-colors"
                 title={t("reset_simulation")}
               >
                 <RotateCcw size={16} />
@@ -386,7 +386,7 @@ export default function BacktestSimulator() {
                 className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs flex items-center gap-2 shadow-lg transition-all ${
                   activeTrade !== null
                     ? "opacity-40 cursor-not-allowed bg-bear/20 text-bear"
-                    : "bg-bear text-white hover:bg-rose-600"
+                    : "bg-bear text-foreground hover:bg-rose-600"
                 }`}
               >
                 <TrendingDown size={16} /> {t("sell_order")}

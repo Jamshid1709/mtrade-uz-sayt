@@ -1,11 +1,11 @@
-"use client"
+﻿"use client"
 
 import * as React from "react"
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "lucide-react"
+} from "@/lib/icons"
 import {
   DayPicker,
   getDefaultClassNames,

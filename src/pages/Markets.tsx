@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
   TrendingUp,
@@ -9,7 +9,7 @@ import {
   Zap,
   Shield,
   Bot
-} from 'lucide-react';
+} from '@/lib/icons';
 
 const BOT_LINK = 'https://t.me/mtrade_obuna_bot';
 
@@ -121,18 +121,18 @@ const TickerRow = ({ symbol, name, price, change }: {
 }) => {
   const isPositive = change.startsWith('+');
   return (
-    <div className="flex justify-between items-center py-3 border-b border-dark-border last:border-0 hover:bg-dark-lighter/50 px-2 rounded transition-colors">
+    <div className="flex justify-between items-center py-3 border-b border-border last:border-0 hover:bg-surface/50 px-2 rounded transition-colors">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-lg bg-dark-lighter flex items-center justify-center font-mono font-bold text-gold text-sm">
+        <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center font-mono font-bold text-accent text-sm">
           {symbol.slice(0, 2)}
         </div>
         <div>
-          <p className="font-bold text-white">{symbol}</p>
-          <p className="text-xs text-gray-400">{name}</p>
+          <p className="font-bold text-foreground">{symbol}</p>
+          <p className="text-xs text-muted">{name}</p>
         </div>
       </div>
       <div className="text-right">
-        <p className="font-mono font-medium text-white">{price}</p>
+        <p className="font-mono font-medium text-foreground">{price}</p>
         <p className={`text-xs font-mono ${isPositive ? 'text-green-500' : 'text-red-500'}`}>{change}</p>
       </div>
     </div>
@@ -153,7 +153,7 @@ export default function Markets() {
   const handleBotClick = () => window.open(BOT_LINK, '_blank');
 
   return (
-    <div className="min-h-screen bg-dark pt-24 pb-12">
+    <div className="min-h-screen bg-ink-950 pt-24 pb-12">
       <div className="container mx-auto px-4">
 
         {/* ── Header ── */}
@@ -163,12 +163,12 @@ export default function Markets() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center">
-              <Globe className="w-6 h-6 text-dark" />
+            <div className="w-12 h-12 rounded-xl wine-gradient-bg flex items-center justify-center">
+              <Globe className="w-6 h-6 text-sand-100" />
             </div>
             <div>
-              <h1 className="text-4xl font-heading font-bold text-white">Bozorlar</h1>
-              <p className="text-gray-400">Real vaqtda dunyo bozorlarini kuzatib boring</p>
+              <h1 className="text-4xl font-display font-bold text-foreground">Bozorlar</h1>
+              <p className="text-muted">Real vaqtda dunyo bozorlarini kuzatib boring</p>
             </div>
           </div>
         </motion.div>
@@ -189,19 +189,19 @@ export default function Markets() {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-dark-card border border-dark-border rounded-xl p-5 hover:border-gold/30 transition-all"
+              className="bg-card border border-border rounded-xl p-5 hover:border-accent/30 transition-all"
             >
               <div className="flex items-center justify-between mb-3">
-                <div className="w-10 h-10 rounded-lg bg-dark-lighter flex items-center justify-center font-mono font-bold text-gold">
+                <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center font-mono font-bold text-accent">
                   {item.symbol.slice(0, 2)}
                 </div>
                 <span className={`text-sm font-mono ${item.positive ? 'text-green-500' : 'text-red-500'}`}>
                   {item.change}
                 </span>
               </div>
-              <p className="text-lg font-bold text-white">{item.symbol}</p>
-              <p className="text-sm text-gray-400 mb-2">{item.name}</p>
-              <p className="text-xl font-mono font-bold text-white">{item.price}</p>
+              <p className="text-lg font-bold text-foreground">{item.symbol}</p>
+              <p className="text-sm text-muted mb-2">{item.name}</p>
+              <p className="text-xl font-mono font-bold text-foreground">{item.price}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -212,8 +212,8 @@ export default function Markets() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="bg-dark-card border border-dark-border rounded-2xl p-8">
-            <h2 className="text-2xl font-heading font-bold text-white mb-6 text-center">
+          <div className="bg-card border border-border rounded-2xl p-8">
+            <h2 className="text-2xl font-display font-bold text-foreground mb-6 text-center">
               Nima uchun bozorlarni biz bilan kuzatish kerak?
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -224,11 +224,11 @@ export default function Markets() {
                   viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-gold/20 flex items-center justify-center text-gold mb-3">
+                  <div className="w-14 h-14 mx-auto rounded-xl bg-primary/20 flex items-center justify-center text-accent mb-3">
                     {adv.icon}
                   </div>
-                  <h3 className="font-bold text-white mb-1">{adv.title}</h3>
-                  <p className="text-sm text-gray-400">{adv.description}</p>
+                  <h3 className="font-bold text-foreground mb-1">{adv.title}</h3>
+                  <p className="text-sm text-muted">{adv.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -242,13 +242,13 @@ export default function Markets() {
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-dark-lighter border border-dark-border text-gold text-sm mb-4">
+            <span className="inline-block px-4 py-2 rounded-full bg-surface border border-border text-accent text-sm mb-4">
               Video tahlillar
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Bozor tahlili videolari
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Professional mentorlar tomonidan tayyorlangan bozor tahlili videolari
             </p>
           </motion.div>
@@ -260,17 +260,17 @@ export default function Markets() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onClick={() => openYoutube(video.url)}
-                className="group relative bg-dark-card border border-dark-border rounded-2xl p-6 text-left hover:border-gold/50 transition-all"
+                className="group relative bg-card border border-border rounded-2xl p-6 text-left hover:border-accent/50 transition-all"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full gold-gradient flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 text-dark ml-1" />
+                  <div className="w-14 h-14 rounded-full wine-gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-6 h-6 text-sand-100 ml-1" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-gold transition-colors">
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">
                       {video.title}
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1">YouTube'da ko'rish →</p>
+                    <p className="text-muted text-sm mt-1">YouTube'da ko'rish ←’</p>
                   </div>
                 </div>
               </motion.button>
@@ -284,10 +284,10 @@ export default function Markets() {
 
         <div className="relative my-12">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-dark-border" />
+            <div className="w-full border-t border-border" />
           </div>
           <div className="relative flex justify-center">
-            <span className="px-4 py-1 bg-dark-card border border-dark-border rounded-full text-gold text-sm">
+            <span className="px-4 py-1 bg-card border border-border rounded-full text-accent text-sm">
               Jonli bozor ma'lumotlari
             </span>
           </div>
@@ -300,35 +300,35 @@ export default function Markets() {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-dark-card rounded-2xl border border-dark-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-gold" />
-                  <h3 className="text-xl font-bold text-white">Top Movers</h3>
+                  <TrendingUp className="w-5 h-5 text-accent" />
+                  <h3 className="text-xl font-bold text-foreground">Top Movers</h3>
                 </div>
-                <span className="text-xs text-gray-400">24 soat</span>
+                <span className="text-xs text-muted">24 soat</span>
               </div>
               <div className="space-y-1">
                 {topMovers.map((item, idx) => <TickerRow key={idx} {...item} />)}
               </div>
             </div>
 
-            <div className="bg-dark-card rounded-2xl border border-dark-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-6">
               <div className="flex items-center gap-2 mb-4">
-                <BarChart3 className="w-5 h-5 text-gold" />
-                <h3 className="text-lg font-bold text-white">Bozor statistikasi</h3>
+                <BarChart3 className="w-5 h-5 text-accent" />
+                <h3 className="text-lg font-bold text-foreground">Bozor statistikasi</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">24s hajm</span>
-                  <span className="text-white font-mono">$245B</span>
+                  <span className="text-muted">24s hajm</span>
+                  <span className="text-foreground font-mono">$245B</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Dominansiya</span>
-                  <span className="text-white font-mono">BTC 52%</span>
+                  <span className="text-muted">Dominansiya</span>
+                  <span className="text-foreground font-mono">BTC 52%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Fear & Greed</span>
+                  <span className="text-muted">Fear & Greed</span>
                   <span className="text-green-500 font-mono">72 (Ochko'zlik)</span>
                 </div>
               </div>
@@ -340,10 +340,10 @@ export default function Markets() {
             initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-dark-card rounded-2xl border border-dark-border p-6 h-[600px]">
+            <div className="bg-card rounded-2xl border border-border p-6 h-[600px]">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-white">Bozor ko'rik</h3>
-                <div className="flex items-center gap-2 text-xs text-gray-400">
+                <h3 className="text-xl font-bold text-foreground">Bozor ko'rik</h3>
+                <div className="flex items-center gap-2 text-xs text-muted">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   Jonli
                 </div>
@@ -361,10 +361,10 @@ export default function Markets() {
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="bg-dark-card rounded-2xl border border-dark-border p-6 h-[500px]">
+          <div className="bg-card rounded-2xl border border-border p-6 h-[500px]">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-bold text-white">Sektorlar issiqlik xaritasi</h3>
-              <span className="text-xs text-gray-400">S&P 500</span>
+              <h3 className="text-xl font-bold text-foreground">Sektorlar issiqlik xaritasi</h3>
+              <span className="text-xs text-muted">S&P 500</span>
             </div>
             <div className="h-[420px]">
               <StockHeatmap />
@@ -376,15 +376,15 @@ export default function Markets() {
         <motion.section
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}
-          className="mt-8 bg-gradient-to-br from-gold/10 to-gold-dark/10 rounded-2xl border border-gold/30 p-8 text-center"
+          className="mt-8 bg-gradient-to-br from-wine-700/10 to-wine-800/10 rounded-2xl border border-accent/30 p-8 text-center"
         >
-          <h2 className="text-2xl font-heading font-bold text-white mb-4">
+          <h2 className="text-2xl font-display font-bold text-foreground mb-4">
             Professional treyderlar bilan o'rganing
           </h2>
-          <p className="text-gray-400 mb-6 max-w-xl mx-auto">
+          <p className="text-muted mb-6 max-w-xl mx-auto">
             Bozorlarni to'g'ri tahlil qilishni o'rganing va professional treyderga aylaning
           </p>
-          <button onClick={handleBotClick} className="btn-gold">
+          <button onClick={handleBotClick} className="wine-gradient-bg">
             <TrendingUp className="w-5 h-5 inline mr-2" />
             Bepul konsultatsiya
           </button>
@@ -392,12 +392,12 @@ export default function Markets() {
 
         {/* Disclaimer */}
         <motion.div
-          className="mt-8 flex items-start gap-3 p-4 bg-dark-lighter/50 rounded-xl border border-dark-border"
+          className="mt-8 flex items-start gap-3 p-4 bg-surface/50 rounded-xl border border-border"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <AlertCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-          <p className="text-sm text-gray-400">
+          <AlertCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+          <p className="text-sm text-muted">
             Ma'lumotlar 15 daqiqa kechikish bilan taqdim etiladi. TradingView™ manbalari asosida.
             Ushbu ma'lumotlar faqat ma'lumot uchun mo'ljallangan va investitsiya maslahati emas.
           </p>

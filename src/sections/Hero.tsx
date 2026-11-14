@@ -1,6 +1,6 @@
-// import { useEffect, useRef } from 'react';
+﻿// import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, BookOpen, Bot } from 'lucide-react';
+import { TrendingUp, Users, BookOpen, Bot } from '@/lib/icons';
 
 interface StatProps {
   label: string;
@@ -10,12 +10,12 @@ interface StatProps {
 
 const Stat = ({ label, value, icon }: StatProps) => (
   <div className="flex items-center gap-3">
-    <div className="w-10 h-10 rounded-full bg-dark-lighter border border-dark-border flex items-center justify-center text-gold">
+    <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-accent">
       {icon}
     </div>
     <div>
-      <p className="text-2xl font-mono font-bold text-white">{value}</p>
-      <p className="text-sm text-gray-400">{label}</p>
+      <p className="text-2xl font-mono font-bold text-foreground">{value}</p>
+      <p className="text-sm text-muted">{label}</p>
     </div>
   </div>
 );
@@ -29,10 +29,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-dark overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-ink-950 overflow-hidden">
       {/* Background pattern with candles */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-wine-700/20 via-transparent to-transparent" />
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="candles" x="0" y="0" width="60" height="40" patternUnits="userSpaceOnUse">
@@ -46,8 +46,8 @@ export default function Hero() {
       </div>
       
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold-dark/10 rounded-full blur-[100px] animate-pulse-glow animation-delay-400" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-wine-800/10 rounded-full blur-[100px] animate-pulse-glow animation-delay-400" />
       
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10 py-20">
         {/* Left side - Text */}
@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <div className="space-y-4">
             <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-lighter border border-dark-border text-gold text-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-border text-accent text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -68,15 +68,15 @@ export default function Hero() {
               <span>Professional treyding ta'limi</span>
             </motion.div>
             
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
               MTRADE Academy — <br />
-              <span className="gold-gradient-text">
+              <span className="sand-text">
                 0 dan PRO darajagacha
               </span>
             </h1>
           </div>
           
-          <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
+          <p className="text-xl text-ink-200 max-w-lg leading-relaxed">
             Real bozor misollari, tizimli risk-menedjment va daromadli treyding yo'li. 
             Professional treyderlar bilan birga o'rganing.
           </p>
@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <button 
               onClick={scrollToCourses}
-              className="btn-gold flex items-center gap-2"
+              className="wine-gradient-bg flex items-center gap-2"
             >
               <BookOpen className="w-5 h-5" />
               Bepul start darsi
@@ -98,7 +98,7 @@ export default function Hero() {
           </div>
           
           {/* Trust indicators */}
-          <div className="flex flex-wrap gap-8 pt-8 border-t border-dark-border">
+          <div className="flex flex-wrap gap-8 pt-8 border-t border-border">
             <Stat label="O'quvchilar" value="50+" icon={<Users className="w-5 h-5" />} />
             <Stat label="Kurslar" value="3" icon={<BookOpen className="w-5 h-5" />} />
             <Stat label="Qo'llab-quvvatlash" value="24/7" icon={<Bot className="w-5 h-5" />} />
@@ -112,16 +112,16 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <div className="aspect-video rounded-2xl overflow-hidden border border-dark-border bg-dark-card shadow-2xl relative">
+          <div className="aspect-video rounded-2xl overflow-hidden border border-border bg-card shadow-2xl relative">
             {/* Video placeholder with play button */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-dark-card to-dark">
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-card to-ink-950">
               <div className="text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-full gold-gradient flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-gold">
-                  <svg className="w-8 h-8 text-dark ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-20 h-20 mx-auto rounded-full wine-gradient-bg flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-gold">
+                  <svg className="w-8 h-8 text-sand-100 ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <p className="text-gray-400 text-sm">Tanishtiruv videosi</p>
+                <p className="text-muted text-sm">Tanishtiruv videosi</p>
               </div>
             </div>
             
@@ -134,11 +134,11 @@ export default function Hero() {
           </div>
           
           {/* Glow effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-gold to-gold-dark opacity-20 blur-3xl -z-10 rounded-full animate-pulse-glow" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-wine-700 to-wine-800 opacity-20 blur-3xl -z-10 rounded-full animate-pulse-glow" />
           
           {/* Floating stats card */}
           <motion.div 
-            className="absolute -bottom-6 -left-6 bg-dark-card border border-dark-border rounded-xl p-4 shadow-xl"
+            className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
@@ -148,8 +148,8 @@ export default function Hero() {
                 <TrendingUp className="w-6 h-6 text-green-500" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">O'quvchilar muvaffaqiyati</p>
-                <p className="text-xl font-bold text-white">85%+</p>
+                <p className="text-sm text-muted">O'quvchilar muvaffaqiyati</p>
+                <p className="text-xl font-bold text-foreground">85%+</p>
               </div>
             </div>
           </motion.div>
@@ -157,7 +157,7 @@ export default function Hero() {
       </div>
       
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ink-950 to-transparent" />
     </section>
   );
 }

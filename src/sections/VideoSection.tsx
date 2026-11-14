@@ -1,5 +1,5 @@
 ﻿import ScrollReveal from "../components/ScrollReveal";
-import { Play, BarChart3, TrendingUp } from "lucide-react";
+import { Play, BarChart3, TrendingUp } from "@/lib/icons";
 import { motion } from "framer-motion";
 
 export default function VideoSection() {
@@ -19,7 +19,7 @@ export default function VideoSection() {
                     <BarChart3 size={24} className="text-bull" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-white text-lg">
+                    <h3 className="font-display font-bold text-foreground text-lg">
                       Savdoni to'g'ri tashkil qilish
                     </h3>
                     <p className="text-muted text-sm">
@@ -46,7 +46,7 @@ export default function VideoSection() {
                     <TrendingUp size={24} className="text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-white text-lg">
+                    <h3 className="font-display font-bold text-foreground text-lg">
                       Zarar qilish
                     </h3>
                     <p className="text-muted text-sm">
@@ -80,7 +80,7 @@ export default function VideoSection() {
                 />
               </div>
               <div className="flex items-center justify-between px-4 py-3">
-                <span className="text-white font-medium text-sm flex items-center gap-2">
+                <span className="text-foreground font-medium text-sm flex items-center gap-2">
                   <Play size={14} className="text-accent" />
                   Batafsil ma'lumot
                 </span>

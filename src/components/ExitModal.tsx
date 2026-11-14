@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Play } from "lucide-react";
+import { X, Play } from "@/lib/icons";
 
 export default function ExitModal() {
   const [show, setShow] = useState(false);
@@ -44,18 +44,18 @@ export default function ExitModal() {
             {/* Close button */}
             <button
               onClick={() => setShow(false)}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-card border border-border flex items-center justify-center text-muted hover:text-white hover:border-accent/50 transition-all z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-card border border-border flex items-center justify-center text-muted hover:text-foreground hover:border-accent/50 transition-all z-10"
             >
               <X size={16} />
             </button>
 
             <div className="relative z-10">
-              <h3 className="font-display font-bold text-2xl text-white mb-2">
+              <h3 className="font-display font-bold text-2xl text-foreground mb-2">
                 Bepul <span className="gold-text">kirish darsini ko'ring</span>
               </h3>
               <p className="text-muted mb-6">
-                Treydingni qanday boshlaÑˆ kerakligini shu videoda tushuntirdik.
-                Bir marta ko'ring â€” ko'p narsaga oydinlik kiritadi!
+                Treydingni qanday boshlash kerakligini shu videoda tushuntirdik.
+                Bir marta ko'ring — ko'p narsaga oydinlik kiritadi!
               </p>
 
               {/* Video placeholder */}
@@ -76,10 +76,10 @@ export default function ExitModal() {
                 <a
                   href="/quiz"
                   onClick={() => setShow(false)}
-                  className="gold-gradient-bg text-ink-950 font-semibold px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 hover:shadow-gold transition-all"
+                  className="wine-gradient-bg text-sand-100 font-semibold px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 hover:shadow-gold transition-all"
                 >
                   <Play size={16} />
-                  Quiz â€” qaysi kurs mos?
+                  Quiz — qaysi kurs mos?
                 </a>
                 <a
                   href="https://t.me/mtrade_obuna_bot?start=course_starter"
@@ -91,7 +91,7 @@ export default function ExitModal() {
                 </a>
                 <button
                   onClick={() => setShow(false)}
-                  className="border border-border text-muted px-6 py-3 rounded-full hover:border-accent/50 hover:text-white transition-all"
+                  className="border border-border text-muted px-6 py-3 rounded-full hover:border-accent/50 hover:text-foreground transition-all"
                 >
                   Hozir emas
                 </button>

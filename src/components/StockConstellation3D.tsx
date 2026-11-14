@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useRef, useState, useMemo } from "react";
-import { ExternalLink, Search, Sparkles, TrendingUp, TrendingDown } from "lucide-react";
+import { ExternalLink, Search, Sparkles, TrendingUp, TrendingDown } from "@/lib/icons";
 import { TOP_STOCKS, type StockData } from "./StockSphere3D";
 
 // Sector Colors Palette
@@ -353,7 +353,7 @@ export default function StockConstellation3D() {
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-4 shadow-lg shadow-wine-500/5">
           <Sparkles size={14} /> 3D Stock Constellation Galaxy Network
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4">
+        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-foreground mb-4">
           Aksiyalar <span className="gold-text">Yulduzlar Turqumi</span>
         </h2>
         <p className="text-muted text-sm sm:text-base max-w-2xl mx-auto">
@@ -392,7 +392,7 @@ export default function StockConstellation3D() {
               placeholder="Aksiya qidiruvi (AAPL, NVDA)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-accent"
+              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
             />
             {filteredStocks.length > 0 && (
               <div className="absolute z-50 left-0 right-0 top-full mt-2 bg-ink-900 border border-border rounded-xl shadow-2xl overflow-hidden text-left">
@@ -405,7 +405,7 @@ export default function StockConstellation3D() {
                     }}
                     className="w-full px-4 py-2 hover:bg-primary/10 flex items-center justify-between border-b border-border/30 last:border-0"
                   >
-                    <span className="font-mono font-bold text-white text-xs">{stock.symbol}</span>
+                    <span className="font-mono font-bold text-foreground text-xs">{stock.symbol}</span>
                     <span className="text-xs text-accent font-mono">{stock.capFormatted}</span>
                   </button>
                 ))}
@@ -444,7 +444,7 @@ export default function StockConstellation3D() {
             className="z-50 bg-ink-900/95 backdrop-blur-xl border border-accent/60 p-3.5 rounded-2xl shadow-2xl text-left transform scale-105"
           >
             <div className="flex items-center justify-between gap-3 mb-1">
-              <span className="font-mono font-extrabold text-lg text-white">
+              <span className="font-mono font-extrabold text-lg text-foreground">
                 {hoveredNode.stock.symbol}
               </span>
               <span
@@ -480,12 +480,12 @@ export default function StockConstellation3D() {
           <div className="bg-ink-900 border border-accent/50 p-6 rounded-3xl max-w-md w-full shadow-2xl relative">
             <button
               onClick={() => setSelectedStock(null)}
-              className="absolute top-4 right-4 text-muted hover:text-white font-mono font-bold text-sm"
+              className="absolute top-4 right-4 text-muted hover:text-foreground font-mono font-bold text-sm"
             >
-              âœ•
+              ✕
             </button>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono font-extrabold text-2xl text-white">
+              <span className="font-mono font-extrabold text-2xl text-foreground">
                 {selectedStock.symbol}
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-accent font-mono text-xs font-bold border border-accent/30">
@@ -516,7 +516,7 @@ export default function StockConstellation3D() {
               </button>
               <button
                 onClick={() => handleOpenExternal(selectedStock.symbol, "stockanalysis")}
-                className="w-full py-2.5 rounded-xl bg-card border border-border text-white font-display font-bold text-xs flex items-center justify-center gap-2 hover:border-accent transition-all"
+                className="w-full py-2.5 rounded-xl bg-card border border-border text-foreground font-display font-bold text-xs flex items-center justify-center gap-2 hover:border-accent transition-all"
               >
                 StockAnalysis'da Ko'rish <ExternalLink size={14} />
               </button>
@@ -536,7 +536,7 @@ export default function StockConstellation3D() {
           <div className="font-mono text-[10px] text-muted uppercase">O'rtacha Sektor Indeksi</div>
         </div>
         <div className="p-3 rounded-2xl bg-card/60 border border-border/30">
-          <div className="font-mono text-lg font-bold text-white">100 Halal Stocks</div>
+          <div className="font-mono text-lg font-bold text-foreground">100 Halal Stocks</div>
           <div className="font-mono text-[10px] text-muted uppercase">Yulduzlar Turqumi</div>
         </div>
         <div className="p-3 rounded-2xl bg-card/60 border border-border/30">

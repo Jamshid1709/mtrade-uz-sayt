@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <I18nProvider>
-      <div className="min-h-screen bg-ink-950 text-white">
+      <div className="min-h-screen bg-ink-950 text-foreground">
         <Navbar />
         <main>
           <Suspense fallback={<PageLoader />}>

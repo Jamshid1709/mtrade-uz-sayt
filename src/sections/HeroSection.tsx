@@ -1,5 +1,5 @@
 ﻿import { motion } from "framer-motion";
-import { Star, ArrowRight, Play } from "lucide-react";
+import { Star, ArrowRight, Play } from "@/lib/icons";
 
 const stats = [
   { value: "66%", label: "Muvaffaqiyat" },
@@ -69,12 +69,12 @@ export default function HeroSection() {
             >
               <Star size={14} className="text-accent fill-accent" />
               <span className="text-accent text-sm font-medium">
-                5 yillik tajriba Â· 100+ o'quvchi
+                5 yillik tajriba · 100+ o'quvchi
               </span>
             </motion.div>
 
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
-              <span className="text-white">Kelajak treyderlarini</span>
+              <span className="text-foreground">Kelajak treyderlarini</span>
               <br />
               <span className="shimmer-text">shu yerdan yetishtiramiz</span>
             </h1>
@@ -88,14 +88,14 @@ export default function HeroSection() {
                 href="https://t.me/mtrade_obuna_bot?start=course_premium"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-gradient-bg text-ink-950 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:shadow-gold-lg transition-all"
+                className="wine-gradient-bg text-sand-100 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:shadow-gold-lg transition-all"
               >
                 Bepul start darsi
                 <ArrowRight size={18} />
               </a>
               <a
                 href="#courses"
-                className="border border-ink-800 text-white font-medium px-8 py-4 rounded-full flex items-center gap-2 hover:border-accent/50 hover:bg-primary/5 transition-all"
+                className="border border-ink-800 text-foreground font-medium px-8 py-4 rounded-full flex items-center gap-2 hover:border-accent/50 hover:bg-primary/5 transition-all"
               >
                 <Play size={18} />
                 Kurslarni ko'rish
@@ -143,11 +143,11 @@ export default function HeroSection() {
 
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full gold-gradient-bg flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full wine-gradient-bg flex items-center justify-center">
                     <Play size={20} className="text-ink-950 ml-1" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-white text-lg">
+                    <h3 className="font-display font-bold text-foreground text-lg">
                       MTrade Academy
                     </h3>
                     <p className="text-muted text-sm">

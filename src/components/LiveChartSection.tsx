@@ -1,6 +1,6 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
-import { BarChart2, Calendar, Newspaper, Sparkles } from "lucide-react";
+import { BarChart2, Calendar, Newspaper, Sparkles } from "@/lib/icons";
 import { useI18n } from "../context/i18nContext";
 
 export default function LiveChartSection() {
@@ -110,7 +110,7 @@ export default function LiveChartSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-2">
             <Sparkles size={14} /> TradingView Stock Pro Engine
           </div>
-          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-foreground">
             {t("live_chart_title")}
           </h2>
         </div>
@@ -122,7 +122,7 @@ export default function LiveChartSection() {
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "chart"
                 ? "bg-primary text-ink-950 font-bold shadow-lg"
-                : "text-muted hover:text-white"
+                : "text-muted hover:text-foreground"
             }`}
           >
             <BarChart2 size={16} /> Interaktiv Aksiya Grafigi
@@ -132,7 +132,7 @@ export default function LiveChartSection() {
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "calendar"
                 ? "bg-primary text-ink-950 font-bold shadow-lg"
-                : "text-muted hover:text-white"
+                : "text-muted hover:text-foreground"
             }`}
           >
             <Calendar size={16} /> {t("economic_calendar")}
@@ -142,7 +142,7 @@ export default function LiveChartSection() {
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "news"
                 ? "bg-primary text-ink-950 font-bold shadow-lg"
-                : "text-muted hover:text-white"
+                : "text-muted hover:text-foreground"
             }`}
           >
             <Newspaper size={16} /> {t("financial_news")}

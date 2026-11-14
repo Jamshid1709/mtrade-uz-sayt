@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Check, Star, Zap, Users } from 'lucide-react';
+﻿import { motion } from 'framer-motion';
+import { Check, Star, Zap, Users } from '@/lib/icons';
 
 interface Course {
   id: string;
@@ -95,10 +95,10 @@ export default function CourseCards() {
   };
 
   return (
-    <section className="py-24 bg-dark relative" id="courses">
+    <section className="py-24 bg-ink-950 relative" id="courses">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gold/5 rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -109,13 +109,13 @@ export default function CourseCards() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-dark-lighter border border-dark-border text-gold text-sm mb-4">
+          <span className="inline-block px-4 py-2 rounded-full bg-surface border border-border text-accent text-sm mb-4">
             Ta'lim dasturlari
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
             Kurslarimiz
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-muted max-w-2xl mx-auto text-lg">
             O'z maqsadlaringizga mos kursni tanlang va professional treyderga aylaning
           </p>
         </motion.div>
@@ -132,54 +132,54 @@ export default function CourseCards() {
               key={course.id}
               variants={cardVariants}
               className={`
-                relative rounded-2xl p-8 bg-dark-card border border-dark-border
-                transition-all duration-300 hover:-translate-y-2 hover:border-gold/50
-                ${course.popular ? 'md:-mt-4 md:mb-4 border-gold/30' : ''}
+                relative rounded-2xl p-8 bg-card border border-border
+                transition-all duration-300 hover:-translate-y-2 hover:border-accent/50
+                ${course.popular ? 'md:-mt-4 md:mb-4 border-accent/30' : ''}
                 ${course.comingSoon ? 'opacity-80' : ''}
               `}
             >
               {/* Popular badge */}
               {course.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 gold-gradient text-dark text-sm font-bold rounded-full flex items-center gap-1">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 wine-gradient-bg text-sand-100 text-sm font-bold rounded-full flex items-center gap-1">
                   <Star className="w-4 h-4" />
                   ENG MASHHUR
                 </div>
               )}
 
               {/* Type badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-lighter border border-dark-border text-gold text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border text-accent text-sm mb-6">
                 {course.icon}
                 {course.type}
               </div>
 
-              <h3 className="text-2xl font-heading font-bold text-white mb-2">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-2">
                 {course.name}
               </h3>
               
               {course.period && (
-                <p className="text-gray-400 mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                <p className="text-muted mb-6 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   {course.period}
                 </p>
               )}
 
               <ul className="space-y-4 mb-8">
                 {course.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-gray-300">
-                    <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-gold" />
+                  <li key={idx} className="flex items-start gap-3 text-ink-200">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-accent" />
                     </div>
                     <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="pt-6 border-t border-dark-border">
+              <div className="pt-6 border-t border-border">
                 <div className="flex items-baseline justify-between mb-4">
-                  <span className="text-gray-400 text-sm">Narx</span>
+                  <span className="text-muted text-sm">Narx</span>
                   <span className={`
                     text-3xl font-mono font-bold
-                    ${course.comingSoon ? 'text-gray-500' : 'gold-gradient-text'}
+                    ${course.comingSoon ? 'text-ink-500' : 'sand-text'}
                   `}>
                     {course.price}
                   </span>
@@ -188,7 +188,7 @@ export default function CourseCards() {
                 {!course.comingSoon ? (
                   <button 
                     onClick={() => handlePayment(course.id)}
-                    className="w-full py-3 rounded-full gold-gradient text-dark font-semibold hover:shadow-gold transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-full wine-gradient-bg text-sand-100 font-semibold hover:shadow-gold transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
                     <Zap className="w-4 h-4" />
                     Bron qilish
@@ -196,7 +196,7 @@ export default function CourseCards() {
                 ) : (
                   <button 
                     disabled
-                    className="w-full py-3 rounded-full bg-dark-lighter text-gray-500 font-semibold border border-dark-border cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-full bg-surface text-ink-500 font-semibold border border-border cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <Star className="w-4 h-4" />
                     Tez kunda
@@ -215,7 +215,7 @@ export default function CourseCards() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-gray-400 text-sm">
+          <p className="text-muted text-sm">
             Barcha kurslarda 7 kunlik pul qaytarish kafolati mavjud
           </p>
         </motion.div>

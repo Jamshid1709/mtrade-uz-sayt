@@ -14,7 +14,13 @@ import {
   CheckCircle,
   X,
   Sparkles,
-} from 'lucide-react';
+  Video,
+  ChatCircle,
+  Robot,
+  ChartLineUp,
+  Certificate,
+  UsersThree,
+} from '@/lib/icons';
 
 const BOT_LINK = 'https://t.me/mtrade_obuna_bot';
 const MAIN_YOUTUBE_URL = 'https://youtube.com/live/0mz8sjfSJeo?feature=share';
@@ -30,7 +36,7 @@ const mentors = [
     name: "Odilbek",
     role: "CEO & Asoschisi, Professional treyder",
     image: "/images/odilbek.webp",
-    bio: "5 yillik tajriba, halol treyding yoÊ»nalishi asoschisi. Professional treyder va investor.",
+    bio: "5 yillik tajriba, halol treyding yo'nalishi asoschisi. Professional treyder va investor.",
     badge: "5+ yil tajriba",
   },
   {
@@ -87,18 +93,18 @@ const tashakkurImages = [
 ];
 
 const features = [
-  { icon: 'ðŸ“š', title: '50+ Video darslar', description: 'Batafsil qo\'llanmalar va real misollar' },
-  { icon: 'ðŸ‘¨â€ðŸ«', title: 'Mentor nazorati', description: '4 oy davomida jonli qo\'llab-quvvatlash' },
-  { icon: 'ðŸ¤–', title: '24/7 AI Bot', description: 'Maxsus o\'qitilgan yordamchi' },
-  { icon: 'ðŸ“Š', title: 'Real bozor tahlili', description: 'Jonli savdo sessiyalari' },
-  { icon: 'ðŸŽ“', title: 'Sertifikat', description: 'Kursni tamomlaganligingizni tasdiqlovchi' },
-  { icon: 'ðŸ’¬', title: 'Jamoa chat', description: 'Boshqa o\'quvchilar bilan aloqa' },
+  { icon: <Video size={40} weight="duotone" />, title: '50+ Video darslar', description: 'Batafsil qo\'llanmalar va real misollar' },
+  { icon: <ChatCircle size={40} weight="duotone" />, title: 'Mentor nazorati', description: '4 oy davomida jonli qo\'llab-quvvatlash' },
+  { icon: <Robot size={40} weight="duotone" />, title: '24/7 AI Bot', description: 'Maxsus o\'qitilgan yordamchi' },
+  { icon: <ChartLineUp size={40} weight="duotone" />, title: 'Real bozor tahlili', description: 'Jonli savdo sessiyalari' },
+  { icon: <Certificate size={40} weight="duotone" />, title: 'Sertifikat', description: 'Kursni tamomlaganligingizni tasdiqlovchi' },
+  { icon: <UsersThree size={40} weight="duotone" />, title: 'Jamoa chat', description: 'Boshqa o\'quvchilar bilan aloqa' },
 ];
 
 const quickActions = [
   { icon: <BookOpen className="w-5 h-5" />, label: 'Kurslar', color: 'bg-blue-500/20 text-blue-500' },
   { icon: <BarChart3 className="w-5 h-5" />, label: 'Bozor', color: 'bg-green-500/20 text-green-500' },
-  { icon: <Award className="w-5 h-5" />, label: 'Sertifikat', color: 'bg-gold/20 text-gold' },
+  { icon: <Award className="w-5 h-5" />, label: 'Sertifikat', color: 'bg-primary/20 text-accent' },
   { icon: <MessageCircle className="w-5 h-5" />, label: 'Yordam', color: 'bg-purple-500/20 text-purple-500' },
 ];
 
@@ -114,7 +120,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-ink-950 text-white">
+    <div className="min-h-screen bg-ink-950 text-foreground">
       {/* Lightbox Modal for Full Image View */}
       <AnimatePresence>
         {selectedImage && (
@@ -128,7 +134,7 @@ export default function HomePage() {
             <div className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl border border-accent/50 shadow-2xl">
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-ink-950/80 text-white flex items-center justify-center border border-border hover:bg-primary hover:text-ink-950 transition-all"
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-ink-950/80 text-foreground flex items-center justify-center border border-border hover:bg-primary hover:text-ink-950 transition-all"
               >
                 <X size={20} />
               </button>
@@ -164,10 +170,10 @@ export default function HomePage() {
                   transition={{ delay: 0.2 }}
                 >
                   <TrendingUp className="w-4 h-4" />
-                  <span>5 yillik tajriba Â· 100+ o'quvchi</span>
+                  <span>5 yillik tajriba · 100+ o'quvchi</span>
                 </motion.div>
 
-                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight">
                   Kelajak treyderlarini{' '}
                   <span className="gold-text">shu yerdan yetishtiramiz</span>
                 </h1>
@@ -180,14 +186,14 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={handleBotClick}
-                  className="gold-gradient-bg text-ink-950 font-display font-bold px-8 py-3.5 rounded-full flex items-center gap-2 hover:shadow-gold transition-all"
+                  className="wine-gradient-bg text-sand-100 font-display font-bold px-8 py-3.5 rounded-full flex items-center gap-2 hover:shadow-gold transition-all"
                 >
                   <Zap className="w-5 h-5" />
                   Bepul start darsi
                 </button>
                 <button
                   onClick={() => document.getElementById('courses-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 py-3.5 rounded-full border border-border text-white font-display font-bold hover:border-accent transition-all"
+                  className="px-8 py-3.5 rounded-full border border-border text-foreground font-display font-bold hover:border-accent transition-all"
                 >
                   Kurslarni ko'rish
                 </button>
@@ -259,7 +265,7 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
               <Sparkles size={14} className="inline mr-1" /> Professional Jamoa
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               Bizning <span className="gold-text">mentorlarimiz</span>
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -287,7 +293,7 @@ export default function HomePage() {
                       className="w-full h-full object-cover object-top rounded-xl"
                     />
                   </div>
-                  <h3 className="font-display font-bold text-xl text-white mb-1">
+                  <h3 className="font-display font-bold text-xl text-foreground mb-1">
                     {mentor.name}
                   </h3>
                   <p className="text-accent text-xs font-mono font-bold mb-3">
@@ -318,7 +324,7 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-bull/10 border border-bull/30 text-bull text-xs font-mono mb-3">
               Real Bozor Isbotlari
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               Natijalarimiz
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -343,7 +349,7 @@ export default function HomePage() {
                   <img src={src} alt={`Natija ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-ink-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="text-xs font-mono bg-primary text-ink-950 font-bold px-2.5 py-1 rounded-full">
-                      Kattalashtirish ðŸ”
+                      Kattalashtirish 🔍
                     </span>
                   </div>
                 </div>
@@ -365,7 +371,7 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
               Haqiqiy Fikrlar
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               O'quvchilarimiz fikri
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -399,7 +405,7 @@ export default function HomePage() {
                     <img src={item.src} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-ink-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="text-xs font-mono bg-primary text-ink-950 font-bold px-2 py-1 rounded-full">
-                        Ko'rish ðŸ”
+                        Ko'rish 🔍
                       </span>
                     </div>
                   </div>
@@ -409,7 +415,7 @@ export default function HomePage() {
 
                 <div className="pt-3 border-t border-border/30 flex items-center justify-between">
                   <div>
-                    <h4 className="font-display font-bold text-sm text-white">{item.name}</h4>
+                    <h4 className="font-display font-bold text-sm text-foreground">{item.name}</h4>
                     <p className="text-[11px] text-accent font-mono">MTrade Academy o'quvchisi</p>
                   </div>
                 </div>
@@ -431,7 +437,7 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
               Video Darslar Namunasi
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               Bizning darslarimizdan namunalar
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
@@ -451,14 +457,14 @@ export default function HomePage() {
                 className="group relative glass-card p-6 text-left hover:border-accent/60 transition-all rounded-3xl"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl gold-gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <div className="w-14 h-14 rounded-2xl wine-gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
                     <Play className="w-6 h-6 text-ink-950 ml-0.5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-display font-bold text-white group-hover:text-accent transition-colors">
+                    <h3 className="text-lg font-display font-bold text-foreground group-hover:text-accent transition-colors">
                       {video.title}
                     </h3>
-                    <p className="text-muted text-xs font-mono mt-1">YouTube'da tomosha qilish â†’</p>
+                    <p className="text-muted text-xs font-mono mt-1">YouTube'da tomosha qilish →</p>
                   </div>
                 </div>
               </motion.button>
@@ -479,7 +485,7 @@ export default function HomePage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
               Nima uchun biz?
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               Afzalliklarimiz
             </h2>
           </motion.div>
@@ -498,7 +504,7 @@ export default function HomePage() {
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-display font-bold text-white mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-display font-bold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted text-sm">{feature.description}</p>
               </motion.div>
             ))}
@@ -515,7 +521,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-display font-extrabold text-foreground mb-4">
               Tezkor harakatlar
             </h2>
           </motion.div>
@@ -546,7 +552,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto text-center"
           >
-            <h3 className="text-3xl font-display font-bold text-white mb-4">
+            <h3 className="text-3xl font-display font-bold text-foreground mb-4">
               Bugun o'rganishni boshlang
             </h3>
             <p className="text-muted mb-8">
@@ -554,7 +560,7 @@ export default function HomePage() {
             </p>
             <button 
               onClick={handleBotClick}
-              className="gold-gradient-bg text-ink-950 font-display font-bold px-8 py-4 rounded-full flex items-center gap-2 mx-auto hover:shadow-gold transition-all text-base"
+              className="wine-gradient-bg text-sand-100 font-display font-bold px-8 py-4 rounded-full flex items-center gap-2 mx-auto hover:shadow-gold transition-all text-base"
             >
               <CheckCircle className="w-5 h-5" />
               Ro'yxatdan o'tish

@@ -8,7 +8,7 @@ import {
   ArrowRight,
   ChevronRight,
   HelpCircle,
-} from "lucide-react";
+} from "@/lib/icons";
 import { motion } from "framer-motion";
 
 const courses = [
@@ -91,8 +91,8 @@ const quizQuestions = [
   {
     q: "Qaysi format qulay?",
     options: [
-      { text: "Video darslar â€” o'z vaqtimda", type: "premium" },
-      { text: "Jonli sessiyalar â€” mentor bilan", type: "hybrid" },
+      { text: "Video darslar — o'z vaqtimda", type: "premium" },
+      { text: "Jonli sessiyalar — mentor bilan", type: "hybrid" },
     ],
   },
   {
@@ -126,7 +126,7 @@ export default function CoursesPage() {
       <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-foreground mb-4">
               Kurslarimizni <span className="gold-text">tanlang</span>
             </h1>
             <p className="text-muted max-w-2xl mx-auto">
@@ -156,7 +156,7 @@ export default function CoursesPage() {
                   <div
                     className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${
                       course.popular
-                        ? "gold-gradient-bg"
+                        ? "wine-gradient-bg"
                         : "bg-ink-900 border border-border"
                     }`}
                   >
@@ -166,7 +166,7 @@ export default function CoursesPage() {
                     />
                   </div>
 
-                  <h3 className="font-display font-bold text-2xl text-white mb-2">
+                  <h3 className="font-display font-bold text-2xl text-foreground mb-2">
                     {course.name}
                   </h3>
                   <div className="font-mono font-bold text-3xl text-accent mb-1">
@@ -189,8 +189,8 @@ export default function CoursesPage() {
                     rel="noopener noreferrer"
                     className={`block text-center py-3 rounded-full font-semibold transition-all ${
                       course.popular
-                        ? "gold-gradient-bg text-ink-950 hover:shadow-gold"
-                        : "border border-border text-muted hover:border-accent/50 hover:text-white"
+                        ? "wine-gradient-bg text-sand-100 hover:shadow-gold"
+                        : "border border-border text-muted hover:border-accent/50 hover:text-foreground"
                     }`}
                   >
                     {course.cta}
@@ -206,7 +206,7 @@ export default function CoursesPage() {
       <section className="py-20 bg-surface">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-display font-bold text-3xl text-white text-center mb-12">
+            <h2 className="font-display font-bold text-3xl text-foreground text-center mb-12">
               Kurslarni <span className="gold-text">taqqoslang</span>
             </h2>
           </ScrollReveal>
@@ -217,8 +217,8 @@ export default function CoursesPage() {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="py-4 pr-4 text-muted font-medium">Xususiyat</th>
-                    <th className="py-4 px-4 text-white font-display">Online Premium</th>
-                    <th className="py-4 px-4 text-white font-display">Masofaviy Gibrid</th>
+                    <th className="py-4 px-4 text-foreground font-display">Online Premium</th>
+                    <th className="py-4 px-4 text-foreground font-display">Masofaviy Gibrid</th>
                     <th className="py-4 px-4 text-accent font-display">Offline Akademiya</th>
                   </tr>
                 </thead>
@@ -229,15 +229,15 @@ export default function CoursesPage() {
                     ["Davomiylik", "4 oy", "9 hafta", "8 hafta (2 oy)"],
                     ["Dars jadvali", "Erkin vaqtda", "Haftada 2-3 kun", "Kun ora (Haftada 3 kun)"],
                     ["Shaxsiy noutbuk", "Kerak", "Kerak", "Shart (Shaxsiy / Vaqtincha)"],
-                    ["Guruh hajmi", "â€”", "5 kishi", "10 kishi mini guruh"],
-                    ["Shaxsiy mentor", "âœ“", "âœ“", "âœ“ (Yuzma-yuz)"],
-                    ["AI Bot 24/7", "âœ“", "âœ“", "âœ“"],
-                    ["Sertifikat", "âœ“", "âœ“", "âœ“"],
+                    ["Guruh hajmi", "—", "5 kishi", "10 kishi mini guruh"],
+                    ["Shaxsiy mentor", "✓", "✓", "✓ (Yuzma-yuz)"],
+                    ["AI Bot 24/7", "✓", "✓", "✓"],
+                    ["Sertifikat", "✓", "✓", "✓"],
                   ].map(([feature, premium, hybrid, offline]) => (
                     <tr key={feature} className="border-b border-border/50">
                       <td className="py-3 pr-4 text-muted">{feature}</td>
-                      <td className="py-3 px-4 text-white">{premium}</td>
-                      <td className="py-3 px-4 text-white">{hybrid}</td>
+                      <td className="py-3 px-4 text-foreground">{premium}</td>
+                      <td className="py-3 px-4 text-foreground">{hybrid}</td>
                       <td className="py-3 px-4 text-accent font-semibold">{offline}</td>
                     </tr>
                   ))}
@@ -254,7 +254,7 @@ export default function CoursesPage() {
           <ScrollReveal>
             <div className="text-center mb-10">
               <HelpCircle size={32} className="text-accent mx-auto mb-4" />
-              <h2 className="font-display font-bold text-3xl text-white mb-4">
+              <h2 className="font-display font-bold text-3xl text-foreground mb-4">
                 Qaysi kurs <span className="gold-text">sizga mos</span>?
               </h2>
               <p className="text-muted">
@@ -267,7 +267,7 @@ export default function CoursesPage() {
             <div className="glass-card p-8">
               {quizResult ? (
                 <div className="text-center">
-                  <h3 className="font-display font-bold text-2xl text-white mb-4">
+                  <h3 className="font-display font-bold text-2xl text-foreground mb-4">
                     Sizga{" "}
                     <span className="gold-text">
                       {quizResult === "premium" ? "Online Premium" : "Masofaviy Gibrid"}
@@ -284,14 +284,14 @@ export default function CoursesPage() {
                       href={`https://t.me/mtrade_obuna_bot?start=course_${quizResult}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="gold-gradient-bg text-ink-950 font-semibold px-6 py-3 rounded-full flex items-center gap-2"
+                      className="wine-gradient-bg text-sand-100 font-semibold px-6 py-3 rounded-full flex items-center gap-2"
                     >
                       Kursga yozilish
                       <ArrowRight size={16} />
                     </a>
                     <button
                       onClick={() => { setQuizStep(0); setQuizResult(null); }}
-                      className="border border-border text-muted px-6 py-3 rounded-full hover:border-accent/50 hover:text-white transition-all"
+                      className="border border-border text-muted px-6 py-3 rounded-full hover:border-accent/50 hover:text-foreground transition-all"
                     >
                       Qayta topshirish
                     </button>
@@ -308,14 +308,14 @@ export default function CoursesPage() {
                         <div
                           key={i}
                           className={`w-8 h-1 rounded-full ${
-                            i <= quizStep ? "gold-gradient-bg" : "bg-border"
+                            i <= quizStep ? "wine-gradient-bg" : "bg-border"
                           }`}
                         />
                       ))}
                     </div>
                   </div>
 
-                  <h3 className="font-display font-semibold text-xl text-white mb-6">
+                  <h3 className="font-display font-semibold text-xl text-foreground mb-6">
                     {quizQuestions[quizStep].q}
                   </h3>
 
@@ -326,7 +326,7 @@ export default function CoursesPage() {
                         onClick={() => handleQuizAnswer(option.type)}
                         className="w-full text-left p-4 rounded-xl border border-border hover:border-accent/50 hover:bg-primary/5 transition-all flex items-center justify-between group"
                       >
-                        <span className="text-white group-hover:text-accent transition-colors">
+                        <span className="text-foreground group-hover:text-accent transition-colors">
                           {option.text}
                         </span>
                         <ChevronRight
