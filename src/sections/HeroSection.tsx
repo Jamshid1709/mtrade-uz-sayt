@@ -160,7 +160,7 @@ export default function HeroSection() {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/FBNSwsygb1c?rel=0"
+                    src="https://www.youtube.com/embed/uA7Ckw_ZBLI?rel=0"
                     title="MTrade Academy"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
