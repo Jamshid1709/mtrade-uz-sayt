@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from "react";
+﻿import React, { useEffect, useRef, useState, useMemo } from "react";
 import { ExternalLink, Search, Sparkles, TrendingUp, TrendingDown } from "lucide-react";
 import { TOP_STOCKS, type StockData } from "./StockSphere3D";
 
@@ -258,7 +258,7 @@ export default function StockConstellation3D() {
         // Stock Ticker Symbol Label
         if (isMatchedSector && (isHovered || pt.projScale > 0.85 || pt.stock.marketCap > 500)) {
           const fontSize = Math.max(9, Math.min(16, pt.radius * pt.projScale * 0.85));
-          ctx.font = `${isHovered ? "bold" : "600"} ${fontSize}px Sora, sans-serif`;
+          ctx.font = `${isHovered ? "bold" : "600"} ${fontSize}px Inter Tight, Inter, sans-serif`;
           ctx.fillStyle = isHovered ? "#FFFFFF" : "rgba(255, 255, 255, 0.85)";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
@@ -347,16 +347,16 @@ export default function StockConstellation3D() {
     : [];
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-b from-mblack via-[#0B0C10] to-mblack py-12 px-4 rounded-3xl border border-mgold/30 shadow-2xl">
+    <div className="relative w-full overflow-hidden bg-gradient-to-b from-ink-950 via-[#0B0C10] to-ink-950 py-12 px-4 rounded-3xl border border-accent/30 shadow-2xl">
       {/* Gargantua Cosmic Header & HUD Stats */}
       <div className="max-w-5xl mx-auto text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mgold/10 border border-mgold/30 text-mgold text-xs font-mono mb-4 shadow-lg shadow-mgold/5">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-4 shadow-lg shadow-wine-500/5">
           <Sparkles size={14} /> 3D Stock Constellation Galaxy Network
         </div>
-        <h2 className="font-sora font-extrabold text-3xl sm:text-5xl text-white mb-4">
+        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4">
           Aksiyalar <span className="gold-text">Yulduzlar Turqumi</span>
         </h2>
-        <p className="text-mgray text-sm sm:text-base max-w-2xl mx-auto">
+        <p className="text-muted text-sm sm:text-base max-w-2xl mx-auto">
           100 ta eng yirik halol aksiyalarning 3D tarmoq grafigi. Sektorlar va bog'liqliklar yulduz turqumlari shaklida o'zaro bog me'yorida joylashgan.
         </p>
 
@@ -386,16 +386,16 @@ export default function StockConstellation3D() {
         {/* Quick Search */}
         <div className="mt-5 flex justify-center">
           <div className="relative w-full max-w-xs">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-mgray" size={16} />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted" size={16} />
             <input
               type="text"
               placeholder="Aksiya qidiruvi (AAPL, NVDA)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-mcard border border-mborder rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-mgold"
+              className="w-full bg-card border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-accent"
             />
             {filteredStocks.length > 0 && (
-              <div className="absolute z-50 left-0 right-0 top-full mt-2 bg-mcard2 border border-mborder rounded-xl shadow-2xl overflow-hidden text-left">
+              <div className="absolute z-50 left-0 right-0 top-full mt-2 bg-ink-900 border border-border rounded-xl shadow-2xl overflow-hidden text-left">
                 {filteredStocks.map((stock) => (
                   <button
                     key={stock.symbol}
@@ -403,10 +403,10 @@ export default function StockConstellation3D() {
                       setSelectedStock(stock);
                       setSearchQuery("");
                     }}
-                    className="w-full px-4 py-2 hover:bg-mgold/10 flex items-center justify-between border-b border-mborder/30 last:border-0"
+                    className="w-full px-4 py-2 hover:bg-primary/10 flex items-center justify-between border-b border-border/30 last:border-0"
                   >
                     <span className="font-mono font-bold text-white text-xs">{stock.symbol}</span>
-                    <span className="text-xs text-mgold font-mono">{stock.capFormatted}</span>
+                    <span className="text-xs text-accent font-mono">{stock.capFormatted}</span>
                   </button>
                 ))}
               </div>
@@ -441,7 +441,7 @@ export default function StockConstellation3D() {
               top: Math.max(15, Math.min(mousePos.y - 15, window.innerHeight - 130)),
               pointerEvents: "none",
             }}
-            className="z-50 bg-mcard2/95 backdrop-blur-xl border border-mgold/60 p-3.5 rounded-2xl shadow-2xl text-left transform scale-105"
+            className="z-50 bg-ink-900/95 backdrop-blur-xl border border-accent/60 p-3.5 rounded-2xl shadow-2xl text-left transform scale-105"
           >
             <div className="flex items-center justify-between gap-3 mb-1">
               <span className="font-mono font-extrabold text-lg text-white">
@@ -450,8 +450,8 @@ export default function StockConstellation3D() {
               <span
                 className={`text-xs font-mono font-bold px-2 py-0.5 rounded-full flex items-center gap-1 ${
                   hoveredNode.stock.change >= 0
-                    ? "bg-mgreen/20 text-mgreen"
-                    : "bg-mred/20 text-mred"
+                    ? "bg-bull/20 text-bull"
+                    : "bg-bear/20 text-bear"
                 }`}
               >
                 {hoveredNode.stock.change >= 0 ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
@@ -459,16 +459,16 @@ export default function StockConstellation3D() {
                 {hoveredNode.stock.change}%
               </span>
             </div>
-            <div className="text-xs text-mgray mb-2">{hoveredNode.stock.name}</div>
-            <div className="flex items-center justify-between gap-4 text-xs font-mono pt-2 border-t border-mborder/40">
-              <span className="text-mgray">Sektor:</span>
+            <div className="text-xs text-muted mb-2">{hoveredNode.stock.name}</div>
+            <div className="flex items-center justify-between gap-4 text-xs font-mono pt-2 border-t border-border/40">
+              <span className="text-muted">Sektor:</span>
               <span style={{ color: SECTOR_COLORS[hoveredNode.stock.sector] || "#D6C3A1" }} className="font-bold">
                 {hoveredNode.stock.sector}
               </span>
             </div>
             <div className="flex items-center justify-between gap-4 text-xs font-mono mt-1">
-              <span className="text-mgray">Market Cap:</span>
-              <span className="text-mgold font-bold">{hoveredNode.stock.capFormatted}</span>
+              <span className="text-muted">Market Cap:</span>
+              <span className="text-accent font-bold">{hoveredNode.stock.capFormatted}</span>
             </div>
           </div>
         )}
@@ -476,32 +476,32 @@ export default function StockConstellation3D() {
 
       {/* Selected Stock Modal Popup */}
       {selectedStock && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-mblack/80 backdrop-blur-md">
-          <div className="bg-mcard2 border border-mgold/50 p-6 rounded-3xl max-w-md w-full shadow-2xl relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink-950/80 backdrop-blur-md">
+          <div className="bg-ink-900 border border-accent/50 p-6 rounded-3xl max-w-md w-full shadow-2xl relative">
             <button
               onClick={() => setSelectedStock(null)}
-              className="absolute top-4 right-4 text-mgray hover:text-white font-mono font-bold text-sm"
+              className="absolute top-4 right-4 text-muted hover:text-white font-mono font-bold text-sm"
             >
-              ✕
+              âœ•
             </button>
             <div className="flex items-center gap-3 mb-3">
               <span className="font-mono font-extrabold text-2xl text-white">
                 {selectedStock.symbol}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-mgold/10 text-mgold font-mono text-xs font-bold border border-mgold/30">
+              <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-accent font-mono text-xs font-bold border border-accent/30">
                 {selectedStock.sector}
               </span>
             </div>
-            <div className="text-sm text-mgray mb-4">{selectedStock.name}</div>
+            <div className="text-sm text-muted mb-4">{selectedStock.name}</div>
 
-            <div className="grid grid-cols-2 gap-3 p-3 rounded-2xl bg-mcard border border-mborder/40 mb-6 font-mono text-xs">
+            <div className="grid grid-cols-2 gap-3 p-3 rounded-2xl bg-card border border-border/40 mb-6 font-mono text-xs">
               <div>
-                <span className="text-mgray block text-[11px]">Bozor Kapitali:</span>
-                <span className="text-mgold font-bold text-sm">{selectedStock.capFormatted}</span>
+                <span className="text-muted block text-[11px]">Bozor Kapitali:</span>
+                <span className="text-accent font-bold text-sm">{selectedStock.capFormatted}</span>
               </div>
               <div>
-                <span className="text-mgray block text-[11px]">24s O'zgarishi:</span>
-                <span className={`font-bold text-sm ${selectedStock.change >= 0 ? "text-mgreen" : "text-mred"}`}>
+                <span className="text-muted block text-[11px]">24s O'zgarishi:</span>
+                <span className={`font-bold text-sm ${selectedStock.change >= 0 ? "text-bull" : "text-bear"}`}>
                   {selectedStock.change >= 0 ? "+" : ""}{selectedStock.change}%
                 </span>
               </div>
@@ -510,13 +510,13 @@ export default function StockConstellation3D() {
             <div className="flex flex-col gap-2">
               <button
                 onClick={() => handleOpenExternal(selectedStock.symbol, "finviz")}
-                className="w-full py-2.5 rounded-xl bg-mgold text-mblack font-sora font-bold text-xs flex items-center justify-center gap-2 hover:bg-mgoldlight transition-all"
+                className="w-full py-2.5 rounded-xl bg-primary text-ink-950 font-display font-bold text-xs flex items-center justify-center gap-2 hover:bg-sand-100 transition-all"
               >
                 Finviz Portalida Tahlil Qilish <ExternalLink size={14} />
               </button>
               <button
                 onClick={() => handleOpenExternal(selectedStock.symbol, "stockanalysis")}
-                className="w-full py-2.5 rounded-xl bg-mcard border border-mborder text-white font-sora font-bold text-xs flex items-center justify-center gap-2 hover:border-mgold transition-all"
+                className="w-full py-2.5 rounded-xl bg-card border border-border text-white font-display font-bold text-xs flex items-center justify-center gap-2 hover:border-accent transition-all"
               >
                 StockAnalysis'da Ko'rish <ExternalLink size={14} />
               </button>
@@ -526,22 +526,22 @@ export default function StockConstellation3D() {
       )}
 
       {/* Cinematic HUD Metrics Footer */}
-      <div className="mt-8 pt-6 border-t border-mborder/40 grid grid-cols-2 md:grid-cols-4 gap-4 text-center max-w-4xl mx-auto">
-        <div className="p-3 rounded-2xl bg-mcard/60 border border-mborder/30">
-          <div className="font-mono text-lg font-bold text-mgold">$24.5 Trillion</div>
-          <div className="font-mono text-[10px] text-mgray uppercase">Jami Bozor Kapitali</div>
+      <div className="mt-8 pt-6 border-t border-border/40 grid grid-cols-2 md:grid-cols-4 gap-4 text-center max-w-4xl mx-auto">
+        <div className="p-3 rounded-2xl bg-card/60 border border-border/30">
+          <div className="font-mono text-lg font-bold text-accent">$24.5 Trillion</div>
+          <div className="font-mono text-[10px] text-muted uppercase">Jami Bozor Kapitali</div>
         </div>
-        <div className="p-3 rounded-2xl bg-mcard/60 border border-mborder/30">
-          <div className="font-mono text-lg font-bold text-mgreen">+1.84%</div>
-          <div className="font-mono text-[10px] text-mgray uppercase">O'rtacha Sektor Indeksi</div>
+        <div className="p-3 rounded-2xl bg-card/60 border border-border/30">
+          <div className="font-mono text-lg font-bold text-bull">+1.84%</div>
+          <div className="font-mono text-[10px] text-muted uppercase">O'rtacha Sektor Indeksi</div>
         </div>
-        <div className="p-3 rounded-2xl bg-mcard/60 border border-mborder/30">
+        <div className="p-3 rounded-2xl bg-card/60 border border-border/30">
           <div className="font-mono text-lg font-bold text-white">100 Halal Stocks</div>
-          <div className="font-mono text-[10px] text-mgray uppercase">Yulduzlar Turqumi</div>
+          <div className="font-mono text-[10px] text-muted uppercase">Yulduzlar Turqumi</div>
         </div>
-        <div className="p-3 rounded-2xl bg-mcard/60 border border-mborder/30">
-          <div className="font-mono text-lg font-bold text-mgold">0.84 Modularity</div>
-          <div className="font-mono text-[10px] text-mgray uppercase">Tarmoq Zichligi</div>
+        <div className="p-3 rounded-2xl bg-card/60 border border-border/30">
+          <div className="font-mono text-lg font-bold text-accent">0.84 Modularity</div>
+          <div className="font-mono text-[10px] text-muted uppercase">Tarmoq Zichligi</div>
         </div>
       </div>
     </div>

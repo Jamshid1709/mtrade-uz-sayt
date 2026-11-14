@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { ChevronDown, BookOpen, Video, Users } from "lucide-react";
@@ -19,7 +19,7 @@ const premiumModules = [
     topics: [
       "Savdo instrumentlari (Stock, BTC, Forex, XAU)",
       "Birja nima? Tarix va shakllanishi",
-      "Fond birjasi — NYSE, NASDAQ, UZEX",
+      "Fond birjasi â€” NYSE, NASDAQ, UZEX",
       "Halol savdo turlari (dalillar bilan)",
       "Treyding Joizmi? (Bu fatvo emas!)",
     ],
@@ -29,9 +29,9 @@ const premiumModules = [
     title: "BROKERLAR VA PLATFORMALAR",
     topics: [
       "Market Maker, Broker va savdo jarayoni",
-      "TradingView — o'rnatish va interfeys",
+      "TradingView â€” o'rnatish va interfeys",
       "IBKR (Interactive Brokers) tanishuv",
-      "Webull — mobile-first platform",
+      "Webull â€” mobile-first platform",
       "Savdoni rejalashtirish",
     ],
   },
@@ -40,8 +40,8 @@ const premiumModules = [
     title: "ACCOUNTLAR VA TO'LOV",
     topics: [
       "Brokerdan ro'yxatdan o'tish",
-      "Cash akkaunt — qoidalar",
-      "Margin akkaunt — afzallik va xavflar",
+      "Cash akkaunt â€” qoidalar",
+      "Margin akkaunt â€” afzallik va xavflar",
       "Qay biri joiz? Dalillar bilan tanlov",
       "IBKR pul chiqarish (Visa)",
     ],
@@ -65,7 +65,7 @@ const premiumModules = [
       "Indikator nima va qanday ishlaydi",
       "Momentum: RSI, Stochastic",
       "Trend: EMA, SMA, WMA, Fibonacci",
-      "Indikatorlar 2 — MACD, VWAP",
+      "Indikatorlar 2 â€” MACD, VWAP",
       "Volatillik: Bollinger Bands, ATR",
     ],
   },
@@ -73,7 +73,7 @@ const premiumModules = [
     num: "07",
     title: "AKSIYA QIDIRISH (SCREENING)",
     topics: [
-      "Finviz.com — professional screener",
+      "Finviz.com â€” professional screener",
       "Yahoo Finance va StockAnalysis",
       "Webull built-in screener",
       "Sektor tahlili va lider aksiyalar",
@@ -87,7 +87,7 @@ const premiumModules = [
       "Fundamental vs Texnik tahlil",
       "P/E, P/C, P/S, PEG ratiolar",
       "Margin, ROE, ROA, ROI",
-      "Beta, Debt, Short ratio — risk",
+      "Beta, Debt, Short ratio â€” risk",
       "Economic asoslari (GDP, CPI, PPI)",
       "Sentimental tahlil va yangiliklar",
       "Aksiya tahlili AI (Sun'iy intelekt)",
@@ -125,7 +125,7 @@ const hybridModules = [
         w: "Hafta 01",
         title: "Asoslar va Platformalar",
         topics: [
-          "NYSE · NASDAQ, TradingView, IBKR · Webull",
+          "NYSE Â· NASDAQ, TradingView, IBKR Â· Webull",
           "Market / Limit / Stop buyurtmalar",
           "Candlestick, Support / Resistance",
         ],
@@ -162,7 +162,7 @@ const hybridModules = [
       },
       {
         w: "Hafta 05",
-        title: "Webull va IBKR — Real Platformalarda",
+        title: "Webull va IBKR â€” Real Platformalarda",
         topics: [
           "Real order placement, Level 2 data",
           "Bracket orders, Cash vs Margin, Withdraw (Visa)",
@@ -184,7 +184,7 @@ const hybridModules = [
     weeks: [
       {
         w: "Hafta 07",
-        title: "Strategiya Amaliyoti — Real Setup'lar",
+        title: "Strategiya Amaliyoti â€” Real Setup'lar",
         topics: [
           "Live setup, Entry / Exit, Stop Loss / TP",
           "Position sizing, Daily P/L",
@@ -289,24 +289,24 @@ export default function SyllabusPage() {
   return (
     <div className="pt-20">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-b from-mblack to-mdark">
+      <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-sora font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
               O'quv <span className="gold-text">dasturi</span>
             </h1>
-            <p className="text-mgray max-w-2xl mx-auto">
-              Tizimli va to'liq qamrovli dastur — 0 dan professional darajagacha.
+            <p className="text-muted max-w-2xl mx-auto">
+              Tizimli va to'liq qamrovli dastur â€” 0 dan professional darajagacha.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="py-12 bg-mblack">
+      <section className="py-12 bg-ink-950">
         <div className="section-container max-w-4xl">
           <div className="flex justify-center mb-10">
-            <div className="inline-flex p-1 rounded-xl bg-mcard border border-mborder flex-wrap justify-center gap-1">
+            <div className="inline-flex p-1 rounded-xl bg-card border border-border flex-wrap justify-center gap-1">
               <button
                 onClick={() => {
                   setActiveTab("premium");
@@ -314,8 +314,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "premium"
-                    ? "gold-gradient-bg text-mblack font-bold"
-                    : "text-mgray hover:text-white"
+                    ? "gold-gradient-bg text-ink-950 font-bold"
+                    : "text-muted hover:text-white"
                 }`}
               >
                 <BookOpen size={16} />
@@ -328,8 +328,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "hybrid"
-                    ? "gold-gradient-bg text-mblack font-bold"
-                    : "text-mgray hover:text-white"
+                    ? "gold-gradient-bg text-ink-950 font-bold"
+                    : "text-muted hover:text-white"
                 }`}
               >
                 <Video size={16} />
@@ -342,8 +342,8 @@ export default function SyllabusPage() {
                 }}
                 className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all flex items-center gap-2 ${
                   activeTab === "offline"
-                    ? "gold-gradient-bg text-mblack font-bold"
-                    : "text-mgray hover:text-white"
+                    ? "gold-gradient-bg text-ink-950 font-bold"
+                    : "text-muted hover:text-white"
                 }`}
               >
                 <Users size={16} />
@@ -365,13 +365,13 @@ export default function SyllabusPage() {
                       className="w-full flex items-center justify-between p-5 text-left"
                     >
                       <div className="flex items-center gap-4">
-                        <span className="font-mono font-bold text-mgold text-lg">
+                        <span className="font-mono font-bold text-accent text-lg">
                           {mod.num}
                         </span>
-                        <span className="font-sora font-semibold text-white">
+                        <span className="font-display font-semibold text-white">
                           {mod.title}
                         </span>
-                        <span className="text-mgray text-xs bg-mcard2 px-2 py-1 rounded-full hidden sm:inline">
+                        <span className="text-muted text-xs bg-ink-900 px-2 py-1 rounded-full hidden sm:inline">
                           {mod.topics.length} mavzu
                         </span>
                       </div>
@@ -380,7 +380,7 @@ export default function SyllabusPage() {
                       >
                         <ChevronDown
                           size={20}
-                          className="text-mgold shrink-0"
+                          className="text-accent shrink-0"
                         />
                       </motion.div>
                     </button>
@@ -393,17 +393,17 @@ export default function SyllabusPage() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <div className="px-5 pb-5 border-t border-mborder/50 pt-4">
+                          <div className="px-5 pb-5 border-t border-border/50 pt-4">
                             <ul className="space-y-2">
                               {mod.topics.map((topic, j) => (
                                 <li
                                   key={topic}
                                   className="flex items-start gap-3 text-sm"
                                 >
-                                  <span className="text-mgold font-mono text-xs mt-0.5 shrink-0">
+                                  <span className="text-accent font-mono text-xs mt-0.5 shrink-0">
                                     {mod.num}.{j + 1}
                                   </span>
-                                  <span className="text-mgray">{topic}</span>
+                                  <span className="text-muted">{topic}</span>
                                 </li>
                               ))}
                             </ul>
@@ -422,7 +422,7 @@ export default function SyllabusPage() {
               {hybridModules.map((block, bi) => (
                 <div key={block.num}>
                   <ScrollReveal delay={bi * 0.1}>
-                    <h3 className="font-sora font-bold text-xl text-mgold mb-4">
+                    <h3 className="font-display font-bold text-xl text-accent mb-4">
                       {block.title}
                     </h3>
                   </ScrollReveal>
@@ -434,10 +434,10 @@ export default function SyllabusPage() {
                       >
                         <div className="glass-card p-5">
                           <div className="flex items-center gap-3 mb-3">
-                            <span className="text-mgold font-mono text-sm font-bold">
+                            <span className="text-accent font-mono text-sm font-bold">
                               {week.w}
                             </span>
-                            <span className="font-sora font-medium text-white">
+                            <span className="font-display font-medium text-white">
                               {week.title}
                             </span>
                           </div>
@@ -445,9 +445,9 @@ export default function SyllabusPage() {
                             {week.topics.map((t) => (
                               <li
                                 key={t}
-                                className="text-mgray text-sm flex items-start gap-2"
+                                className="text-muted text-sm flex items-start gap-2"
                               >
-                                <span className="text-mgold mt-1.5 w-1 h-1 rounded-full bg-mgold shrink-0" />
+                                <span className="text-accent mt-1.5 w-1 h-1 rounded-full bg-primary shrink-0" />
                                 {t}
                               </li>
                             ))}
@@ -466,7 +466,7 @@ export default function SyllabusPage() {
               {offlineModules.map((block, bi) => (
                 <div key={block.num}>
                   <ScrollReveal delay={bi * 0.1}>
-                    <h3 className="font-sora font-bold text-xl text-mgold mb-4">
+                    <h3 className="font-display font-bold text-xl text-accent mb-4">
                       {block.title}
                     </h3>
                   </ScrollReveal>
@@ -476,12 +476,12 @@ export default function SyllabusPage() {
                         key={week.w}
                         delay={bi * 0.1 + wi * 0.05}
                       >
-                        <div className="glass-card p-5 border border-mgold/30">
+                        <div className="glass-card p-5 border border-accent/30">
                           <div className="flex items-center gap-3 mb-3">
-                            <span className="text-mgold font-mono text-sm font-bold">
+                            <span className="text-accent font-mono text-sm font-bold">
                               {week.w}
                             </span>
-                            <span className="font-sora font-medium text-white">
+                            <span className="font-display font-medium text-white">
                               {week.title}
                             </span>
                           </div>
@@ -489,9 +489,9 @@ export default function SyllabusPage() {
                             {week.topics.map((t) => (
                               <li
                                 key={t}
-                                className="text-mgray text-sm flex items-start gap-2"
+                                className="text-muted text-sm flex items-start gap-2"
                               >
-                                <span className="text-mgold mt-1.5 w-1.5 h-1.5 rounded-full bg-mgold shrink-0" />
+                                <span className="text-accent mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                                 {t}
                               </li>
                             ))}

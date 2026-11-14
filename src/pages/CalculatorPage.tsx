@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import ScrollReveal from "../components/ScrollReveal";
 import { motion } from "framer-motion";
 import {
@@ -27,70 +27,70 @@ function PositionSizeCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-sora font-bold text-xl text-white mb-4 flex items-center gap-2">
-        <Calculator size={20} className="text-mgold" />
+      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+        <Calculator size={20} className="text-accent" />
         Position Size Kalkulyatori
       </h3>
       <div className="grid sm:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Hisob balansi ($)
           </label>
           <input
             type="number"
             value={balance}
             onChange={(e) => setBalance(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">Risk (%)</label>
+          <label className="text-muted text-sm block mb-1">Risk (%)</label>
           <input
             type="number"
             value={riskPercent}
             onChange={(e) => setRiskPercent(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Entry narxi ($)
           </label>
           <input
             type="number"
             value={entry}
             onChange={(e) => setEntry(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Stop Loss ($)
           </label>
           <input
             type="number"
             value={stopLoss}
             onChange={(e) => setStopLoss(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
       </div>
       {result && (
-        <div className="bg-mcard2 rounded-xl p-4 space-y-2">
+        <div className="bg-ink-900 rounded-xl p-4 space-y-2">
           <div className="flex justify-between">
-            <span className="text-mgray text-sm">Aksiyalar soni:</span>
-            <span className="font-mono font-bold text-mgold">
+            <span className="text-muted text-sm">Aksiyalar soni:</span>
+            <span className="font-mono font-bold text-accent">
               {result.shares}
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="text-mgray text-sm">Dollar risk:</span>
-            <span className="font-mono font-bold text-mred">
+            <span className="text-muted text-sm">Dollar risk:</span>
+            <span className="font-mono font-bold text-bear">
               ${result.totalRisk.toFixed(2)}
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="text-mgray text-sm">Risk/Share:</span>
+            <span className="text-muted text-sm">Risk/Share:</span>
             <span className="font-mono text-white">
               ${result.riskPerShare.toFixed(2)}
             </span>
@@ -117,78 +117,78 @@ function RRRcalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-sora font-bold text-xl text-white mb-4 flex items-center gap-2">
-        <TrendingUp size={20} className="text-mgold" />
+      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+        <TrendingUp size={20} className="text-accent" />
         Risk/Reward Ratio
       </h3>
       <div className="grid sm:grid-cols-3 gap-4 mb-4">
         <div>
-          <label className="text-mgray text-sm block mb-1">Entry ($)</label>
+          <label className="text-muted text-sm block mb-1">Entry ($)</label>
           <input
             type="number"
             value={entry}
             onChange={(e) => setEntry(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Stop Loss ($)
           </label>
           <input
             type="number"
             value={stopLoss}
             onChange={(e) => setStopLoss(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Take Profit ($)
           </label>
           <input
             type="number"
             value={takeProfit}
             onChange={(e) => setTakeProfit(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
       </div>
       {result && (
-        <div className="bg-mcard2 rounded-xl p-4">
+        <div className="bg-ink-900 rounded-xl p-4">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-mgray text-sm">Risk/Reward:</span>
+            <span className="text-muted text-sm">Risk/Reward:</span>
             <span
               className={`font-mono font-bold text-2xl ${
-                result.rrr >= 2 ? "text-mgreen" : "text-mgold"
+                result.rrr >= 2 ? "text-bull" : "text-accent"
               }`}
             >
               1:{result.rrr.toFixed(2)}
             </span>
           </div>
           {/* Visual bar */}
-          <div className="w-full h-3 bg-mborder rounded-full overflow-hidden flex">
+          <div className="w-full h-3 bg-border rounded-full overflow-hidden flex">
             <div
-              className="h-full bg-mred transition-all"
+              className="h-full bg-bear transition-all"
               style={{
                 width: `${Math.min((1 / (result.rrr + 1)) * 100, 50)}%`,
               }}
             />
             <div
-              className="h-full bg-mgreen transition-all"
+              className="h-full bg-bull transition-all"
               style={{
                 width: `${Math.min((result.rrr / (result.rrr + 1)) * 100, 80)}%`,
               }}
             />
           </div>
           <div className="flex justify-between mt-1">
-            <span className="text-mred text-xs">Risk ${result.risk}</span>
-            <span className="text-mgreen text-xs">
+            <span className="text-bear text-xs">Risk ${result.risk}</span>
+            <span className="text-bull text-xs">
               Reward ${result.reward}
             </span>
           </div>
           {result.rrr < 2 && (
-            <p className="text-mgold text-xs mt-2">
+            <p className="text-accent text-xs mt-2">
               Tavsiya: Minimum 1:2 RRR maqsad qiling.
             </p>
           )}
@@ -219,8 +219,8 @@ function FundamentalCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-sora font-bold text-xl text-white mb-4 flex items-center gap-2">
-        <BarChart3 size={20} className="text-mgold" />
+      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+        <BarChart3 size={20} className="text-accent" />
         Fundamental Ratio Kalkulyatori
       </h3>
       <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -232,7 +232,7 @@ function FundamentalCalc() {
           ["Equity ($B)", equity, setEquity],
         ].map(([label, value, setter]) => (
           <div key={label as string}>
-            <label className="text-mgray text-sm block mb-1">
+            <label className="text-muted text-sm block mb-1">
               {label as string}
             </label>
             <input
@@ -241,7 +241,7 @@ function FundamentalCalc() {
               onChange={(e) =>
                 (setter as (v: number) => void)(Number(e.target.value))
               }
-              className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+              className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
             />
           </div>
         ))}
@@ -254,9 +254,9 @@ function FundamentalCalc() {
           { label: "D/E", value: result.de.toFixed(2) },
           { label: "Margin", value: `${result.margin.toFixed(1)}%` },
         ].map((item) => (
-          <div key={item.label} className="bg-mcard2 rounded-lg p-3 text-center">
-            <p className="text-mgray text-xs">{item.label}</p>
-            <p className="font-mono font-bold text-mgold text-lg">
+          <div key={item.label} className="bg-ink-900 rounded-lg p-3 text-center">
+            <p className="text-muted text-xs">{item.label}</p>
+            <p className="font-mono font-bold text-accent text-lg">
               {item.value}
             </p>
           </div>
@@ -280,19 +280,19 @@ function PortfolioCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-sora font-bold text-xl text-white mb-4 flex items-center gap-2">
-        <PieChart size={20} className="text-mgold" />
+      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+        <PieChart size={20} className="text-accent" />
         Portfolio Taqsimoti
       </h3>
       <div className="mb-4">
-        <label className="text-mgray text-sm block mb-1">
+        <label className="text-muted text-sm block mb-1">
           Umumiy kapital ($)
         </label>
         <input
           type="number"
           value={total}
           onChange={(e) => setTotal(Number(e.target.value))}
-          className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none mb-4"
+          className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none mb-4"
         />
         <div className="space-y-3">
           {allocations.map((a, i) => (
@@ -306,7 +306,7 @@ function PortfolioCalc() {
                     na[i].name = e.target.value;
                     setAllocations(na);
                   }}
-                  className="w-16 sm:w-20 bg-mcard border border-mborder rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-white text-xs sm:text-sm focus:border-mgold outline-none"
+                  className="w-16 sm:w-20 bg-card border border-border rounded-lg px-2 py-1 sm:px-3 sm:py-2 text-white text-xs sm:text-sm focus:border-accent outline-none"
                 />
                 <input
                   type="range"
@@ -318,14 +318,14 @@ function PortfolioCalc() {
                     na[i].percent = Number(e.target.value);
                     setAllocations(na);
                   }}
-                  className="flex-1 accent-mgold"
+                  className="flex-1 accent-wine-500"
                 />
               </div>
               <div className="flex items-center gap-2 sm:gap-1 ml-2 sm:ml-0">
                 <span className="font-mono text-white text-xs sm:text-sm w-8 sm:w-12 text-right">
                   {a.percent}%
                 </span>
-                <span className="font-mono text-mgold text-xs sm:text-sm w-16 sm:w-20 text-right">
+                <span className="font-mono text-accent text-xs sm:text-sm w-16 sm:w-20 text-right">
                   ${((total * a.percent) / 100).toFixed(0)}
                 </span>
               </div>
@@ -334,11 +334,11 @@ function PortfolioCalc() {
         </div>
         <div className="flex justify-between mt-3 text-sm">
           <span
-            className={remaining === 0 ? "text-mgreen" : "text-mred"}
+            className={remaining === 0 ? "text-bull" : "text-bear"}
           >
             Qoldiq: {remaining}%
           </span>
-          <span className="text-mgray">
+          <span className="text-muted">
             Ajratildi: ${(
               allocations.reduce((s, a) => s + (total * a.percent) / 100, 0)
             ).toFixed(0)}
@@ -358,7 +358,7 @@ function PortfolioCalc() {
             )`,
           }}
         >
-          <div className="absolute inset-4 rounded-full bg-mcard" />
+          <div className="absolute inset-4 rounded-full bg-card" />
         </div>
       </div>
     </div>
@@ -386,51 +386,51 @@ function CompoundCalc() {
 
   return (
     <div className="glass-card p-6">
-      <h3 className="font-sora font-bold text-xl text-white mb-4 flex items-center gap-2">
-        <Percent size={20} className="text-mgold" />
+      <h3 className="font-display font-bold text-xl text-white mb-4 flex items-center gap-2">
+        <Percent size={20} className="text-accent" />
         Daromad Kalkulyatori (Compound)
       </h3>
       <div className="grid sm:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Boshlang'ich ($)
           </label>
           <input
             type="number"
             value={principal}
             onChange={(e) => setPrincipal(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Oylik qo'shimcha ($)
           </label>
           <input
             type="number"
             value={monthly}
             onChange={(e) => setMonthly(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">
+          <label className="text-muted text-sm block mb-1">
             Yillik foiz (%)
           </label>
           <input
             type="number"
             value={rate}
             onChange={(e) => setRate(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
         <div>
-          <label className="text-mgray text-sm block mb-1">Yillar</label>
+          <label className="text-muted text-sm block mb-1">Yillar</label>
           <input
             type="number"
             value={years}
             onChange={(e) => setYears(Number(e.target.value))}
-            className="w-full bg-mcard border border-mborder rounded-lg px-4 py-2 text-white focus:border-mgold outline-none"
+            className="w-full bg-card border border-border rounded-lg px-4 py-2 text-white focus:border-accent outline-none"
           />
         </div>
       </div>
@@ -441,12 +441,12 @@ function CompoundCalc() {
           <motion.div
             key={d.year}
             title={`$${d.total.toLocaleString()}`}
-            className="flex-1 min-w-[20px] sm:min-w-0 bg-gradient-to-t from-mgolddark to-mgold rounded-t cursor-pointer relative group"
+            className="flex-1 min-w-[20px] sm:min-w-0 bg-gradient-to-t from-wine-700dark to-sand-100 rounded-t cursor-pointer relative group"
             initial={{ height: 0 }}
             animate={{ height: `${(d.total / maxVal) * 144}px` }}
             transition={{ duration: 0.6, delay: d.year * 0.04, ease: "easeOut" }}
           >
-            <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-mgold text-[10px] sm:text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-accent text-[10px] sm:text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
               ${d.total.toLocaleString()}
             </span>
           </motion.div>
@@ -455,7 +455,7 @@ function CompoundCalc() {
       <div className="flex gap-px sm:gap-1 overflow-x-auto">
         {data.map((d) => (
           <div key={d.year} className="flex-1 min-w-[20px] sm:min-w-0 text-center">
-            <span className="text-mgray text-[10px] sm:text-xs">{d.year}y</span>
+            <span className="text-muted text-[10px] sm:text-xs">{d.year}y</span>
           </div>
         ))}
       </div>
@@ -466,20 +466,20 @@ function CompoundCalc() {
 export default function CalculatorPage() {
   return (
     <div className="pt-20">
-      <section className="py-20 bg-gradient-to-b from-mblack to-mdark">
+      <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-sora font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
               Treyding <span className="gold-text">Kalkulyatori</span>
             </h1>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Professional treyding uchun 5 ta foydali kalkulyator.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-16 bg-mblack">
+      <section className="py-16 bg-ink-950">
         <div className="section-container max-w-5xl">
           <div className="grid lg:grid-cols-2 gap-6">
             <ScrollReveal>

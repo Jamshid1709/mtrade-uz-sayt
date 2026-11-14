@@ -1,4 +1,4 @@
-import ScrollReveal from "../components/ScrollReveal";
+﻿import ScrollReveal from "../components/ScrollReveal";
 import { Award, TrendingUp, BarChart3 } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -65,12 +65,12 @@ function MentorCard({ mentor, delay }: { mentor: typeof mentors[0]; delay: numbe
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
-        className="glass-card p-6 text-center group hover:border-mgold/30 transition-colors duration-300"
+        className="glass-card p-6 text-center group hover:border-accent/30 transition-colors duration-300"
       >
         {/* Avatar */}
         <motion.div
           style={{ translateZ: 40 }}
-          className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden bg-white p-1 shadow-lg border border-mgold/40 flex items-center justify-center"
+          className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden bg-white p-1 shadow-lg border border-accent/40 flex items-center justify-center"
         >
           <img
             src={mentor.image}
@@ -83,30 +83,30 @@ function MentorCard({ mentor, delay }: { mentor: typeof mentors[0]; delay: numbe
           style={{ translateZ: 30 }}
           className="w-12 h-12 rounded-full gold-gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
         >
-          <mentor.icon size={20} className="text-mblack" />
+          <mentor.icon size={20} className="text-ink-950" />
         </motion.div>
 
         <motion.h3
           style={{ translateZ: 20 }}
-          className="font-sora font-bold text-xl text-white mb-1"
+          className="font-display font-bold text-xl text-white mb-1"
         >
           {mentor.name}
         </motion.h3>
         <motion.p
           style={{ translateZ: 15 }}
-          className="text-mgold text-sm font-medium mb-3"
+          className="text-accent text-sm font-medium mb-3"
         >
           {mentor.role}
         </motion.p>
         <motion.p
           style={{ translateZ: 10 }}
-          className="text-mgray text-sm leading-relaxed mb-3"
+          className="text-muted text-sm leading-relaxed mb-3"
         >
           {mentor.bio}
         </motion.p>
         <motion.span
           style={{ translateZ: 20 }}
-          className="inline-block px-3 py-1 rounded-full bg-mgold/10 border border-mgold/20 text-mgold text-xs font-medium"
+          className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-accent/20 text-accent text-xs font-medium"
         >
           {mentor.stats}
         </motion.span>
@@ -117,14 +117,14 @@ function MentorCard({ mentor, delay }: { mentor: typeof mentors[0]; delay: numbe
 
 export default function MentorsSection() {
   return (
-    <section className="py-24 bg-mblack">
+    <section className="py-24 bg-ink-950">
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-sora font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               Bizning <span className="gold-text">mentorlarimiz</span>
             </h2>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Tajribali professional treyderlar sizga yo'l boshlaydi.
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function MentorsSection() {
           <motion.div
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="mt-12 rounded-2xl overflow-hidden border border-mborder hover:border-mgold/30 transition-colors duration-300"
+            className="mt-12 rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-colors duration-300"
           >
             <img
               src="/images/mentors-duo.webp"

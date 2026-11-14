@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 
 export default function TickerTape() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ export default function TickerTape() {
   }, []);
 
   return (
-    <div className="w-full bg-mblack border-y border-mborder/30 py-1">
+    <div className="w-full bg-ink-950 border-y border-border/30 py-1">
       <div ref={containerRef} className="tradingview-widget-container">
         <div className="tradingview-widget-container__widget" />
       </div>

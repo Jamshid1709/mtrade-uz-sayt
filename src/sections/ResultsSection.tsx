@@ -1,4 +1,4 @@
-import ScrollReveal from "../components/ScrollReveal";
+﻿import ScrollReveal from "../components/ScrollReveal";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { AlertTriangle, TrendingUp } from "lucide-react";
 import { useRef } from "react";
@@ -38,7 +38,7 @@ function TiltCard({ src, alt, label, delay }: { src: string; alt: string; label:
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
-        className="relative rounded-2xl overflow-hidden border border-mborder hover:border-mgold/50 transition-colors duration-300 cursor-pointer group"
+        className="relative rounded-2xl overflow-hidden border border-border hover:border-accent/50 transition-colors duration-300 cursor-pointer group"
       >
         <motion.img
           src={src}
@@ -46,12 +46,12 @@ function TiltCard({ src, alt, label, delay }: { src: string; alt: string; label:
           className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-mblack/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-full gold-gradient-bg flex items-center justify-center">
-              <TrendingUp size={14} className="text-mblack" />
+              <TrendingUp size={14} className="text-ink-950" />
             </div>
-            <span className="font-mono font-bold text-mgold text-sm">{label}</span>
+            <span className="font-mono font-bold text-accent text-sm">{label}</span>
           </div>
         </div>
         {/* Shine effect */}
@@ -66,14 +66,14 @@ function TiltCard({ src, alt, label, delay }: { src: string; alt: string; label:
 
 export default function ResultsSection() {
   return (
-    <section className="py-24 bg-mblack">
+    <section className="py-24 bg-ink-950">
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <h2 className="font-sora font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               <span className="gold-text">Natijalar</span>imiz
             </h2>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               O'quvchilarimizning real bozorda erishgan natijalari.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function ResultsSection() {
         </div>
 
         <ScrollReveal>
-          <div className="flex items-center justify-center gap-2 text-mdim text-xs">
+          <div className="flex items-center justify-center gap-2 text-ink-500 text-xs">
             <AlertTriangle size={14} />
             <span>
               O'tgan natija kelajak kafolati emas. Investitsiya maslahati emas.

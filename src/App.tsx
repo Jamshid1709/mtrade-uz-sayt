@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from "react";
+﻿import { useEffect, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { I18nProvider } from "./context/i18nContext";
 import Navbar from "./components/Navbar";
@@ -19,8 +19,8 @@ const QuizPage = lazy(() => import("./pages/QuizPage"));
 function PageLoader() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center gap-3">
-      <div className="w-10 h-10 border-4 border-mgold/20 border-t-mgold rounded-full animate-spin" />
-      <span className="text-xs font-mono text-mgold font-medium">MTrade Academy yuklanmoqda...</span>
+      <div className="w-10 h-10 border-4 border-accent/20 border-t-wine-500 rounded-full animate-spin" />
+      <span className="text-xs font-mono text-accent font-medium">MTrade Academy yuklanmoqda...</span>
     </div>
   );
 }
@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <I18nProvider>
-      <div className="min-h-screen bg-mblack text-white">
+      <div className="min-h-screen bg-ink-950 text-white">
         <Navbar />
         <main>
           <Suspense fallback={<PageLoader />}>

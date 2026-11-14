@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { Check, Zap, Crown, Users } from "lucide-react";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ const courses = [
     name: "Online Premium",
     price: "$250",
     badge: "ENG MASHHUR",
-    badgeColor: "bg-mgold text-mblack",
+    badgeColor: "bg-primary text-ink-950",
     icon: Crown,
     duration: "4 oy (3 oy + 1 bonus)",
     features: [
@@ -26,7 +26,7 @@ const courses = [
     name: "Masofaviy Gibrid",
     price: "$600",
     badge: "INTENSIV",
-    badgeColor: "bg-mblue text-white",
+    badgeColor: "bg-info text-white",
     icon: Zap,
     duration: "9 hafta",
     features: [
@@ -45,7 +45,7 @@ const courses = [
     name: "Offline Akademiya",
     price: "$1000",
     badge: "OFFLINE AKADEMIYA",
-    badgeColor: "bg-mgold text-mblack font-bold",
+    badgeColor: "bg-primary text-ink-950 font-bold",
     icon: Users,
     duration: "8 hafta (2 oy)",
     features: [
@@ -65,14 +65,14 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section id="courses" className="py-24 bg-mblack">
+    <section id="courses" className="py-24 bg-ink-950">
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-sora font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               Kurslarimiz
             </h2>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               O'zingizga mos kursni tanlang va halol treyding yo'lida birinchi
               qadamni qo'ying.
             </p>
@@ -87,8 +87,8 @@ export default function CoursesSection() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className={`relative h-full rounded-2xl p-8 flex flex-col ${
                   course.popular
-                    ? "gold-border bg-gradient-to-b from-mcard to-mcard2"
-                    : "border border-mborder bg-mcard"
+                    ? "gold-border bg-gradient-to-b from-card to-ink-900"
+                    : "border border-border bg-card"
                 }`}
               >
                 {/* Badge */}
@@ -103,22 +103,22 @@ export default function CoursesSection() {
                   className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${
                     course.popular
                       ? "gold-gradient-bg"
-                      : "bg-mcard2 border border-mborder"
+                      : "bg-ink-900 border border-border"
                   }`}
                 >
                   <course.icon
                     size={24}
-                    className={course.popular ? "text-mblack" : "text-mgold"}
+                    className={course.popular ? "text-ink-950" : "text-accent"}
                   />
                 </div>
 
-                <h3 className="font-sora font-bold text-2xl text-white mb-2">
+                <h3 className="font-display font-bold text-2xl text-white mb-2">
                   {course.name}
                 </h3>
-                <div className="font-mono font-bold text-3xl text-mgold mb-1">
+                <div className="font-mono font-bold text-3xl text-accent mb-1">
                   {course.price}
                 </div>
-                <p className="text-mgray text-sm mb-6">{course.duration}</p>
+                <p className="text-muted text-sm mb-6">{course.duration}</p>
 
                 <ul className="space-y-3 mb-8 flex-grow">
                   {course.features.map((feature) => (
@@ -128,9 +128,9 @@ export default function CoursesSection() {
                     >
                       <Check
                         size={16}
-                        className="text-mgreen mt-0.5 shrink-0"
+                        className="text-bull mt-0.5 shrink-0"
                       />
-                      <span className="text-mgray">{feature}</span>
+                      <span className="text-muted">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -140,7 +140,7 @@ export default function CoursesSection() {
                     href={course.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center py-3 rounded-full font-semibold transition-all border border-mborder text-mgray hover:border-mgold/50 hover:text-white"
+                    className="block text-center py-3 rounded-full font-semibold transition-all border border-border text-muted hover:border-accent/50 hover:text-white"
                   >
                     {course.cta}
                   </a>
@@ -149,8 +149,8 @@ export default function CoursesSection() {
                     to={course.link}
                     className={`block text-center py-3 rounded-full font-semibold transition-all ${
                       course.popular
-                        ? "gold-gradient-bg text-mblack hover:shadow-gold"
-                        : "border border-mborder text-mgray hover:border-mgold/50 hover:text-white"
+                        ? "gold-gradient-bg text-ink-950 hover:shadow-gold"
+                        : "border border-border text-muted hover:border-accent/50 hover:text-white"
                     }`}
                   >
                     {course.cta}

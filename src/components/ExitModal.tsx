@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play } from "lucide-react";
 
@@ -44,22 +44,22 @@ export default function ExitModal() {
             {/* Close button */}
             <button
               onClick={() => setShow(false)}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-mcard border border-mborder flex items-center justify-center text-mgray hover:text-white hover:border-mgold/50 transition-all z-10"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-card border border-border flex items-center justify-center text-muted hover:text-white hover:border-accent/50 transition-all z-10"
             >
               <X size={16} />
             </button>
 
             <div className="relative z-10">
-              <h3 className="font-sora font-bold text-2xl text-white mb-2">
+              <h3 className="font-display font-bold text-2xl text-white mb-2">
                 Bepul <span className="gold-text">kirish darsini ko'ring</span>
               </h3>
-              <p className="text-mgray mb-6">
-                Treydingni qanday boshlaш kerakligini shu videoda tushuntirdik.
-                Bir marta ko'ring — ko'p narsaga oydinlik kiritadi!
+              <p className="text-muted mb-6">
+                Treydingni qanday boshlaÑˆ kerakligini shu videoda tushuntirdik.
+                Bir marta ko'ring â€” ko'p narsaga oydinlik kiritadi!
               </p>
 
               {/* Video placeholder */}
-              <div className="aspect-video rounded-xl overflow-hidden bg-mcard border border-mborder mb-6">
+              <div className="aspect-video rounded-xl overflow-hidden bg-card border border-border mb-6">
                 <iframe
                   width="100%"
                   height="100%"
@@ -76,22 +76,22 @@ export default function ExitModal() {
                 <a
                   href="/quiz"
                   onClick={() => setShow(false)}
-                  className="gold-gradient-bg text-mblack font-semibold px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 hover:shadow-gold transition-all"
+                  className="gold-gradient-bg text-ink-950 font-semibold px-6 py-3 rounded-full text-center flex items-center justify-center gap-2 hover:shadow-gold transition-all"
                 >
                   <Play size={16} />
-                  Quiz — qaysi kurs mos?
+                  Quiz â€” qaysi kurs mos?
                 </a>
                 <a
                   href="https://t.me/mtrade_obuna_bot?start=course_starter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-mgold/30 text-mgold px-6 py-3 rounded-full text-center hover:bg-mgold/10 transition-all"
+                  className="border border-accent/30 text-accent px-6 py-3 rounded-full text-center hover:bg-primary/10 transition-all"
                 >
                   To'g'ridan botga
                 </a>
                 <button
                   onClick={() => setShow(false)}
-                  className="border border-mborder text-mgray px-6 py-3 rounded-full hover:border-mgold/50 hover:text-white transition-all"
+                  className="border border-border text-muted px-6 py-3 rounded-full hover:border-accent/50 hover:text-white transition-all"
                 >
                   Hozir emas
                 </button>

@@ -1,4 +1,4 @@
-import CountUp from "react-countup";
+﻿import CountUp from "react-countup";
 import ScrollReveal from "../components/ScrollReveal";
 
 const stats = [
@@ -10,7 +10,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="py-20 bg-mblack">
+    <section className="py-20 bg-ink-950">
       <div className="section-container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
@@ -19,7 +19,7 @@ export default function StatsSection() {
                 <div className="font-mono font-bold text-4xl sm:text-5xl gold-text mb-2">
                   <CountUp end={stat.value} suffix={stat.suffix} duration={2} />
                 </div>
-                <p className="text-mgray text-sm">{stat.label}</p>
+                <p className="text-muted text-sm">{stat.label}</p>
               </div>
             </ScrollReveal>
           ))}

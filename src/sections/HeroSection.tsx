@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Star, ArrowRight, Play } from "lucide-react";
 
 const stats = [
@@ -12,24 +12,24 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-mblack via-mdark to-mblack" />
+      <div className="absolute inset-0 bg-gradient-to-br from-ink-950 via-surface to-ink-950" />
 
       {/* Floating shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-72 h-72 bg-mgold/5 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ y: [20, -20, 20], x: [10, -10, 10] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-mgold/5 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ y: [-10, 30, -10] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/3 w-64 h-64 bg-mgold/3 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary/3 rounded-full blur-3xl"
         />
 
         {/* Candlestick shapes */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
               delay: i * 1.5,
               ease: "linear",
             }}
-            className="absolute w-1 bg-gradient-to-t from-mgold/40 to-mgold/10 rounded-full"
+            className="absolute w-1 bg-gradient-to-t from-wine-700/40 to-sand-100/10 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               height: `${40 + Math.random() * 80}px`,
@@ -65,21 +65,21 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mgold/10 border border-mgold/20 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-accent/20 mb-6"
             >
-              <Star size={14} className="text-mgold fill-mgold" />
-              <span className="text-mgold text-sm font-medium">
-                5 yillik tajriba · 100+ o'quvchi
+              <Star size={14} className="text-accent fill-accent" />
+              <span className="text-accent text-sm font-medium">
+                5 yillik tajriba Â· 100+ o'quvchi
               </span>
             </motion.div>
 
-            <h1 className="font-sora font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
               <span className="text-white">Kelajak treyderlarini</span>
               <br />
               <span className="shimmer-text">shu yerdan yetishtiramiz</span>
             </h1>
 
-            <p className="text-mgray text-lg leading-relaxed mb-8 max-w-lg">
+            <p className="text-muted text-lg leading-relaxed mb-8 max-w-lg">
               Halol treydingni 0 dan o'rganing. 5 yillik tajriba, 100+ o'quvchi aksiya treyderi bo'lishdi.
             </p>
 
@@ -88,14 +88,14 @@ export default function HeroSection() {
                 href="https://t.me/mtrade_obuna_bot?start=course_premium"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-gradient-bg text-mblack font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:shadow-gold-lg transition-all"
+                className="gold-gradient-bg text-ink-950 font-semibold px-8 py-4 rounded-full flex items-center gap-2 hover:shadow-gold-lg transition-all"
               >
                 Bepul start darsi
                 <ArrowRight size={18} />
               </a>
               <a
                 href="#courses"
-                className="border border-mborder2 text-white font-medium px-8 py-4 rounded-full flex items-center gap-2 hover:border-mgold/50 hover:bg-mgold/5 transition-all"
+                className="border border-ink-800 text-white font-medium px-8 py-4 rounded-full flex items-center gap-2 hover:border-accent/50 hover:bg-primary/5 transition-all"
               >
                 <Play size={18} />
                 Kurslarni ko'rish
@@ -117,14 +117,14 @@ export default function HeroSection() {
                       <Star
                         key={j}
                         size={10}
-                        className="text-mgold fill-mgold"
+                        className="text-accent fill-accent"
                       />
                     ))}
                   </div>
-                  <div className="font-mono font-bold text-xl text-mgold">
+                  <div className="font-mono font-bold text-xl text-accent">
                     {stat.value}
                   </div>
-                  <div className="text-mgray text-xs">{stat.label}</div>
+                  <div className="text-muted text-xs">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -144,19 +144,19 @@ export default function HeroSection() {
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-full gold-gradient-bg flex items-center justify-center">
-                    <Play size={20} className="text-mblack ml-1" />
+                    <Play size={20} className="text-ink-950 ml-1" />
                   </div>
                   <div>
-                    <h3 className="font-sora font-bold text-white text-lg">
+                    <h3 className="font-display font-bold text-white text-lg">
                       MTrade Academy
                     </h3>
-                    <p className="text-mgray text-sm">
+                    <p className="text-muted text-sm">
                       Professional treyding kursi
                     </p>
                   </div>
                 </div>
 
-                <div className="aspect-video rounded-xl overflow-hidden bg-mcard border border-mborder mb-6">
+                <div className="aspect-video rounded-xl overflow-hidden bg-card border border-border mb-6">
                   <iframe
                     width="100%"
                     height="100%"
@@ -174,14 +174,14 @@ export default function HeroSection() {
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="w-8 h-8 rounded-full bg-gradient-to-br from-mgold to-mgolddark border-2 border-mcard flex items-center justify-center text-mblack text-xs font-bold"
+                        className="w-8 h-8 rounded-full bg-gradient-to-br from-wine-700 to-sand-100dark border-2 border-card flex items-center justify-center text-ink-950 text-xs font-bold"
                       >
                         {i}
                       </div>
                     ))}
                   </div>
-                  <span className="text-mgray text-sm">
-                    <span className="text-mgold font-semibold">100+</span>{" "}
+                  <span className="text-muted text-sm">
+                    <span className="text-accent font-semibold">100+</span>{" "}
                     o'quvchi qo'shildi
                   </span>
                 </div>

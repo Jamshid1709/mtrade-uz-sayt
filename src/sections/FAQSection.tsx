@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { ChevronDown } from "lucide-react";
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Kurslar online yoki offline?",
-    a: "Ikkala formatda ham mavjud. Online Premium — to'liq online, Masofaviy Gibrid — Live + Online aralash format.",
+    a: "Ikkala formatda ham mavjud. Online Premium â€” to'liq online, Masofaviy Gibrid â€” Live + Online aralash format.",
   },
   {
     q: "Sertifikat beriladimi?",
@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     q: "Kurs davomiyligi?",
-    a: "Online Premium — 4 oy (3 oy + 1 bonus), Masofaviy Gibrid — 9 hafta. Siz o'z tezligingizda o'rganishingiz mumkin.",
+    a: "Online Premium â€” 4 oy (3 oy + 1 bonus), Masofaviy Gibrid â€” 9 hafta. Siz o'z tezligingizda o'rganishingiz mumkin.",
   },
   {
-    q: "Online Premium va Masofaviy Gibrid — farqi nima?",
-    a: "Online Premium — videodarslar asosida, mustaqil o'rganish uchun. Masofaviy Gibrid — jonli sessiyalar, 5 kishilik intensiv guruh va shaxsiy mentorlik bilan. Gibrid kurs tezroq natija beradi, lekin ko'proq vaqt talab qiladi.",
+    q: "Online Premium va Masofaviy Gibrid â€” farqi nima?",
+    a: "Online Premium â€” videodarslar asosida, mustaqil o'rganish uchun. Masofaviy Gibrid â€” jonli sessiyalar, 5 kishilik intensiv guruh va shaxsiy mentorlik bilan. Gibrid kurs tezroq natija beradi, lekin ko'proq vaqt talab qiladi.",
   },
   {
     q: "Fond bozorida savdo qilish haqiqatan halolmi?",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "Broker hisob ochish uchun minimal yosh bormi?",
-    a: "Interactive Brokers (IBKR) da hisob ochish uchun 18 yoshdan katta bo'lishingiz shart. Biz asosan IBKR bilan ishlaymiz — bu xavfsiz va professional broker.",
+    a: "Interactive Brokers (IBKR) da hisob ochish uchun 18 yoshdan katta bo'lishingiz shart. Biz asosan IBKR bilan ishlaymiz â€” bu xavfsiz va professional broker.",
   },
   {
     q: "Signal kanali pullikmi?",
@@ -66,15 +66,15 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-mblack">
+    <section className="py-24 bg-ink-950">
       <div className="section-container max-w-4xl">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-sora font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               Ko'p so'raladigan{" "}
               <span className="gold-text">savollar</span>
             </h2>
-            <p className="text-mgray">
+            <p className="text-muted">
               Eng ko'p beriladigan savollarga javoblar.
             </p>
           </div>
@@ -88,14 +88,14 @@ export default function FAQSection() {
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   className="w-full flex items-center justify-between p-5 text-left"
                 >
-                  <span className="font-sora font-medium text-white pr-4">
+                  <span className="font-display font-medium text-white pr-4">
                     {faq.q}
                   </span>
                   <motion.div
                     animate={{ rotate: openIndex === i ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown size={20} className="text-mgold shrink-0" />
+                    <ChevronDown size={20} className="text-accent shrink-0" />
                   </motion.div>
                 </button>
 
@@ -107,7 +107,7 @@ export default function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
                     >
-                      <div className="px-5 pb-5 text-mgray text-sm leading-relaxed border-t border-mborder/50 pt-4">
+                      <div className="px-5 pb-5 text-muted text-sm leading-relaxed border-t border-border/50 pt-4">
                         {faq.a}
                       </div>
                     </motion.div>

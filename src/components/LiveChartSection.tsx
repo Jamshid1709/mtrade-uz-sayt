@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { BarChart2, Calendar, Newspaper, Sparkles } from "lucide-react";
 import { useI18n } from "../context/i18nContext";
@@ -107,22 +107,22 @@ export default function LiveChartSection() {
       {/* Header & Tabs */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mgold/10 border border-mgold/30 text-mgold text-xs font-mono mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-2">
             <Sparkles size={14} /> TradingView Stock Pro Engine
           </div>
-          <h2 className="font-sora font-extrabold text-2xl sm:text-3xl text-white">
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
             {t("live_chart_title")}
           </h2>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center bg-mcard border border-mborder p-1 rounded-2xl text-xs font-mono">
+        <div className="flex items-center bg-card border border-border p-1 rounded-2xl text-xs font-mono">
           <button
             onClick={() => setActiveTab("chart")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "chart"
-                ? "bg-mgold text-mblack font-bold shadow-lg"
-                : "text-mgray hover:text-white"
+                ? "bg-primary text-ink-950 font-bold shadow-lg"
+                : "text-muted hover:text-white"
             }`}
           >
             <BarChart2 size={16} /> Interaktiv Aksiya Grafigi
@@ -131,8 +131,8 @@ export default function LiveChartSection() {
             onClick={() => setActiveTab("calendar")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "calendar"
-                ? "bg-mgold text-mblack font-bold shadow-lg"
-                : "text-mgray hover:text-white"
+                ? "bg-primary text-ink-950 font-bold shadow-lg"
+                : "text-muted hover:text-white"
             }`}
           >
             <Calendar size={16} /> {t("economic_calendar")}
@@ -141,8 +141,8 @@ export default function LiveChartSection() {
             onClick={() => setActiveTab("news")}
             className={`px-4 py-2 rounded-xl flex items-center gap-2 transition-all ${
               activeTab === "news"
-                ? "bg-mgold text-mblack font-bold shadow-lg"
-                : "text-mgray hover:text-white"
+                ? "bg-primary text-ink-950 font-bold shadow-lg"
+                : "text-muted hover:text-white"
             }`}
           >
             <Newspaper size={16} /> {t("financial_news")}
@@ -152,7 +152,7 @@ export default function LiveChartSection() {
 
       {/* Display Area */}
       <ScrollReveal>
-        <div className="glass-card overflow-hidden border border-mborder/50 rounded-3xl min-h-[620px] w-full">
+        <div className="glass-card overflow-hidden border border-border/50 rounded-3xl min-h-[620px] w-full">
           {activeTab === "chart" && (
             <div
               ref={chartContainerRef}

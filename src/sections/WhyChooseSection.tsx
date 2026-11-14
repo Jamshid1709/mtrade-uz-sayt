@@ -1,4 +1,4 @@
-import ScrollReveal from "../components/ScrollReveal";
+﻿import ScrollReveal from "../components/ScrollReveal";
 import { TrendingUp, Shield, Target } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -59,7 +59,7 @@ function Feature3DCard({ icon: Icon, title, description, delay }: {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
-        className="group glass-card p-8 h-full transition-colors duration-300 hover:border-mgold/40"
+        className="group glass-card p-8 h-full transition-colors duration-300 hover:border-accent/40"
       >
         <div
           className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -69,17 +69,17 @@ function Feature3DCard({ icon: Icon, title, description, delay }: {
           style={{ translateZ: 30 }}
           className="w-14 h-14 rounded-xl gold-gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-gold"
         >
-          <Icon size={24} className="text-mblack" />
+          <Icon size={24} className="text-ink-950" />
         </motion.div>
         <motion.h3
           style={{ translateZ: 20 }}
-          className="font-sora font-bold text-xl text-white mb-3"
+          className="font-display font-bold text-xl text-white mb-3"
         >
           {title}
         </motion.h3>
         <motion.p
           style={{ translateZ: 10 }}
-          className="text-mgray leading-relaxed text-sm"
+          className="text-muted leading-relaxed text-sm"
         >
           {description}
         </motion.p>
@@ -90,15 +90,15 @@ function Feature3DCard({ icon: Icon, title, description, delay }: {
 
 export default function WhyChooseSection() {
   return (
-    <section className="py-24 bg-mblack">
+    <section className="py-24 bg-ink-950">
       <div className="section-container">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="font-sora font-bold text-3xl sm:text-4xl text-white mb-4">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               Nima uchun aynan{" "}
               <span className="gold-text">MTrade Academy</span>?
             </h2>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Biz sizga nafaqat nazariy bilim, balki real bozorda ishlatiladigan
               amaliy ko'nikmalarni beramiz.
             </p>

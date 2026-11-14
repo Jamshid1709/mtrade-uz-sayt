@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { Play, Pause, SkipForward, RotateCcw, TrendingUp, TrendingDown, Award, Zap, DollarSign } from "lucide-react";
 import { useI18n } from "../context/i18nContext";
 
@@ -261,15 +261,15 @@ export default function BacktestSimulator() {
   const totalPnL = closedTrades.reduce((acc, t) => acc + t.pnl, 0);
 
   return (
-    <div className="w-full bg-gradient-to-b from-mdark via-mblack to-mdark py-10 px-4 sm:px-6 rounded-3xl border border-mborder/40 shadow-2xl">
+    <div className="w-full bg-gradient-to-b from-surface via-ink-950 to-surface py-10 px-4 sm:px-6 rounded-3xl border border-border/40 shadow-2xl">
       <div className="max-w-4xl mx-auto mb-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mgold/10 border border-mgold/30 text-mgold text-xs font-mono mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-accent/30 text-accent text-xs font-mono mb-3">
           <Zap size={14} /> MTrade Backtest & Replay Simulator
         </div>
-        <h2 className="font-sora font-extrabold text-3xl sm:text-4xl text-white mb-3">
+        <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white mb-3">
           {t("backtest_title")}
         </h2>
-        <p className="text-mgray text-sm sm:text-base max-w-xl mx-auto">
+        <p className="text-muted text-sm sm:text-base max-w-xl mx-auto">
           Tarixiy grafikda bar-by-bar simulyatsiya qiling, Buy/Sell buyruqlarini joylashtiring va o'z win-rate statistikangizni aniqlang.
         </p>
 
@@ -281,8 +281,8 @@ export default function BacktestSimulator() {
               onClick={() => setSelectedAsset(asset)}
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all ${
                 selectedAsset === asset
-                  ? "bg-mgold text-mblack font-bold shadow-md"
-                  : "bg-mcard border border-mborder text-mgray hover:text-white"
+                  ? "bg-primary text-ink-950 font-bold shadow-md"
+                  : "bg-card border border-border text-muted hover:text-white"
               }`}
             >
               {asset}
@@ -295,28 +295,28 @@ export default function BacktestSimulator() {
       <div className="grid lg:grid-cols-4 gap-6 mb-6">
         {/* Stats Summary Cards */}
         <div className="lg:col-span-1 space-y-4">
-          <div className="glass-card p-4 flex items-center justify-between border-mborder/40">
+          <div className="glass-card p-4 flex items-center justify-between border-border/40">
             <div>
-              <div className="text-[11px] text-mgray font-mono">{t("win_rate")}</div>
-              <div className="text-2xl font-extrabold font-mono text-mgreen">{winRate}%</div>
+              <div className="text-[11px] text-muted font-mono">{t("win_rate")}</div>
+              <div className="text-2xl font-extrabold font-mono text-bull">{winRate}%</div>
             </div>
-            <Award className="text-mgreen" size={28} />
+            <Award className="text-bull" size={28} />
           </div>
 
-          <div className="glass-card p-4 flex items-center justify-between border-mborder/40">
+          <div className="glass-card p-4 flex items-center justify-between border-border/40">
             <div>
-              <div className="text-[11px] text-mgray font-mono">{t("total_trades")}</div>
+              <div className="text-[11px] text-muted font-mono">{t("total_trades")}</div>
               <div className="text-2xl font-extrabold font-mono text-white">{closedTrades.length}</div>
             </div>
-            <DollarSign className="text-mgold" size={28} />
+            <DollarSign className="text-accent" size={28} />
           </div>
 
-          <div className="glass-card p-4 flex items-center justify-between border-mborder/40">
+          <div className="glass-card p-4 flex items-center justify-between border-border/40">
             <div>
-              <div className="text-[11px] text-mgray font-mono">Umumiy PnL</div>
+              <div className="text-[11px] text-muted font-mono">Umumiy PnL</div>
               <div
                 className={`text-xl font-extrabold font-mono ${
-                  totalPnL >= 0 ? "text-mgreen" : "text-mred"
+                  totalPnL >= 0 ? "text-bull" : "text-bear"
                 }`}
               >
                 {totalPnL >= 0 ? "+" : ""}
@@ -324,32 +324,32 @@ export default function BacktestSimulator() {
               </div>
             </div>
             {totalPnL >= 0 ? (
-              <TrendingUp className="text-mgreen" size={28} />
+              <TrendingUp className="text-bull" size={28} />
             ) : (
-              <TrendingDown className="text-mred" size={28} />
+              <TrendingDown className="text-bear" size={28} />
             )}
           </div>
         </div>
 
         {/* Canvas & Replay Controls */}
-        <div className="lg:col-span-3 glass-card p-4 border-mborder/40 flex flex-col justify-between">
+        <div className="lg:col-span-3 glass-card p-4 border-border/40 flex flex-col justify-between">
           <div className="relative w-full h-[380px] flex items-center justify-center">
             <canvas ref={canvasRef} className="w-full h-full" />
           </div>
 
           {/* Replay Controls & Buy/Sell Actions */}
-          <div className="mt-4 pt-4 border-t border-mborder/40 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-4 pt-4 border-t border-border/40 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="p-2.5 rounded-xl bg-mgold text-mblack hover:bg-mgoldlight transition-colors font-bold text-xs flex items-center gap-1"
+                className="p-2.5 rounded-xl bg-primary text-ink-950 hover:bg-sand-100 transition-colors font-bold text-xs flex items-center gap-1"
               >
                 {isPlaying ? <Pause size={16} /> : <Play size={16} />}
                 {isPlaying ? "Pauza" : "Avto O'ynash"}
               </button>
               <button
                 onClick={handleNextCandle}
-                className="p-2.5 rounded-xl bg-mcard border border-mborder text-white hover:border-mgold transition-colors font-mono text-xs flex items-center gap-1"
+                className="p-2.5 rounded-xl bg-card border border-border text-white hover:border-accent transition-colors font-mono text-xs flex items-center gap-1"
               >
                 <SkipForward size={16} /> {t("step_next")}
               </button>
@@ -360,7 +360,7 @@ export default function BacktestSimulator() {
                   setActiveTrade(null);
                   setIsPlaying(false);
                 }}
-                className="p-2.5 rounded-xl bg-mcard border border-mborder text-mgray hover:text-white transition-colors"
+                className="p-2.5 rounded-xl bg-card border border-border text-muted hover:text-white transition-colors"
                 title={t("reset_simulation")}
               >
                 <RotateCcw size={16} />
@@ -371,10 +371,10 @@ export default function BacktestSimulator() {
               <button
                 onClick={() => handleOpenTrade("BUY")}
                 disabled={activeTrade !== null}
-                className={`px-5 py-2.5 rounded-xl font-sora font-bold text-xs flex items-center gap-2 shadow-lg transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs flex items-center gap-2 shadow-lg transition-all ${
                   activeTrade !== null
-                    ? "opacity-40 cursor-not-allowed bg-mgreen/20 text-mgreen"
-                    : "bg-mgreen text-mblack hover:bg-emerald-400"
+                    ? "opacity-40 cursor-not-allowed bg-bull/20 text-bull"
+                    : "bg-bull text-ink-950 hover:bg-emerald-400"
                 }`}
               >
                 <TrendingUp size={16} /> {t("buy_order")}
@@ -383,10 +383,10 @@ export default function BacktestSimulator() {
               <button
                 onClick={() => handleOpenTrade("SELL")}
                 disabled={activeTrade !== null}
-                className={`px-5 py-2.5 rounded-xl font-sora font-bold text-xs flex items-center gap-2 shadow-lg transition-all ${
+                className={`px-5 py-2.5 rounded-xl font-display font-bold text-xs flex items-center gap-2 shadow-lg transition-all ${
                   activeTrade !== null
-                    ? "opacity-40 cursor-not-allowed bg-mred/20 text-mred"
-                    : "bg-mred text-white hover:bg-rose-600"
+                    ? "opacity-40 cursor-not-allowed bg-bear/20 text-bear"
+                    : "bg-bear text-white hover:bg-rose-600"
                 }`}
               >
                 <TrendingDown size={16} /> {t("sell_order")}

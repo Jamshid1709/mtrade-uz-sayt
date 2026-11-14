@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { ChevronDown, HelpCircle } from "lucide-react";
@@ -9,8 +9,8 @@ const faqs = [
     a: "Ha, bizning kurslarimiz 0 dan boshlab o'rganish uchun mo'ljallangan. Siz oldin hech qanday tajribaga ega bo'lmasangiz ham, tizimli dasturimiz orqali professional darajaga yetishingiz mumkin.",
   },
   {
-    q: "Online Premium va Masofaviy Gibrid — farqi nima?",
-    a: "Online Premium — videodarslar asosida, mustaqil o'rganish uchun. Masofaviy Gibrid — jonli sessiyalar, 5 kishilik intensiv guruh va shaxsiy mentorlik bilan. Gibrid kurs tezroq natija beradi, lekin ko'proq vaqt talab qiladi.",
+    q: "Online Premium va Masofaviy Gibrid â€” farqi nima?",
+    a: "Online Premium â€” videodarslar asosida, mustaqil o'rganish uchun. Masofaviy Gibrid â€” jonli sessiyalar, 5 kishilik intensiv guruh va shaxsiy mentorlik bilan. Gibrid kurs tezroq natija beradi, lekin ko'proq vaqt talab qiladi.",
   },
   {
     q: "Fond bozorida savdo qilish haqiqatan halolmi?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Qancha pul bilan treydingni boshlash mumkin?",
-    a: "Minimum $100-500 dan boshlash tavsiya etiladi. Siz yuqoriroq kapital bilan asosiy ishga o'zgartira olasiz. Asosiy kapitalingizni himoya qilish — birinchi qoidamiz.",
+    a: "Minimum $100-500 dan boshlash tavsiya etiladi. Siz yuqoriroq kapital bilan asosiy ishga o'zgartira olasiz. Asosiy kapitalingizni himoya qilish â€” birinchi qoidamiz.",
   },
   {
     q: "Qaysi platformalardan foydalaniladi?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Offline Akademiya kursi qanday va qayerda o'tkaziladi?",
-    a: "Offline Akademiya kursi Toshkent shahri markazidagi zamonaviy Coworking zalida 8 hafta (2 oy) davomida o'tkaziladi. Guruh atigi 10 kishilik intensiv mini guruhdan iborat bo'lib, o'quvchilarda shaxsiy noutbuk bo'lishi shart (shaxsiy yoki vaqtinchalik). Darslar kun ora — haftada 3 kun (Dush-Chor-Jum yoki Ses-Pay-Shan) tartibida o'tkaziladi. Narxi: $1000.",
+    a: "Offline Akademiya kursi Toshkent shahri markazidagi zamonaviy Coworking zalida 8 hafta (2 oy) davomida o'tkaziladi. Guruh atigi 10 kishilik intensiv mini guruhdan iborat bo'lib, o'quvchilarda shaxsiy noutbuk bo'lishi shart (shaxsiy yoki vaqtinchalik). Darslar kun ora â€” haftada 3 kun (Dush-Chor-Jum yoki Ses-Pay-Shan) tartibida o'tkaziladi. Narxi: $1000.",
   },
   {
     q: "Kursni tugatgandan keyin sertifikat beriladimi?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "Broker hisob ochish uchun minimal yosh bor?",
-    a: "Interactive Brokers (IBKR) da hisob ochish uchun 18 yoshdan katta bo'lishingiz shart. Biz asosan IBKR bilan ishlaymiz — bu xavfsiz va professional broker.",
+    a: "Interactive Brokers (IBKR) da hisob ochish uchun 18 yoshdan katta bo'lishingiz shart. Biz asosan IBKR bilan ishlaymiz â€” bu xavfsiz va professional broker.",
   },
   {
     q: "Signal kanali pullikmi?",
@@ -59,25 +59,25 @@ export default function FAQPage() {
 
   return (
     <div className="pt-20">
-      <section className="py-20 bg-gradient-to-b from-mblack to-mdark">
+      <section className="py-20 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
             <HelpCircle
               size={48}
-              className="text-mgold mx-auto mb-4"
+              className="text-accent mx-auto mb-4"
             />
-            <h1 className="font-sora font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
               Ko'p so'raladigan{" "}
               <span className="gold-text">savollar</span>
             </h1>
-            <p className="text-mgray max-w-2xl mx-auto">
+            <p className="text-muted max-w-2xl mx-auto">
               Eng ko'p beriladigan savollarga batafsil javoblar.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="py-16 bg-mblack">
+      <section className="py-16 bg-ink-950">
         <div className="section-container max-w-4xl">
           <div className="space-y-3">
             {faqs.map((faq, i) => (
@@ -89,7 +89,7 @@ export default function FAQPage() {
                     }
                     className="w-full flex items-center justify-between p-6 text-left"
                   >
-                    <span className="font-sora font-medium text-white pr-4 text-lg">
+                    <span className="font-display font-medium text-white pr-4 text-lg">
                       {faq.q}
                     </span>
                     <motion.div
@@ -98,7 +98,7 @@ export default function FAQPage() {
                     >
                       <ChevronDown
                         size={24}
-                        className="text-mgold shrink-0"
+                        className="text-accent shrink-0"
                       />
                     </motion.div>
                   </button>
@@ -111,7 +111,7 @@ export default function FAQPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                       >
-                        <div className="px-6 pb-6 text-mgray leading-relaxed border-t border-mborder/50 pt-4">
+                        <div className="px-6 pb-6 text-muted leading-relaxed border-t border-border/50 pt-4">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -125,18 +125,18 @@ export default function FAQPage() {
           {/* CTA */}
           <ScrollReveal delay={0.3}>
             <div className="mt-12 text-center glass-card p-8">
-              <h3 className="font-sora font-bold text-xl text-white mb-3">
+              <h3 className="font-display font-bold text-xl text-white mb-3">
                 Savolingiz qoldimi?
               </h3>
-              <p className="text-mgray mb-6">
-                Telegram botimizga murojaat qiling — javob berishdan mamnun
+              <p className="text-muted mb-6">
+                Telegram botimizga murojaat qiling â€” javob berishdan mamnun
                 bo'lamiz.
               </p>
               <a
                 href="https://t.me/mtrade_obuna_bot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-gradient-bg text-mblack font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 hover:shadow-gold transition-all"
+                className="gold-gradient-bg text-ink-950 font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2 hover:shadow-gold transition-all"
               >
                 Telegramga yozish
               </a>

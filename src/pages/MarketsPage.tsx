@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import ScrollReveal from "../components/ScrollReveal";
 import StockSphere3D from "../components/StockSphere3D";
 import StockConstellation3D from "../components/StockConstellation3D";
@@ -59,23 +59,23 @@ const topStocksQuote = [
 
 export default function MarketsPage() {
   return (
-    <div className="pt-20 bg-mblack text-white">
+    <div className="pt-20 bg-ink-950 text-white">
       {/* Header */}
-      <section className="py-12 bg-gradient-to-b from-mblack to-mdark">
+      <section className="py-12 bg-gradient-to-b from-ink-950 to-surface">
         <div className="section-container text-center">
           <ScrollReveal>
-            <h1 className="font-sora font-extrabold text-4xl sm:text-5xl text-white mb-4">
+            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
               Aksiya <span className="gold-text">Bozori va 3D Galaxy</span>
             </h1>
-            <p className="text-mgray max-w-2xl mx-auto">
-              Real vaqt ma'lumotlari — 100+ Halal aksiyalar yulduz turqumi, 3D shari va GMT Terminali.
+            <p className="text-muted max-w-2xl mx-auto">
+              Real vaqt ma'lumotlari â€” 100+ Halal aksiyalar yulduz turqumi, 3D shari va GMT Terminali.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* 1. 3D Stock Constellation Galaxy Network (Connectome Style) */}
-      <section className="py-8 bg-mblack">
+      <section className="py-8 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
             <StockConstellation3D />
@@ -84,7 +84,7 @@ export default function MarketsPage() {
       </section>
 
       {/* 2. Spacious GMT Market Terminal Hub */}
-      <section className="py-10 bg-mdark border-t border-mborder/30">
+      <section className="py-10 bg-surface border-t border-border/30">
         <div className="section-container">
           <ScrollReveal>
             <SpaciousGmtTerminal />
@@ -93,7 +93,7 @@ export default function MarketsPage() {
       </section>
 
       {/* 3. 3D Interactive Stock Sphere */}
-      <section className="py-8 bg-mblack">
+      <section className="py-8 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
             <StockSphere3D />
@@ -102,14 +102,14 @@ export default function MarketsPage() {
       </section>
 
       {/* 4. Live Chart & Economic Calendar Section */}
-      <section className="py-10 bg-mdark border-t border-mborder/30">
+      <section className="py-10 bg-surface border-t border-border/30">
         <div className="section-container">
           <LiveChartSection />
         </div>
       </section>
 
-      {/* 5. Ticker Tape — Stocks Only (Fixed Symbols, No Red Dots) */}
-      <section className="bg-mblack border-y border-mborder/30">
+      {/* 5. Ticker Tape â€” Stocks Only (Fixed Symbols, No Red Dots) */}
+      <section className="bg-ink-950 border-y border-border/30">
         <TVWidget
           containerId="tv-ticker"
           widgetSrc="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
@@ -138,10 +138,10 @@ export default function MarketsPage() {
       </section>
 
       {/* 6. Top Stock Quotes Grid */}
-      <section className="py-12 bg-mblack">
+      <section className="py-12 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-sora font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-white mb-8">
               Top <span className="gold-text">Aksiyalar Kotirovkalari</span>
             </h2>
           </ScrollReveal>
@@ -150,7 +150,7 @@ export default function MarketsPage() {
             {topStocksQuote.map((st, i) => (
               <ScrollReveal key={st.symbol} delay={i * 0.1}>
                 <div className="glass-card p-4">
-                  <p className="text-mgray text-xs font-mono mb-2">{st.name}</p>
+                  <p className="text-muted text-xs font-mono mb-2">{st.name}</p>
                   <TVWidget
                     containerId={`tv-quote-${i}`}
                     widgetSrc="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
@@ -170,10 +170,10 @@ export default function MarketsPage() {
       </section>
 
       {/* 7. Stock Screener Table */}
-      <section className="py-12 bg-mdark">
+      <section className="py-12 bg-surface">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-sora font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-white mb-8">
               AQSh Aksiyalar <span className="gold-text">Skanneri</span>
             </h2>
           </ScrollReveal>
@@ -201,10 +201,10 @@ export default function MarketsPage() {
       </section>
 
       {/* 8. Sector Heatmap */}
-      <section className="py-12 bg-mblack">
+      <section className="py-12 bg-ink-950">
         <div className="section-container">
           <ScrollReveal>
-            <h2 className="font-sora font-bold text-2xl text-white mb-8">
+            <h2 className="font-display font-bold text-2xl text-white mb-8">
               Aksiyalar <span className="gold-text">Sektorlar Issiqlik Xaritasi</span>
             </h2>
           </ScrollReveal>
@@ -238,30 +238,30 @@ export default function MarketsPage() {
       </section>
 
       {/* Musaffa Halol Disclaimer */}
-      <section className="py-6 bg-mdark border-t border-mborder/30">
+      <section className="py-6 bg-surface border-t border-border/30">
         <div className="section-container text-center">
-          <p className="text-mgray text-xs max-w-2xl mx-auto mb-3">
-            Halol yoki Not halal ekanligini aniqlash katta mas'uliyat. Biz to'g'ridan-to'g'ri hukm chiqarmaymiz — tekshirish uchun ishonchli manbaga yo'naltiramiz.
+          <p className="text-muted text-xs max-w-2xl mx-auto mb-3">
+            Halol yoki Not halal ekanligini aniqlash katta mas'uliyat. Biz to'g'ridan-to'g'ri hukm chiqarmaymiz â€” tekshirish uchun ishonchli manbaga yo'naltiramiz.
           </p>
           <a
             href="https://musaffa.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-mgreen/10 hover:bg-mgreen/20 border border-mgreen/30 rounded-xl text-mgreen text-xs font-mono transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-bull/10 hover:bg-bull/20 border border-bull/30 rounded-xl text-bull text-xs font-mono transition-colors"
           >
-            Musaffa da halol aksiyalarni tekshirish ↗
+            Musaffa da halol aksiyalarni tekshirish â†—
           </a>
-          <p className="text-mdim text-[10px] mt-2">Eslatma: bu diniy fatvo emas. O'z ustozingizdan so'rang.</p>
+          <p className="text-ink-500 text-[10px] mt-2">Eslatma: bu diniy fatvo emas. O'z ustozingizdan so'rang.</p>
         </div>
       </section>
 
       {/* Disclaimer */}
-      <section className="py-8 bg-mblack border-t border-mborder/30">
+      <section className="py-8 bg-ink-950 border-t border-border/30">
         <div className="section-container">
-          <div className="flex items-center justify-center gap-2 text-mdim text-xs">
+          <div className="flex items-center justify-center gap-2 text-ink-500 text-xs">
             <AlertTriangle size={14} />
             <span>
-              Ma'lumotlar TradingView™ va Finnhub/Wisesheets/FMP manbalari asosida. Faqat Halol aksiyalar tahlili uchun. Investitsiya maslahati emas.
+              Ma'lumotlar TradingViewâ„¢ va Finnhub/Wisesheets/FMP manbalari asosida. Faqat Halol aksiyalar tahlili uchun. Investitsiya maslahati emas.
             </span>
           </div>
         </div>

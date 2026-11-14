@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -40,7 +40,7 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-mblack/90 backdrop-blur-xl border-b border-mborder/50"
+          ? "bg-ink-950/90 backdrop-blur-xl border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -53,7 +53,7 @@ export default function Navbar() {
               alt="MTrade Academy"
               className="h-10 w-10 object-contain"
             />
-            <span className="font-sora font-bold text-lg hidden sm:block">
+            <span className="font-display font-bold text-lg hidden sm:block">
               <span className="gold-text">MTrade</span>{" "}
               <span className="text-white">Academy</span>
             </span>
@@ -67,8 +67,8 @@ export default function Navbar() {
                 to={link.path}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   location.pathname === link.path
-                    ? "text-mgold bg-mgold/10"
-                    : "text-mgray hover:text-white hover:bg-white/5"
+                    ? "text-accent bg-primary/10"
+                    : "text-muted hover:text-white hover:bg-white/5"
                 }`}
               >
                 {link.name}
@@ -82,15 +82,15 @@ export default function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-mcard border border-mborder/60 text-xs font-mono text-white hover:border-mgold transition-all"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border/60 text-xs font-mono text-white hover:border-accent transition-all"
               >
                 <span>{currentLangObj.flag}</span>
                 <span className="uppercase">{currentLangObj.code}</span>
-                <ChevronDown size={14} className="text-mgray" />
+                <ChevronDown size={14} className="text-muted" />
               </button>
 
               {showLangMenu && (
-                <div className="absolute right-0 top-full mt-2 w-36 bg-mcard2 border border-mborder rounded-2xl shadow-2xl overflow-hidden z-50 py-1">
+                <div className="absolute right-0 top-full mt-2 w-36 bg-ink-900 border border-border rounded-2xl shadow-2xl overflow-hidden z-50 py-1">
                   {LANGUAGES.map((lang) => (
                     <button
                       key={lang.code}
@@ -98,8 +98,8 @@ export default function Navbar() {
                         setLanguage(lang.code as LanguageCode);
                         setShowLangMenu(false);
                       }}
-                      className={`w-full px-3 py-2 text-left text-xs font-mono flex items-center justify-between hover:bg-mgold/10 transition-colors ${
-                        language === lang.code ? "text-mgold font-bold bg-mgold/5" : "text-mgray"
+                      className={`w-full px-3 py-2 text-left text-xs font-mono flex items-center justify-between hover:bg-primary/10 transition-colors ${
+                        language === lang.code ? "text-accent font-bold bg-primary/5" : "text-muted"
                       }`}
                     >
                       <span className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function Navbar() {
               href="https://t.me/mtrade_obuna_bot?start=course_premium"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex gold-gradient-bg text-mblack font-semibold px-5 py-2 rounded-full text-sm hover:shadow-gold transition-shadow"
+              className="hidden sm:inline-flex gold-gradient-bg text-ink-950 font-semibold px-5 py-2 rounded-full text-sm hover:shadow-gold transition-shadow"
             >
               {t("free_lesson")}
             </a>
@@ -137,7 +137,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-mblack/95 backdrop-blur-xl border-t border-mborder/50"
+            className="lg:hidden bg-ink-950/95 backdrop-blur-xl border-t border-border/50"
           >
             <div className="section-container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -146,8 +146,8 @@ export default function Navbar() {
                   to={link.path}
                   className={`px-4 py-3 rounded-lg font-medium transition-colors ${
                     location.pathname === link.path
-                      ? "text-mgold bg-mgold/10"
-                      : "text-mgray hover:text-white hover:bg-white/5"
+                      ? "text-accent bg-primary/10"
+                      : "text-muted hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {link.name}
@@ -157,7 +157,7 @@ export default function Navbar() {
                 href="https://t.me/mtrade_obuna_bot?start=course_premium"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="sm:hidden gold-gradient-bg text-mblack font-semibold px-5 py-3 rounded-full text-center mt-2"
+                className="sm:hidden gold-gradient-bg text-ink-950 font-semibold px-5 py-3 rounded-full text-center mt-2"
               >
                 {t("free_lesson")}
               </a>
