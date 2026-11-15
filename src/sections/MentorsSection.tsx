@@ -28,7 +28,7 @@ export default function MentorsSection() {
             transition={{ type: "spring", stiffness: 200 }}
             className="mt-14 rounded-2xl overflow-hidden border border-border hover:border-accent/30 transition-colors duration-300"
           >
-            <img loading="lazy" decoding="async"
+            <img width="512" height="512" loading="lazy" decoding="async"
               src="/images/mentors-duo.webp"
               alt="MTrade Academy mentorlari"
               className="w-full h-auto object-cover"

@@ -145,7 +145,7 @@ export default function StockSphere3D() {
     pointsRef.current = points;
   }, []);
 
-  // Animation render loop
+  // Animation render loop (visible bo'lganda + reduced-motion yo'q bo'lsa)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -276,10 +276,46 @@ export default function StockSphere3D() {
         ctx.restore();
       });
 
-      animationFrameId = requestAnimationFrame(render);
+      animationFrameId = requestAnimationFrame(() => {
+        if (running) render();
+      });
     };
 
-    render();
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let running = false;
+
+    const startLoop = () => {
+      if (running || reducedMotion) return;
+      running = true;
+      animationFrameId = requestAnimationFrame(render);
+    };
+    const stopLoop = () => {
+      running = false;
+      cancelAnimationFrame(animationFrameId);
+    };
+
+    if (reducedMotion) {
+      // Faqat bitta statik kadr chiz, loop ishlamasin
+      running = true;
+      render();
+      running = false;
+    } else {
+      // Ko'rinsa ishla, ko'rinmasa to'xta
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries[0]?.isIntersecting) startLoop();
+          else stopLoop();
+        },
+        { threshold: 0 }
+      );
+      io.observe(canvas);
+      render();
+      return () => {
+        stopLoop();
+        io.disconnect();
+        window.removeEventListener("resize", handleResize);
+      };
+    }
 
     return () => {
       cancelAnimationFrame(animationFrameId);

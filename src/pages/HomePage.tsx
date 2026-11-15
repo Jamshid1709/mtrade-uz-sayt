@@ -138,7 +138,7 @@ export default function HomePage() {
               >
                 <X size={20} />
               </button>
-              <img loading="lazy" decoding="async" src={selectedImage} alt="Natija screenshot" className="w-full h-full object-contain" />
+              <img loading="lazy" decoding="async" width="1200" height="1280" src={selectedImage} alt="Natija screenshot" className="w-full h-full object-contain" />
             </div>
           </motion.div>
         )}
@@ -287,7 +287,7 @@ export default function HomePage() {
                 <div>
                   {/* Uniform White Photo Frame */}
                   <div className="w-28 h-28 mx-auto mb-4 rounded-2xl overflow-hidden bg-white p-1 shadow-lg border border-accent/40 flex items-center justify-center">
-                    <img loading="lazy" decoding="async"
+                    <img loading="lazy" decoding="async" width="512" height="512"
                       src={mentor.image}
                       alt={mentor.name}
                       className="w-full h-full object-cover object-top rounded-xl"
@@ -346,7 +346,7 @@ export default function HomePage() {
                 className="glass-card overflow-hidden rounded-2xl border border-border/40 cursor-pointer hover:border-accent transition-all group"
               >
                 <div className="aspect-[4/3] relative overflow-hidden bg-card">
-                  <img loading="lazy" decoding="async" src={src} alt={`Natija ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" width="600" height="1280" src={src} alt={`Natija ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-ink-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="text-xs font-mono bg-primary text-ink-950 font-bold px-2.5 py-1 rounded-full">
                       Kattalashtirish 🔍
@@ -402,7 +402,7 @@ export default function HomePage() {
                     onClick={() => setSelectedImage(item.src)}
                     className="rounded-2xl overflow-hidden border border-border/40 mb-4 cursor-pointer relative group h-44 bg-card flex items-center justify-center"
                   >
-                    <img loading="lazy" decoding="async" src={item.src} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img loading="lazy" decoding="async" width="900" height="1280" src={item.src} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-ink-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="text-xs font-mono bg-primary text-ink-950 font-bold px-2 py-1 rounded-full">
                         Ko'rish 🔍
