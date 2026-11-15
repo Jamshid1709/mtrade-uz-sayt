@@ -76,7 +76,7 @@ export default function HeroSection() {
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
               <span className="text-foreground">Kelajak treyderlarini</span>
               <br />
-              <span className="shimmer-text">shu yerdan yetishtiramiz</span>
+              <span className="sand-text">shu yerdan yetishtiramiz</span>
             </h1>
 
             <p className="text-muted text-lg leading-relaxed mb-8 max-w-lg">
