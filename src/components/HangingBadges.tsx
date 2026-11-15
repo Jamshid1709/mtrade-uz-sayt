@@ -116,7 +116,7 @@ export default function HangingBadges({ mentors }: HangingBadgesProps) {
                   >
                     {/* Rasm doirasi */}
                     <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 md:w-[88px] md:h-[88px] rounded-full overflow-hidden border-2 border-sand-100/70 bg-ink-900 mt-1">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={m.image}
                         alt={m.name}
                         className="w-full h-full object-cover object-top"
@@ -165,7 +165,7 @@ export default function HangingBadges({ mentors }: HangingBadgesProps) {
                     <p className="text-muted text-[10px] sm:text-[11px] leading-relaxed">
                       {m.bio}
                     </p>
-                    <img
+                    <img loading="lazy" decoding="async"
                       src="/brand/logo/MTrade_icon_sand.svg"
                       alt=""
                       aria-hidden

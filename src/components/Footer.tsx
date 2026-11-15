@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-4 mb-6">
-              <img
+              <img loading="eager" decoding="async"
                 src="/brand/logo/MTrade_icon_reverse.svg"
                 alt="MTrade Academy belgisi"
                 className="h-14 w-12 object-contain"

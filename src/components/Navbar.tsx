@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo — Brand v2.1: BIR QATOR (inline reverse), brand p.7 "Bir qator (web)" */}
           <Link to="/" className="flex items-center gap-3 py-1">
-            <img
+            <img loading="eager" decoding="async"
               src="/brand/logo/MTrade_inline_reverse.svg"
               alt="MTrade Academy — Halol trading — ilm bilan"
               className="h-8 md:h-9 w-auto object-contain"

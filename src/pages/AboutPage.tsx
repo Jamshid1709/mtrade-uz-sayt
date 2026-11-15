@@ -55,7 +55,7 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.2}>
               <div className="rounded-2xl overflow-hidden border border-accent/30">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/odilbek.webp"
                   alt="Odilbek - CEO"
                   className="w-full h-auto object-cover"
@@ -159,7 +159,7 @@ export default function AboutPage() {
           {/* Duo image */}
           <ScrollReveal>
             <div className="rounded-2xl overflow-hidden border border-border">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/mentors-duo.webp"
                 alt="MTrade Academy mentorlari"
                 className="w-full h-auto object-cover"

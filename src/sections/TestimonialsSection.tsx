@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
                 </div>
 
                 <div className="mb-4 rounded-xl overflow-hidden border border-border">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={t.image}
                     alt={t.name}
                     className="w-full h-48 object-cover"

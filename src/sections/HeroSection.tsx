@@ -157,7 +157,7 @@ export default function HeroSection() {
                 </div>
 
                 <div className="aspect-video rounded-xl overflow-hidden bg-card border border-border mb-6" data-glow-none>
-                  <iframe
+                  <iframe loading="lazy"
                     width="100%"
                     height="100%"
                     src="https://www.youtube.com/embed/uA7Ckw_ZBLI?rel=0"

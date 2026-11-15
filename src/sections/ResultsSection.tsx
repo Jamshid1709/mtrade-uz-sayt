@@ -114,7 +114,7 @@ export default function ResultsSection() {
                 <motion.div
                   className="relative w-full h-full rounded-3xl overflow-hidden border border-border bg-card shadow-2xl"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={r.src}
                     alt={r.alt}
                     draggable={false}

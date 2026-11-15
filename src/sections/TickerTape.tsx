@@ -37,9 +37,9 @@ export default function TickerTape() {
   }, []);
 
   return (
-    <div className="w-full bg-ink-950 border-y border-border/30 py-1">
-      <div ref={containerRef} className="tradingview-widget-container">
-        <div className="tradingview-widget-container__widget" />
+    <div className="w-full bg-ink-950 border-y border-border/30 py-1 h-[48px]">
+      <div ref={containerRef} className="tradingview-widget-container h-full">
+        <div className="tradingview-widget-container__widget h-full" />
       </div>
     </div>
   );
